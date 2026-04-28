@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { ArrowUp } from "lucide-react";
 
+
 export default function Home() {
 
   // ================= CLIENT =================
@@ -167,8 +168,12 @@ useEffect(() => {
   return (
     <main className="w-full">
 
+      <div className="bg-red-500 text-white p-10">
+  TEST TAILWIND
+</div>
+
       {/* NAVBAR */}
-      {searchOpen && (
+     {searchOpen && (
   <div className="fixed inset-0 bg-black/40 z-50 flex items-start justify-center pt-24">
 
     <div className="bg-white w-[90%] max-w-lg p-4 rounded-xl shadow-lg relative">
@@ -257,8 +262,8 @@ useEffect(() => {
   className="
     border px-2 py-1 text-sm
     transition-all duration-150
-    hover:-translate-y-[1px]
-    active:scale-90 active:translate-y-[1px]
+    hover:translate-y-px
+active:translate-y-px
   "
 >
   EN
@@ -269,8 +274,8 @@ useEffect(() => {
   className="
     bg-red-500 text-white px-2 py-1 text-sm
     transition-all duration-150
-    hover:-translate-y-[1px]
-    active:scale-90 active:translate-y-[1px]
+    hover:translate-y-px
+    active:scale-90 active:translate-y-px
   "
 >
   ID
@@ -453,12 +458,12 @@ useEffect(() => {
 <section id="about" className="w-full">
 
   {/* TOP HERO ABOUT */}
-  <div className="relative min-h-[400px] md:h-[300px] flex items-center justify-center text-center">
+  <div className="relative min-h-100 md:h-75 flex items-center justify-center text-center">
 
   
 
   {/* OVERLAY */}
-  <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-white/40 to-blue-900/40"></div>
+  <div className="absolute inset-0 bg-linear-to-b from-white/60 via-white/40 to-blue-900/40"></div>
 
   <div className="relative z-10 mt-10">
     <h2 className="text-4xl md:text-6xl font-extrabold text-black">
@@ -551,7 +556,7 @@ useEffect(() => {
             alt={client}
             width={120}
             height={60}
-            className="object-contain max-h-[50px] w-auto opacity-80 hover:opacity-100 transition"
+            className="object-contain max-h-12.5 w-auto opacity-80 hover:opacity-100 transition"
           />
         </div>
       ))}
@@ -563,7 +568,7 @@ useEffect(() => {
 
  {/* FOOTER */}
 {!showContact && (
-  <footer className="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-6 px-4 md:px-10 border-t border-white/20">
+  <footer className="bg-linear-to-r from-blue-900 to-blue-800 text-white py-6 px-4 md:px-10 border-t border-white/20">
 
   <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
 
@@ -593,7 +598,7 @@ useEffect(() => {
 {showContact && (
   <section id="contact" className="w-full">
 
-  <div className="grid md:grid-cols-3 min-h-[260px] md:min-h-[300px]">
+  <div className="grid md:grid-cols-3 min-h-65 md:min-h-75">
 
     {/* KIRI */}
          <div className="md:col-span-1 bg-blue-900 text-white px-6 py-6 md:px-10 md:py-8 flex flex-col justify-center">
@@ -643,7 +648,7 @@ useEffect(() => {
     </div>
 
     {/* KANAN (MAP) */}
-    <div className="md:col-span-2 h-[260px] md:h-[300px] shadow-lg">
+    <div className="md:col-span-2 h-65 md:h-75 shadow-lg">
       <iframe
   src="https://www.google.com/maps?q=PT+Dothree+Santana+Prisma+Jakarta&output=embed"
   className="w-full h-full border-0"
