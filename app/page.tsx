@@ -30,6 +30,30 @@ const [showTop, setShowTop] = useState(false);
 const [showContact, setShowContact] = useState(false);
 
 const [searchOpen, setSearchOpen] = useState(false);
+
+const [showNavbar, setShowNavbar] = useState(true);
+const [lastScroll, setLastScroll] = useState(0);
+
+useEffect(() => {
+  const handleScroll = () => {
+    const currentScroll = window.scrollY;
+
+    if (currentScroll > lastScroll && currentScroll > 100) {
+      // scroll ke bawah → hide
+      setShowNavbar(false);
+    } else {
+      // scroll ke atas → show
+      setShowNavbar(true);
+    }
+
+    setLastScroll(currentScroll);
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
+  return () => window.removeEventListener("scroll", handleScroll);
+}, [lastScroll]);
+
 const [search, setSearch] = useState("");
 
 const handleSearch = (value: string) => {
@@ -169,7 +193,14 @@ useEffect(() => {
   </div>
 )}
 
-    <nav className="w-full px-6 md:px-10 py-4 flex justify-between items-center sticky top-0 bg-white/80 backdrop-blur z-50 shadow-sm">
+  <nav
+  className={`fixed top-0 left-0 w-full z-50 bg-white transition-transform duration-500 ${
+    showNavbar ? "translate-y-0 shadow-md" : "-translate-y-full"
+  }`}
+>
+  <div className="max-w-6xl mx-auto px-6 md:px-10 py-4 flex justify-between items-center">
+
+
 
   {/* LOGO */}
  <a
@@ -256,7 +287,7 @@ useEffect(() => {
   <button className="md:hidden text-2xl" onClick={() => setMenu(true)}>
     ☰
   </button>
-
+</div>
 </nav>
 
       {/* OVERLAY */}
@@ -404,7 +435,10 @@ useEffect(() => {
 </div>
 
    {/* HERO */}
-<section id="home" className="w-full bg-blue-900 text-white text-center py-20 px-4 md:px-10">
+<section
+  id="home"
+  className="w-full bg-blue-900 text-white text-center pt-24 md:pt-28 pb-20 px-4 md:px-10"
+>
   <h1 className="text-4xl md:text-6xl font-extrabold tracking-wide">
     DOTHREE
   </h1>
