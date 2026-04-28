@@ -168,15 +168,11 @@ useEffect(() => {
   return (
     <main className="w-full">
 
-      <div className="bg-red-500 text-white p-10">
-  TEST TAILWIND
-</div>
-
       {/* NAVBAR */}
      {searchOpen && (
   <div className="fixed inset-0 bg-black/40 z-50 flex items-start justify-center pt-24">
 
-    <div className="bg-white w-[90%] max-w-lg p-4 rounded-xl shadow-lg relative">
+    <div className="bg-white/90 dark:bg-gray-900/90 text-black dark:text-white backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
 
       <input
         type="text"
@@ -199,8 +195,10 @@ useEffect(() => {
   </div>
 )}
 
-  <nav
-  className={`fixed top-0 left-0 w-full z-50 bg-white transition-transform duration-500 ${
+ <nav
+  className={`fixed top-0 left-0 w-full z-50 
+  bg-white dark:bg-gray-900
+  transition-transform duration-500 ${
     showNavbar ? "translate-y-0 shadow-md" : "-translate-y-full"
   }`}
 >
@@ -516,7 +514,7 @@ active:translate-y-px
 </section>
 
  {/* SERVICES */}
-<section id="services" className="py-16 px-4 bg-gray-100">
+<section id="services" className="py-16 px-4 bg-gray-100 dark:bg-gray-800">
   <h2 className="TEXT-2xl font-bold mb-8">
     {lang === "id" ? "Layanan Kami" : "Our Services"}
   </h2>
