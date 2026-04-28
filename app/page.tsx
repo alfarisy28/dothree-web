@@ -31,15 +31,6 @@ const [showContact, setShowContact] = useState(false);
 
 const [searchOpen, setSearchOpen] = useState(false);
 
-const [dark, setDark] = useState(false);
-
-useEffect(() => {
-  if (dark) {
-    document.documentElement.classList.add("dark");
-  } else {
-    document.documentElement.classList.remove("dark");
-  }
-}, [dark]);
 
 const [showNavbar, setShowNavbar] = useState(true);
 const [lastScroll, setLastScroll] = useState(0);
@@ -283,13 +274,6 @@ useEffect(() => {
   "
 >
   ID
-</button>
-
-<button
-  onClick={() => setDark(!dark)}
-  className="ml-2 text-lg transition active:scale-90"
->
-  {dark ? "☀️" : "🌙"}
 </button>
 
    <span
