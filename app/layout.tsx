@@ -19,14 +19,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-   
-<html lang="en" className="light">
-  <body className="min-h-full flex flex-col bg-white text-black">
-  </body>
-</html>
+    <html lang="en">
+      <head>
+        <meta name="color-scheme" content="light only" />
+      </head>
+      <body>{children}</body>
+    </html>
   );
 }
