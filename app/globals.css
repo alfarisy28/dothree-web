@@ -5,26 +5,29 @@
   --foreground: #171717;
 }
 
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* LOCK warna supaya tidak berubah */
+html {
+  color-scheme: light;
+  forced-color-adjust: none;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: #ffffff;
+  color: #000000;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
+/* cegah semua auto dark */
+* {
+  box-sizing: border-box;
+  touch-action: auto;
+  forced-color-adjust: none;
 }
 
-* {
-  touch-action: auto;
+img {
+  max-width: 100%;
+  height: auto;
+  filter: none !important;
 }
 
 section {
@@ -36,24 +39,15 @@ html, body {
   overflow-x: hidden;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
 #clients {
   scroll-margin-top: 150px;
 }
 
 html {
-  color-scheme: light;
+  -webkit-text-fill-color: initial;
+  -webkit-text-size-adjust: 100%;
 }
 
-body {
-  background: #ffffff;
-  color: #000000;
+img, video {
+  filter: none !important;
 }
