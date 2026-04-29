@@ -48,3 +48,12 @@ img {
 #clients {
   scroll-margin-top: 150px;
 }
+
+html {
+  color-scheme: light;
+}
+
+body {
+  background: #ffffff;
+  color: #000000;
+}
