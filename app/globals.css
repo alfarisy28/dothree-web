@@ -5,10 +5,10 @@
   --foreground: #171717;
 }
 
-/* LOCK warna supaya tidak berubah */
+/* LOCK warna */
 html {
   color-scheme: light;
-  forced-color-adjust: none;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -17,17 +17,16 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* cegah semua auto dark */
+/* cegah auto dark (cukup ini saja) */
 * {
   box-sizing: border-box;
-  touch-action: auto;
   forced-color-adjust: none;
 }
 
-img {
+img, video {
   max-width: 100%;
   height: auto;
-  filter: none !important;
+  filter: none;
 }
 
 section {
@@ -43,11 +42,10 @@ html, body {
   scroll-margin-top: 150px;
 }
 
-html {
-  -webkit-text-fill-color: initial;
-  -webkit-text-size-adjust: 100%;
-}
-
-img, video {
-  filter: none !important;
+/* override kalau device tetap paksa dark */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #ffffff;
+    color: #000000;
+  }
 }

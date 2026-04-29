@@ -172,7 +172,7 @@ useEffect(() => {
      {searchOpen && (
   <div className="fixed inset-0 bg-black/40 z-50 flex items-start justify-center pt-24">
 
-    <div className="bg-white/90 dark:bg-gray-900/90 text-black dark:text-white backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
+    <div className="bg-white text-black dark:text-white border-b border-gray-200">
 
       <input
         type="text"
@@ -197,7 +197,7 @@ useEffect(() => {
 
  <nav
   className={`fixed top-0 left-0 w-full z-50 
-  bg-white dark:bg-gray-900
+  bg-white
   transition-transform duration-500 ${
     showNavbar ? "translate-y-0 shadow-md" : "-translate-y-full"
   }`}
@@ -520,13 +520,13 @@ active:translate-y-px
   </h2>
 
   <div className="GRID grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-    <div className="bg-white p-6 rounded-xl shadow hover:shadow-xl hover:-translate-y-1 transition duration-300">
+    <div className="bg-white text-black p-6 rounded-xl shadow hover:shadow-xl ">
   IT Solution
 </div>
-    <div className="bg-white p-6 rounded-xl shadow hover:shadow-xl hover:-translate-y-1 transition duration-300">
+    <div className="bg-white text-black p-6 rounded-xl shadow hover:shadow-xl hover:-translate-y-1 transition duration-300">
       Cyber Security
     </div>
-    <div className="bg-white p-6 rounded-xl shadow hover:shadow-xl hover:-translate-y-1 transition duration-300">
+    <div className="bg-white text-black p-6 rounded-xl shadow hover:shadow-xl hover:-translate-y-1 transition duration-300">
       Managed Services
     </div>
   </div>
