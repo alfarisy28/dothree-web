@@ -48,3 +48,7 @@ img {
 #clients {
   scroll-margin-top: 150px;
 }
+
+:root {
+  color-scheme: light;
+}
