@@ -514,8 +514,8 @@ active:translate-y-px
 </section>
 
  {/* SERVICES */}
-<section id="services" className="py-16 px-4 bg-gray-100 dark:bg-gray-800">
-  <h2 className="TEXT-2xl font-bold mb-8">
+<section id="services" className="py-16 px-4 bg-gray-100 ">
+  <h2 className="text-2xl font-bold mb-8">
     {lang === "id" ? "Layanan Kami" : "Our Services"}
   </h2>
 
