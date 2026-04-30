@@ -38,13 +38,21 @@ const handleNavClick = (id: string) => {
   if (!el) return;
 
   if (currentHash === id) {
-    // scroll ke atas dulu
+
+   if (id === "home") {
+  // 🔥 paksa refresh walaupun sudah di atas
+  window.scrollTo({ top: 10, behavior: "smooth" });
+
+  setTimeout(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+  }, 150);
+
+  return;
+}
 
     setTimeout(() => {
       el.scrollIntoView({ behavior: "smooth", block: "start" });
 
-      // 🔥 TAMBAHKAN DI SINI
       el.classList.add("ring-4", "ring-blue-300");
 
       setTimeout(() => {
@@ -215,7 +223,7 @@ useEffect(() => {
     DOTHREE
   </div>
 
-  {/* MENU TENGAH */}
+  {/* MENU NAVBAR */}
   <div className="hidden md:flex items-center gap-8 text-sm">
 
     <a onClick={() => handleNavClick("home")} className="cursor-pointer hover:text-blue-600">
@@ -226,9 +234,59 @@ useEffect(() => {
       {lang === "id" ? "Tentang" : "About"}
     </a>
 
-    <span onClick={() => handleNavClick("services")} className="cursor-pointer hover:text-blue-600">
-      {lang === "id" ? "Layanan" : "Services"} ▾
+  <div className="relative">
+
+  {/* BUTTON */}
+  <div
+    onClick={() =>
+      setOpenDropdown(openDropdown === "services" ? null : "services")
+    }
+    className="cursor-pointer hover:text-blue-600 flex items-center gap-1"
+  >
+    {lang === "id" ? "Layanan" : "Services"}
+    <span className={`transition ${openDropdown === "services" ? "rotate-180" : ""}`}>
+      ▾
     </span>
+  </div>
+
+  {/* DROPDOWN */}
+  {openDropdown === "services" && (
+    <div className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-lg p-2 w-48 z-50">
+
+      <div
+        onClick={() => {
+          handleNavClick("services");
+          setOpenDropdown(null);
+        }}
+        className="p-2 hover:bg-gray-100 cursor-pointer"
+      >
+        IT Solution
+      </div>
+
+      <div
+        onClick={() => {
+          handleNavClick("services");
+          setOpenDropdown(null);
+        }}
+        className="p-2 hover:bg-gray-100 cursor-pointer"
+      >
+        Cyber Security
+      </div>
+
+      <div
+        onClick={() => {
+          handleNavClick("services");
+          setOpenDropdown(null);
+        }}
+        className="p-2 hover:bg-gray-100 cursor-pointer"
+      >
+        Managed Services
+      </div>
+
+    </div>
+  )}
+
+</div>
 
     <a onClick={() => handleNavClick("clients")} className="cursor-pointer hover:text-blue-600">
       {lang === "id" ? "Klien" : "Clients"}
@@ -299,13 +357,11 @@ useEffect(() => {
 
     {/* HEADER */}
     <div className="flex justify-between items-center mb-6">
-     <div
+   <div
   onClick={() => {
-  setMenu(false);
-  document.getElementById("home")?.scrollIntoView({
-    behavior: "smooth",
-  });
-}}
+    handleNavClick("home");
+    setMenu(false);
+  }}
   className="font-bold text-blue-900 cursor-pointer active:scale-90 transition"
 >
   DOTHREE
@@ -343,16 +399,62 @@ useEffect(() => {
     {lang === "id" ? "Tentang" : "About"}
   </a>
 
+ <div>
+
+  {/* HEADER */}
   <div
     className="flex justify-between cursor-pointer transition active:scale-95"
-    onClick={() => {
-  setOpenDropdown(openDropdown === "services" ? null : "services");
-
-}}
+    onClick={() =>
+      setOpenDropdown(openDropdown === "services" ? null : "services")
+    }
   >
     <span>{lang === "id" ? "Layanan" : "Services"}</span>
-    <span>▾</span>
+    <span className={`${openDropdown === "services" ? "rotate-180" : ""} transition`}>
+      ▾
+    </span>
   </div>
+
+  {/* DROPDOWN */}
+  {openDropdown === "services" && (
+    <div className="pl-4 mt-2 flex flex-col gap-2">
+
+      <div
+        onClick={() => {
+          handleNavClick("services");
+          setMenu(false);
+          setOpenDropdown(null);
+        }}
+        className="cursor-pointer text-sm opacity-80"
+      >
+        IT Solution
+      </div>
+
+      <div
+        onClick={() => {
+          handleNavClick("services");
+          setMenu(false);
+          setOpenDropdown(null);
+        }}
+        className="cursor-pointer text-sm opacity-80"
+      >
+        Cyber Security
+      </div>
+
+      <div
+        onClick={() => {
+          handleNavClick("services");
+          setMenu(false);
+          setOpenDropdown(null);
+        }}
+        className="cursor-pointer text-sm opacity-80"
+      >
+        Managed Services
+      </div>
+
+    </div>
+  )}
+
+</div>
 
   <a
   onClick={() => {
