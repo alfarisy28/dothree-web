@@ -28,9 +28,36 @@ const [isPaused, setIsPaused] = useState(false);
 
 const [showTop, setShowTop] = useState(false);
 
-const [showContact, setShowContact] = useState(false);
 
 const [searchOpen, setSearchOpen] = useState(false);
+
+const handleNavClick = (id: string) => {
+  const currentHash = window.location.hash.replace("#", "");
+  const el = document.getElementById(id);
+
+  if (!el) return;
+
+  if (currentHash === id) {
+    // scroll ke atas dulu
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    setTimeout(() => {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+
+      // 🔥 TAMBAHKAN DI SINI
+      el.classList.add("ring-4", "ring-blue-300");
+
+      setTimeout(() => {
+        el.classList.remove("ring-4", "ring-blue-300");
+      }, 400);
+
+    }, 300);
+
+  } else {
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+    window.history.pushState(null, "", `#${id}`);
+  }
+};
 
 
 const [showNavbar, setShowNavbar] = useState(true);
@@ -83,6 +110,8 @@ const handleSearch = (value: string) => {
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
   }
 };
+
+
 
  // ================= MENU =================
   const [menu, setMenu] = useState(false);
@@ -154,16 +183,6 @@ useEffect(() => {
   document.body.style.overflow = menu ? "hidden" : "auto";
 }, [menu]);
 
-useEffect(() => {
-  if (showContact) {
-    requestAnimationFrame(() => {
-      document.getElementById("contact")?.scrollIntoView({
-        behavior: "smooth",
-      });
-    });
-  }
-}, [showContact]);
-
 
   return (
     <main className="w-full">
@@ -173,22 +192,6 @@ useEffect(() => {
   <div className="fixed inset-0 bg-black/40 z-50 flex items-start justify-center pt-24">
 
     <div className="bg-white text-black dark:text-white border-b border-gray-200">
-
-      <input
-        type="text"
-        placeholder="Cari halaman... (about, client, kontak)"
-        value={search}
-        onChange={(e) => handleSearch(e.target.value)}
-        className="w-full border p-3 rounded-lg outline-none focus:ring-2 focus:ring-blue-500"
-        autoFocus
-      />
-
-      <button
-        onClick={() => setSearchOpen(false)}
-        className="absolute top-2 right-3 text-gray-500 hover:text-black"
-      >
-        ✕
-      </button>
 
     </div>
 
@@ -202,97 +205,79 @@ useEffect(() => {
     showNavbar ? "translate-y-0 shadow-md" : "-translate-y-full"
   }`}
 >
-  <div className="max-w-6xl mx-auto px-6 md:px-10 py-4 flex justify-between items-center">
-
-
+ <div className="flex items-center justify-between px-6 py-3">
 
   {/* LOGO */}
- <a
-  href="#home"
-  onClick={() => setShowContact(false)}
-  className="font-bold text-blue-900 text-lg sm:text-xl cursor-pointer hover:text-blue-600 transition"
->
-  DOTHREE
-</a>
+  <div
+    onClick={() => handleNavClick("home")}
+    className="font-bold text-blue-900 text-lg cursor-pointer"
+  >
+    DOTHREE
+  </div>
 
-  {/* MENU */}
+  {/* MENU TENGAH */}
   <div className="hidden md:flex items-center gap-8 text-sm">
 
-    <a href="#home" onClick={() => setShowContact(false)} className="hover:text-blue-600">
+    <a onClick={() => handleNavClick("home")} className="cursor-pointer hover:text-blue-600">
       {lang === "id" ? "Beranda" : "Home"}
     </a>
 
-    <a href="#about" onClick={() => setShowContact(false)} className="hover:text-blue-600">
+    <a onClick={() => handleNavClick("about")} className="cursor-pointer hover:text-blue-600">
       {lang === "id" ? "Tentang" : "About"}
     </a>
 
-    <div className="relative group cursor-pointer">
-      <span onClick={() => setShowContact(false)} className="hover:text-blue-600">
-        {lang === "id" ? "Layanan" : "Services"} ▾
-      </span>
+    <span onClick={() => handleNavClick("services")} className="cursor-pointer hover:text-blue-600">
+      {lang === "id" ? "Layanan" : "Services"} ▾
+    </span>
 
-      <div className="absolute hidden group-hover:block bg-white shadow mt-2 p-3 text-sm">
-        <div>IT Solution</div>
-        <div>Cyber Security</div>
-      </div>
-    </div>
-
-    <a href="#clients" onClick={() => setShowContact(false)} className="hover:text-blue-600">
+    <a onClick={() => handleNavClick("clients")} className="cursor-pointer hover:text-blue-600">
       {lang === "id" ? "Klien" : "Clients"}
     </a>
 
-   <a
-  onClick={() => {
-    setShowContact(true);
-    setMenu(false);
-  }}
-  className="cursor-pointer transition active:scale-95"
->
-  {lang === "id" ? "Kontak" : "Contact"}
-</a>
+    {/* ⚠️ PINDAHKAN KONTAK KE SINI */}
+    <a onClick={() => handleNavClick("contact")} className="cursor-pointer hover:text-blue-600">
+      {lang === "id" ? "Kontak" : "Contact"}
+    </a>
 
   </div>
 
   {/* RIGHT */}
   <div className="hidden md:flex items-center gap-2">
-    <button
-  onClick={() => setLang("en")}
-  className="
-    border px-2 py-1 text-sm
-    transition-all duration-150
-    hover:translate-y-px
-active:translate-y-px
-  "
->
-  EN
-</button>
 
-<button
-  onClick={() => setLang("id")}
-  className="
-    bg-red-500 text-white px-2 py-1 text-sm
-    transition-all duration-150
-    hover:translate-y-px
-    active:scale-90 active:translate-y-px
-  "
->
-  ID
-</button>
+  {/* EN */}
+  <button
+    onClick={() => setLang("en")}
+    className={`px-2 py-1 text-sm border transition
+      ${lang === "en"
+        ? "bg-red-500 text-white border-red-500"
+        : "bg-white text-black hover:bg-gray-100"}
+    `}
+  >
+    EN
+  </button>
 
-   <span
-  onClick={() => setSearchOpen(true)}
-  className="cursor-pointer transition hover:scale-110 active:scale-90"
->
-  🔍
-</span>
-  </div>
+  {/* ID */}
+  <button
+    onClick={() => setLang("id")}
+    className={`px-2 py-1 text-sm border transition
+      ${lang === "id"
+        ? "bg-red-500 text-white border-red-500"
+        : "bg-white text-black hover:bg-gray-100"}
+    `}
+  >
+    ID
+  </button>
+
+</div>
 
   {/* MOBILE */}
   <button className="md:hidden text-2xl" onClick={() => setMenu(true)}>
     ☰
   </button>
+
 </div>
 </nav>
+
 
       {/* OVERLAY */}
       {menu && (
@@ -317,7 +302,6 @@ active:translate-y-px
      <div
   onClick={() => {
   setMenu(false);
-  setShowContact(false);
   document.getElementById("home")?.scrollIntoView({
     behavior: "smooth",
   });
@@ -339,25 +323,23 @@ active:translate-y-px
     {/* MENU */}
    <div className="flex flex-col gap-5">
 
-  <a
-    href="#home"
-    onClick={() => {
-  setMenu(false);
-  setShowContact(false);
-}}
-    className="transition active:scale-95 hover:translate-x-1"
-  >
+ <a
+  onClick={() => {
+    handleNavClick("home");
+    setMenu(false);
+  }}
+  className="cursor-pointer transition active:scale-95 hover:translate-x-1"
+>
     {lang === "id" ? "Beranda" : "Home"}
   </a>
 
-  <a
-    href="#about"
-    onClick={() => {
-  setMenu(false);
-  setShowContact(false);
-}}
-    className="transition active:scale-95 hover:translate-x-1"
-  >
+<a
+  onClick={() => {
+    handleNavClick("about");
+    setMenu(false);
+  }}
+  className="cursor-pointer transition active:scale-95 hover:translate-x-1"
+>
     {lang === "id" ? "Tentang" : "About"}
   </a>
 
@@ -365,7 +347,7 @@ active:translate-y-px
     className="flex justify-between cursor-pointer transition active:scale-95"
     onClick={() => {
   setOpenDropdown(openDropdown === "services" ? null : "services");
-  setShowContact(false);
+
 }}
   >
     <span>{lang === "id" ? "Layanan" : "Services"}</span>
@@ -373,19 +355,18 @@ active:translate-y-px
   </div>
 
   <a
-    href="#clients"
-    onClick={() => {
-  setMenu(false);
-  setShowContact(false);
-}}
-    className="transition active:scale-95 hover:translate-x-1"
-  >
+  onClick={() => {
+    handleNavClick("clients");
+    setMenu(false);
+  }}
+  className="cursor-pointer transition active:scale-95 hover:translate-x-1"
+>
     {lang === "id" ? "Klien" : "Clients"}
   </a>
 
-  <a
+<a
   onClick={() => {
-    setShowContact(true);
+    handleNavClick("contact");
     setMenu(false);
   }}
   className="cursor-pointer transition active:scale-95 hover:translate-x-1"
@@ -395,44 +376,35 @@ active:translate-y-px
 
 </div>
 
-{/* SEARCH MOBILE */}
-<div className="mt-6 flex items-center gap-3">
-
-  <span
-    onClick={() => {
-      setSearchOpen(true);
-      setMenu(false);
-    }}
-    className="cursor-pointer transition active:scale-95"
-  >
-    🔍
-  </span>
-
-  <span className="text-sm text-gray-500">
-    {lang === "id" ? "Cari..." : "Search..."}
-  </span>
-
-</div>
-
     {/* LANGUAGE */}
     <div className="mt-10">
       <p className="text-sm mb-2">PILIH BAHASA</p>
 
       <div className="flex gap-2">
-        <button
-  onClick={() => setLang("en")}
-  className="border px-3 py-1 transition active:scale-90"
->
-          EN
-        </button>
 
-        <button
-  onClick={() => setLang("id")}
-  className="bg-red-500 text-white px-3 py-1 transition active:scale-90"
->
-          ID
-        </button>
-      </div>
+  <button
+    onClick={() => setLang("en")}
+    className={`px-3 py-1 transition
+      ${lang === "en"
+        ? "bg-red-500 text-white"
+        : "border"}
+    `}
+  >
+    EN
+  </button>
+
+  <button
+    onClick={() => setLang("id")}
+    className={`px-3 py-1 transition
+      ${lang === "id"
+        ? "bg-red-500 text-white"
+        : "border"}
+    `}
+  >
+    ID
+  </button>
+
+</div>
     </div>
 
   </div>
@@ -565,24 +537,19 @@ active:translate-y-px
 </section>
 
  {/* FOOTER */}
-{!showContact && (
-  <footer className="bg-linear-to-r from-blue-900 to-blue-800 text-white py-6 px-4 md:px-10 border-t border-white/20">
+<footer className="bg-linear-to-r from-blue-900 to-blue-800 text-white py-6 px-4 md:px-10 border-t border-white/20">
 
   <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
 
-    {/* KIRI - ALAMAT (HANYA SAAT BUKAN CONTACT) */}
-    {!showContact && (
-      <div className="flex items-start gap-3 text-sm md:text-base">
-        <MapPin size={18} className="mt-1 shrink-0" />
+    <div className="flex items-start gap-3 text-sm md:text-base">
+      <MapPin size={18} className="mt-1 shrink-0" />
 
-        <div className="leading-relaxed">
-          Jl. Perdana I No.10c, RT.7/RW.5, Petukangan Selatan,<br />
-          Pesanggrahan, Jakarta Selatan 12270
-        </div>
+      <div className="leading-relaxed">
+        Jl. Perdana I No.10c, RT.7/RW.5, Petukangan Selatan,<br />
+        Pesanggrahan, Jakarta Selatan 12270
       </div>
-    )}
+    </div>
 
-    {/* KANAN - COPYRIGHT */}
     <div className="text-sm opacity-80">
       © DOTHREE 2026
     </div>
@@ -590,11 +557,10 @@ active:translate-y-px
   </div>
 
 </footer>
-)}
+
 
   {/* CONTACT */}
-{showContact && (
-  <section id="contact" className="w-full">
+  <section id="contact" className="w-full scroll-mt-20">
 
   <div className="grid md:grid-cols-3 min-h-65 md:min-h-75">
 
@@ -657,7 +623,7 @@ active:translate-y-px
   </div>
 
 </section>
-)}
+
 
 
 {showTop && (
