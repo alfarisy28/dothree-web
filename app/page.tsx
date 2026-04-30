@@ -64,6 +64,26 @@ const handleNavClick = (id: string) => {
   }
 };
 
+const [visible, setVisible] = useState(false);
+const coreRef = useRef<HTMLDivElement>(null);
+
+useEffect(() => {
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        setVisible(true);
+      }
+    },
+    { threshold: 0.2 }
+  );
+
+  if (coreRef.current) observer.observe(coreRef.current);
+
+  return () => {
+    if (coreRef.current) observer.unobserve(coreRef.current);
+  };
+}, []);
+
 
 const [showNavbar, setShowNavbar] = useState(true);
 const [lastScroll, setLastScroll] = useState(0);
@@ -82,7 +102,7 @@ useEffect(() => {
 
     setLastScroll(currentScroll);
   };
-
+    setOpenDropdown(null); // tutup dropdown saat scroll
   window.addEventListener("scroll", handleScroll);
 
   return () => window.removeEventListener("scroll", handleScroll);
@@ -443,48 +463,53 @@ useEffect(() => {
     </span>
   </div>
 
-  {/* DROPDOWN */}
-  {openDropdown === "services" && (
-    <div className="pl-4 mt-2 flex flex-col gap-2">
+ {/* DROPDOWN */}
+<div
+  className={`pl-4 flex flex-col gap-2 overflow-hidden transition-all duration-300 ${
+    openDropdown === "services"
+      ? "max-h-40 opacity-100 mt-2"
+      : "max-h-0 opacity-0"
+  }`}
+>
 
-      <div
-        onClick={() => {
-          handleNavClick("services");
-          setMenu(false);
-          setOpenDropdown(null);
-          setShowContact(false);
-        }}
-        className="cursor-pointer text-sm opacity-80"
-      >
-        IT Solution
-      </div>
+  <div
+    onClick={() => {
+      handleNavClick("services");
+      setMenu(false);
+      setOpenDropdown(null);
+      setShowContact(false);
+    }}
+    className="cursor-pointer transition active:scale-95 hover:translate-x-1"
+  >
+    IT Solution
+  </div>
 
-      <div
-        onClick={() => {
-          handleNavClick("services");
-          setMenu(false);
-          setOpenDropdown(null);
-          setShowContact(false);
-        }}
-        className="cursor-pointer text-sm opacity-80"
-      >
-        Cyber Security
-      </div>
+  <div
+    onClick={() => {
+      handleNavClick("services");
+      setMenu(false);
+      setOpenDropdown(null);
+      setShowContact(false);
+    }}
+    className="cursor-pointer transition active:scale-95 hover:translate-x-1"
+  >
+    Cyber Security
+  </div>
 
-      <div
-        onClick={() => {
-          handleNavClick("services");
-          setMenu(false);
-          setOpenDropdown(null);
-          setShowContact(false);
-        }}
-        className="cursor-pointer text-sm opacity-80"
-      >
-        Managed Services
-      </div>
+  <div
+    onClick={() => {
+      handleNavClick("services");
+      setMenu(false);
+      setOpenDropdown(null);
+      setShowContact(false);
+    }}
+    className="flex justify-between items-center cursor-pointer transition active:scale-95 active:bg-gray-100 p-2 rounded-md"
+  >
+    Managed Services
+  </div>
 
-    </div>
-  )}
+</div>
+  
 
 </div>
 
@@ -504,7 +529,7 @@ useEffect(() => {
     setShowContact(true);
     setTimeout(() => handleNavClick("contact"), 100);
   }}
-  className="cursor-pointer hover:text-blue-600"
+  className="cursor-pointer transition active:scale-95 hover:translate-x-1"
 >
   {lang === "id" ? "Kontak" : "Contact"}
 </a>
@@ -705,7 +730,9 @@ useEffect(() => {
 </section>
 
 {/*CORE VALUES */}
-<section className="py-16 px-4 bg-linear-to-b from-gray-100 to-gray-200 text-center">
+ 
+<section
+ ref={coreRef} className="py-16 px-4 bg-linear-to-b from-gray-100 to-gray-200 text-center">
 
   <div className="max-w-5xl mx-auto">
 
@@ -719,19 +746,55 @@ useEffect(() => {
 
     <div className="grid md:grid-cols-2 gap-6">
 
-      <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl">
+      <div
+  className={`
+    bg-white p-6 rounded-xl shadow-md hover:shadow-xl
+
+    transition-all duration-700 transform
+    ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
+
+    md:opacity-100 md:translate-y-0 md:transition-none
+  `}
+>
         <h3 className="font-semibold">Professional Excellence</h3>
       </div>
 
-      <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl">
+      <div
+  className={`
+    bg-white p-6 rounded-xl shadow-md hover:shadow-xl
+
+    transition-all duration-700 transform
+    ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
+
+    md:opacity-100 md:translate-y-0 md:transition-none
+  `}
+>
         <h3 className="font-semibold">Ethical Integrity</h3>
       </div>
 
-      <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl">
+      <div
+  className={`
+    bg-white p-6 rounded-xl shadow-md hover:shadow-xl
+
+    transition-all duration-700 transform
+    ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
+
+    md:opacity-100 md:translate-y-0 md:transition-none
+  `}
+>
         <h3 className="font-semibold">Innovative Growth</h3>
       </div>
 
-      <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl">
+      <div
+  className={`
+    bg-white p-6 rounded-xl shadow-md hover:shadow-xl
+
+    transition-all duration-700 transform
+    ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
+
+    md:opacity-100 md:translate-y-0 md:transition-none
+  `}
+>
         <h3 className="font-semibold">Strong Commitment</h3>
       </div>
 
