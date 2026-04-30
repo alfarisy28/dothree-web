@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { ArrowUp } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 
 
 export default function Home() {
@@ -37,7 +38,7 @@ const handleNavClick = (id: string) => {
   if (currentHash === id) {
 
    if (id === "home") {
-  // 🔥 paksa refresh walaupun sudah di atas
+  
   window.scrollTo({ top: 10, behavior: "smooth" });
 
   setTimeout(() => {
@@ -63,9 +64,29 @@ const handleNavClick = (id: string) => {
     window.history.pushState(null, "", `#${id}`);
   }
 };
-
+const sectionRef = useRef<HTMLDivElement>(null);
 const [visible, setVisible] = useState(false);
 const coreRef = useRef<HTMLDivElement>(null);
+const serviceRef = useRef<HTMLDivElement>(null);
+
+useEffect(() => {
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) setVisible(true);
+    },
+    { threshold: 0.2 }
+  );
+
+  if (serviceRef.current) {
+    observer.observe(serviceRef.current);
+  }
+
+  return () => {
+    if (serviceRef.current) {
+      observer.unobserve(serviceRef.current);
+    }
+  };
+}, []);
 
 useEffect(() => {
   const observer = new IntersectionObserver(
@@ -645,28 +666,44 @@ useEffect(() => {
 
 </section>
 
-<section id="vision" className="py-16 px-4 bg-white text-center">
+<section className="py-20 px-4 bg-linear-to-b from-gray-50 to-gray-100 text-center">
 
   <div className="max-w-4xl mx-auto">
 
-    <h2 className="text-2xl md:text-3xl font-bold mb-8">
+    <h2 className="text-3xl md:text-4xl font-bold mb-10">
       Vision & Mission
     </h2>
 
-    <div className="mb-6">
-      <h3 className="font-semibold text-blue-700">Vision</h3>
-     <p className="text-base md:text-lg font-medium mt-2">
-  To become a trusted IT company delivering secure and integrated solutions.
-</p>
-    </div>
+    <div className="grid md:grid-cols-2 gap-8">
 
-    <div>
-      <h3 className="font-semibold text-blue-700">Mission</h3>
-      <ul className="text-sm opacity-80 space-y-1 mt-2">
-        <li>• Deliver reliable IT solutions</li>
-        <li>• Ensure system security</li>
-        <li>• Provide responsive support</li>
-      </ul>
+      {/* VISION */}
+      <div className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition">
+
+        <h3 className="text-blue-600 font-semibold mb-3">
+          Vision
+        </h3>
+
+        <p className="text-gray-700 leading-relaxed">
+          To become a trusted IT company delivering secure and integrated solutions.
+        </p>
+
+      </div>
+
+      {/* MISSION */}
+      <div className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition">
+
+        <h3 className="text-blue-600 font-semibold mb-3">
+          Mission
+        </h3>
+
+        <ul className="text-gray-700 space-y-2 text-left">
+          <li>• Deliver reliable IT solutions</li>
+          <li>• Ensure system security</li>
+          <li>• Provide responsive support</li>
+        </ul>
+
+      </div>
+
     </div>
 
   </div>
@@ -674,22 +711,192 @@ useEffect(() => {
 </section>
 
  {/* SERVICES */}
-<section id="services" className="py-16 px-4 bg-gray-100 ">
-  <h2 className="text-2xl font-bold mb-8">
-    {lang === "id" ? "Layanan Kami" : "Our Services"}
-  </h2>
+<section ref={sectionRef} className="py-20 px-4 bg-white">
 
-  <div className="GRID grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-    <div className="bg-white text-black p-6 rounded-xl shadow hover:shadow-xl ">
-  IT Solution
-</div>
-    <div className="bg-white text-black p-6 rounded-xl shadow hover:shadow-xl hover:-translate-y-1 transition duration-300">
-      Cyber Security
+  <div className="max-w-5xl mx-auto text-center">
+
+    {/* TITLE */}
+    <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
+      OUR SERVICES
+    </h2>
+
+    <p className="text-gray-600 max-w-3xl mx-auto mb-12">
+      <span className="font-semibold">PT. DOTHREE SANTANA PRISMA</span> delivers professional services
+      designed to provide comprehensive solutions in information technology, system security, and procurement.
+    </p>
+
+  </div>
+
+  {/* ===== CARD 1 ===== */}
+  <div className={`max-w-5xl mx-auto bg-white rounded-2xl shadow-md p-6 mb-10
+    hover:shadow-2xl hover:-translate-y-1 transition-all duration-700 transform
+    ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+
+    <div className="flex justify-center mb-8">
+      <div className="bg-linear-to-r from-blue-700 to-blue-500 text-white px-6 py-2 rounded-full font-semibold shadow-md">
+        1. IT Solutions and System Integrations
+      </div>
     </div>
-    <div className="bg-white text-black p-6 rounded-xl shadow hover:shadow-xl hover:-translate-y-1 transition duration-300">
-      Managed Services
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+      <div className="group h-56 md:h-64 overflow-hidden rounded-xl">
+        <img src="/it1.png" className="w-full h-full object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-110" />
+      </div>
+      <div className="group h-56 md:h-64 overflow-hidden rounded-xl">
+        <img src="/it2.png" className="w-full h-full object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-110" />
+      </div>
+    </div>
+
+    <p className="text-gray-700 text-sm md:text-base mb-6 leading-relaxed text-center max-w-2xl mx-auto">
+      Providing integrated IT solutions and system integration services to support efficient and reliable business operations.
+    </p>
+
+    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-8 
+text-sm md:text-base text-gray-700 max-w-2xl mx-auto text-left">
+      <li className="flex gap-2"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />Infrastructure Professional Services</li>
+      <li className="flex gap-2"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />Network Professional Services</li>
+      <li className="flex gap-2"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />Data Storage Professional Services</li>
+      <li className="flex gap-2"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />Procurement of Goods and Services</li>
+    </ul>
+
+  </div>
+
+  {/* ===== CARD 2 ===== */}
+  <div className={`max-w-5xl mx-auto bg-white rounded-2xl shadow-md p-6 mb-10
+    hover:shadow-2xl hover:-translate-y-1 transition-all duration-700 transform delay-200
+    ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+
+    <div className="flex justify-center mb-8">
+      <div className="bg-linear-to-r from-blue-700 to-blue-500 text-white px-6 py-2 rounded-full font-semibold shadow-md">
+        2. Cyber and Security Solutions
+      </div>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+      <div className="group h-56 md:h-64 overflow-hidden rounded-xl">
+        <img src="/cyber1.png" className="w-full h-full object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-110" />
+      </div>
+      <div className="group h-56 md:h-64 overflow-hidden rounded-xl">
+        <img src="/cyber2.png" className="w-full h-full object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-110" />
+      </div>
+    </div>
+
+    <p className="text-gray-700 text-sm md:text-base mb-6 leading-relaxed text-center max-w-2xl mx-auto">
+      Delivering cyber security services focused on protecting systems, networks, and data from digital threats.
+    </p>
+
+    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-8 
+text-sm md:text-base text-gray-700 max-w-2xl mx-auto text-left">
+      <li className="flex gap-2"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />Threat Detection & Response</li>
+      <li className="flex gap-2"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />Network & Cloud Security</li>
+      <li className="flex gap-2"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />Application Security</li>
+      <li className="flex gap-2"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />Data Protection</li>
+      <li className="flex gap-2"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />Identity & Access Security</li>
+    </ul>
+
+  </div>
+
+  {/* ===== CARD 3 ===== */}
+  <div className={`max-w-5xl mx-auto bg-white rounded-2xl shadow-md p-6
+    hover:shadow-2xl hover:-translate-y-1 transition-all duration-700 transform delay-300
+    ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+
+    <div className="flex justify-center mb-8">
+      <div className="bg-linear-to-r from-blue-700 to-blue-500 text-white px-6 py-2 rounded-full font-semibold shadow-md">
+        3. Professional Managed Services
+      </div>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+      <div className="group h-56 md:h-64 overflow-hidden rounded-xl">
+        <img src="/server.png" className="w-full h-full object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-110" />
+      </div>
+      <div className="group h-56 md:h-64 overflow-hidden rounded-xl">
+        <img src="/monitoring.png" className="w-full h-full object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-110" />
+      </div>
+    </div>
+
+    <p className="text-gray-700 text-sm md:text-base mb-6 leading-relaxed text-center max-w-2xl mx-auto">
+      Providing continuous management and monitoring services to ensure system stability and operational reliability.
+    </p>
+
+    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-8 
+text-sm md:text-base text-gray-700 max-w-2xl mx-auto text-left">
+      <li className="flex gap-2"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />Network Operation Center (NOC)</li>
+      <li className="flex gap-2"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />Security Operation Center (SOC)</li>
+    </ul>
+
+  </div>
+
+  {/* ===== CARD 4 ===== */}
+<div className={`max-w-5xl mx-auto bg-white rounded-2xl shadow-md p-6 mt-10
+  hover:shadow-2xl hover:-translate-y-1 transition-all duration-700 transform delay-400
+  ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+
+  {/* HEADER */}
+  <div className="flex justify-center mb-8">
+    <div className="bg-linear-to-r from-blue-700 to-blue-500 text-white px-6 py-2 rounded-full font-semibold shadow-md">
+      4. Network Building Constructions
     </div>
   </div>
+
+  {/* IMAGE */}
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+    
+    <div className="group h-56 md:h-64 overflow-hidden rounded-xl">
+      <img
+        src="/network1.png"
+        className="w-full h-full object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-110"
+      />
+    </div>
+
+    <div className="group h-56 md:h-64 overflow-hidden rounded-xl">
+      <img
+        src="/network2.png"
+        className="w-full h-full object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-110"
+      />
+    </div>
+
+  </div>
+
+  {/* DESC */}
+  <p className="text-gray-700 text-sm md:text-base mb-6 leading-relaxed text-center max-w-2xl mx-auto">
+    Providing infrastructure construction and installation services to support network and operational systems.
+  </p>
+
+  {/* LIST (2 KOLOM) */}
+  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-8 
+    text-sm md:text-base text-gray-700 max-w-2xl mx-auto text-left">
+
+    <li className="flex items-center gap-2">
+      <CheckCircle className="text-blue-600 w-4 h-4" />
+      Network Installation
+    </li>
+
+    <li className="flex items-center gap-2">
+      <CheckCircle className="text-blue-600 w-4 h-4" />
+      CCTV Installation
+    </li>
+
+    <li className="flex items-center gap-2">
+      <CheckCircle className="text-blue-600 w-4 h-4" />
+      Access Gate Installation
+    </li>
+
+    <li className="flex items-center gap-2">
+      <CheckCircle className="text-blue-600 w-4 h-4" />
+      Mechanical Electrical Installation
+    </li>
+
+    <li className="flex items-center gap-2">
+      <CheckCircle className="text-blue-600 w-4 h-4" />
+      Cable Management
+    </li>
+
+  </ul>
+
+</div>
+
 </section>
 
 {/* ADVANTAGE */}
@@ -731,77 +938,111 @@ useEffect(() => {
 
 {/*CORE VALUES */}
  
-<section
- ref={coreRef} className="py-16 px-4 bg-linear-to-b from-gray-100 to-gray-200 text-center">
+<section 
+ref={coreRef}
+className="relative py-20 px-4 bg-linear-to-b from-blue-900 to-blue-800 text-white overflow-hidden">
+{/* GRID BACKGROUND */}
+<div className="absolute inset-0 opacity-10 pointer-events-none
+[background-image:linear-linear(rgba(255,255,255,0.2)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.2)_1px,transparent_1px)]
+[background-size:40px_40px"></div>
 
-  <div className="max-w-5xl mx-auto">
-
-    <h2 className="text-2xl md:text-3xl font-bold mb-10">
-      Core Values
-    </h2>
-    <h3 className="font-semibold">Professional Excellence</h3>
-<p className="text-sm opacity-70 mt-1">
-  Delivering high-quality work with responsibility.
-</p>
-
-    <div className="grid md:grid-cols-2 gap-6">
-
-      <div
-  className={`
-    bg-white p-6 rounded-xl shadow-md hover:shadow-xl
-
-    transition-all duration-700 transform
-    ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
-
-    md:opacity-100 md:translate-y-0 md:transition-none
-  `}
->
-        <h3 className="font-semibold">Professional Excellence</h3>
-      </div>
-
-      <div
-  className={`
-    bg-white p-6 rounded-xl shadow-md hover:shadow-xl
-
-    transition-all duration-700 transform
-    ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
-
-    md:opacity-100 md:translate-y-0 md:transition-none
-  `}
->
-        <h3 className="font-semibold">Ethical Integrity</h3>
-      </div>
-
-      <div
-  className={`
-    bg-white p-6 rounded-xl shadow-md hover:shadow-xl
-
-    transition-all duration-700 transform
-    ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
-
-    md:opacity-100 md:translate-y-0 md:transition-none
-  `}
->
-        <h3 className="font-semibold">Innovative Growth</h3>
-      </div>
-
-      <div
-  className={`
-    bg-white p-6 rounded-xl shadow-md hover:shadow-xl
-
-    transition-all duration-700 transform
-    ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
-
-    md:opacity-100 md:translate-y-0 md:transition-none
-  `}
->
-        <h3 className="font-semibold">Strong Commitment</h3>
-      </div>
-
+  <div className="max-w-5xl mx-auto text-center">
     </div>
 
+    {/* TITLE */}
+    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
+      Core Values
+    </h2>
+
+    <p className="text-sm md:text-base text-white/80 max-w-2xl mx-auto mb-12 text-center">
+      Our core values serve as the guiding principles that direct our decisions,
+      strengthen our performance, and support long-term partnerships.
+    </p>
+
+    {/* GRID */}
+    <div className="space-y-8">
+
+      {/* CARD 1 */}
+  <div className={`relative bg-linear-to-r from-blue-600 via-blue-500 to-blue-400
+p-6 rounded-2xl text-center
+border border-white/10
+shadow-[0_10px_40px_rgba(59,130,246,0.3)]
+hover:shadow-[0_20px_60px_rgba(59,130,246,0.5)]
+hover:-translate-y-1 hover:scale-[1.02] hover:brightness-110
+transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] transform delay-100
+${visible ? "opacity-100 translate-x-0 scale-100" : "opacity-0 -translate-x-10 scale-95"}
+`}>
+
+  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-800 px-4 py-1 rounded-md text-sm font-semibold shadow">
+    Professional Excellence
   </div>
 
+  <p className="text-sm mt-4 text-white/90 leading-relaxed">
+    We perform every task with competence, responsibility, and high ethical standards.
+  </p>
+</div>
+
+      {/* CARD 2 */}
+   <div className={`relative bg-linear-to-r from-blue-600 via-blue-500 to-blue-400
+p-6 rounded-2xl text-center
+border border-white/10
+shadow-[0_10px_40px_rgba(59,130,246,0.3)]
+hover:shadow-[0_20px_60px_rgba(59,130,246,0.5)]
+hover:-translate-y-1 hover:scale-[1.02] hover:brightness-110
+transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] transform delay-200
+${visible ? "opacity-100 translate-x-0 scale-100" : "opacity-0 translate-x-10 scale-95"}
+`}>
+
+  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-800 px-4 py-1 rounded-md text-sm font-semibold shadow">
+    Ethical Integrity
+  </div>
+
+  <p className="text-sm mt-4 text-white/90 leading-relaxed">
+    We uphold honesty, transparency, and compliance with regulations and standards.
+  </p>
+</div>
+      {/* CARD 3 */}
+    <div className={`relative bg-linear-to-r from-blue-600 via-blue-500 to-blue-400
+p-6 rounded-2xl text-center
+border border-white/10
+shadow-[0_10px_40px_rgba(59,130,246,0.3)]
+hover:shadow-[0_20px_60px_rgba(59,130,246,0.5)]
+hover:-translate-y-1 hover:scale-[1.02] hover:brightness-110
+transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] transform delay-300
+${visible ? "opacity-100 translate-x-0 scale-100" : "opacity-0 -translate-x-10 scale-95"}
+`}>
+
+  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-800 px-4 py-1 rounded-md text-sm font-semibold shadow">
+    Innovative Growth
+  </div>
+
+  <p className="text-sm mt-4 text-white/90 leading-relaxed">
+    We continuously develop adaptive and relevant solutions aligned with technological advancements.
+  </p>
+</div>
+
+      {/* CARD 4 */}
+   <div className={`relative bg-linear-to-r from-blue-600 via-blue-500 to-blue-400
+p-6 rounded-2xl text-center
+border border-white/10
+shadow-[0_10px_40px_rgba(59,130,246,0.3)]
+hover:shadow-[0_20px_60px_rgba(59,130,246,0.5)]
+hover:-translate-y-1 hover:scale-[1.02] hover:brightness-110
+transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] transform delay-500
+${visible ? "opacity-100 translate-x-0 scale-100" : "opacity-0 translate-x-10 scale-95"}
+`}>
+
+  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-800 px-4 py-1 rounded-md text-sm font-semibold shadow">
+    Strong Commitment
+  </div>
+
+  <p className="text-sm mt-4 text-white/90 leading-relaxed">
+    We are committed to delivering high-quality services and achieving the best results for our clients.
+  </p>
+</div>
+
+  </div>
+<div className="absolute bottom-0 left-0 w-full h-32 bg-linear-to-t from-blue-900 to-transparent"></div>
 </section>
 
    {/* CLIENT SLIDER */}

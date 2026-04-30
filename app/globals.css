@@ -9,6 +9,8 @@
 html {
   color-scheme: light;
   -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 body {
