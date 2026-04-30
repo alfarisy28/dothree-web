@@ -25,12 +25,9 @@ export default function Home() {
   // ================= STATE =================
   const [active, setActive] = useState(0);
 const [isPaused, setIsPaused] = useState(false);
-
 const [showTop, setShowTop] = useState(false);
-
-
+const [showContact, setShowContact] = useState(false);
 const [searchOpen, setSearchOpen] = useState(false);
-
 const handleNavClick = (id: string) => {
   const currentHash = window.location.hash.replace("#", "");
   const el = document.getElementById(id);
@@ -119,6 +116,24 @@ const handleSearch = (value: string) => {
   }
 };
 
+const dropdownRef = useRef<HTMLDivElement>(null);
+
+useEffect(() => {
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      dropdownRef.current &&
+      !dropdownRef.current.contains(event.target as Node)
+    ) {
+      setOpenDropdown(null);
+    }
+  };
+
+  document.addEventListener("mousedown", handleClickOutside);
+
+  return () => {
+    document.removeEventListener("mousedown", handleClickOutside);
+  };
+}, []);
 
 
  // ================= MENU =================
@@ -226,21 +241,25 @@ useEffect(() => {
   {/* MENU NAVBAR */}
   <div className="hidden md:flex items-center gap-8 text-sm">
 
-    <a onClick={() => handleNavClick("home")} className="cursor-pointer hover:text-blue-600">
+    <a onClick={() => { handleNavClick("home");
+      setShowContact(false);
+    }} className="cursor-pointer hover:text-blue-600">
       {lang === "id" ? "Beranda" : "Home"}
     </a>
 
-    <a onClick={() => handleNavClick("about")} className="cursor-pointer hover:text-blue-600">
+    <a onClick={() => { handleNavClick("about");
+      setShowContact(false);
+    }} className="cursor-pointer hover:text-blue-600">
       {lang === "id" ? "Tentang" : "About"}
     </a>
 
-  <div className="relative">
+  <div className="relative" ref={dropdownRef}>
 
   {/* BUTTON */}
   <div
-    onClick={() =>
+    onClick={() => {setShowContact(false);
       setOpenDropdown(openDropdown === "services" ? null : "services")
-    }
+    }}
     className="cursor-pointer hover:text-blue-600 flex items-center gap-1"
   >
     {lang === "id" ? "Layanan" : "Services"}
@@ -255,7 +274,7 @@ useEffect(() => {
 
       <div
         onClick={() => {
-          handleNavClick("services");
+          handleNavClick("services"); setShowContact(false);
           setOpenDropdown(null);
         }}
         className="p-2 hover:bg-gray-100 cursor-pointer"
@@ -265,7 +284,7 @@ useEffect(() => {
 
       <div
         onClick={() => {
-          handleNavClick("services");
+          handleNavClick("services"); setShowContact(false);
           setOpenDropdown(null);
         }}
         className="p-2 hover:bg-gray-100 cursor-pointer"
@@ -275,7 +294,7 @@ useEffect(() => {
 
       <div
         onClick={() => {
-          handleNavClick("services");
+          handleNavClick("services"); setShowContact(false);
           setOpenDropdown(null);
         }}
         className="p-2 hover:bg-gray-100 cursor-pointer"
@@ -288,14 +307,23 @@ useEffect(() => {
 
 </div>
 
-    <a onClick={() => handleNavClick("clients")} className="cursor-pointer hover:text-blue-600">
+    <a onClick={() => { handleNavClick("clients"); setShowContact(false); }} className="cursor-pointer hover:text-blue-600">
       {lang === "id" ? "Klien" : "Clients"}
     </a>
 
     {/* ⚠️ PINDAHKAN KONTAK KE SINI */}
-    <a onClick={() => handleNavClick("contact")} className="cursor-pointer hover:text-blue-600">
-      {lang === "id" ? "Kontak" : "Contact"}
-    </a>
+   <a
+  onClick={() => {
+    setShowContact(true); // 🔥 tampilkan contact dulu
+
+    setTimeout(() => {
+      handleNavClick("contact"); // baru scroll
+    }, 100);
+  }}
+  className="cursor-pointer hover:text-blue-600"
+>
+  {lang === "id" ? "Kontak" : "Contact"}
+</a>
 
   </div>
 
@@ -360,6 +388,7 @@ useEffect(() => {
    <div
   onClick={() => {
     handleNavClick("home");
+    setShowContact(false);
     setMenu(false);
   }}
   className="font-bold text-blue-900 cursor-pointer active:scale-90 transition"
@@ -423,6 +452,7 @@ useEffect(() => {
           handleNavClick("services");
           setMenu(false);
           setOpenDropdown(null);
+          setShowContact(false);
         }}
         className="cursor-pointer text-sm opacity-80"
       >
@@ -434,6 +464,7 @@ useEffect(() => {
           handleNavClick("services");
           setMenu(false);
           setOpenDropdown(null);
+          setShowContact(false);
         }}
         className="cursor-pointer text-sm opacity-80"
       >
@@ -445,6 +476,7 @@ useEffect(() => {
           handleNavClick("services");
           setMenu(false);
           setOpenDropdown(null);
+          setShowContact(false);
         }}
         className="cursor-pointer text-sm opacity-80"
       >
@@ -460,6 +492,7 @@ useEffect(() => {
   onClick={() => {
     handleNavClick("clients");
     setMenu(false);
+    setShowContact(false);
   }}
   className="cursor-pointer transition active:scale-95 hover:translate-x-1"
 >
@@ -468,10 +501,10 @@ useEffect(() => {
 
 <a
   onClick={() => {
-    handleNavClick("contact");
-    setMenu(false);
+    setShowContact(true);
+    setTimeout(() => handleNavClick("contact"), 100);
   }}
-  className="cursor-pointer transition active:scale-95 hover:translate-x-1"
+  className="cursor-pointer hover:text-blue-600"
 >
   {lang === "id" ? "Kontak" : "Contact"}
 </a>
@@ -587,6 +620,34 @@ useEffect(() => {
 
 </section>
 
+<section id="vision" className="py-16 px-4 bg-white text-center">
+
+  <div className="max-w-4xl mx-auto">
+
+    <h2 className="text-2xl md:text-3xl font-bold mb-8">
+      Vision & Mission
+    </h2>
+
+    <div className="mb-6">
+      <h3 className="font-semibold text-blue-700">Vision</h3>
+     <p className="text-base md:text-lg font-medium mt-2">
+  To become a trusted IT company delivering secure and integrated solutions.
+</p>
+    </div>
+
+    <div>
+      <h3 className="font-semibold text-blue-700">Mission</h3>
+      <ul className="text-sm opacity-80 space-y-1 mt-2">
+        <li>• Deliver reliable IT solutions</li>
+        <li>• Ensure system security</li>
+        <li>• Provide responsive support</li>
+      </ul>
+    </div>
+
+  </div>
+
+</section>
+
  {/* SERVICES */}
 <section id="services" className="py-16 px-4 bg-gray-100 ">
   <h2 className="text-2xl font-bold mb-8">
@@ -604,6 +665,80 @@ useEffect(() => {
       Managed Services
     </div>
   </div>
+</section>
+
+{/* ADVANTAGE */}
+<section className="py-16 px-4 bg-blue-900 text-white text-center">
+
+  <div className="max-w-6xl mx-auto">
+
+    <h2 className="text-2xl md:text-3xl font-bold mb-6">
+      {lang === "id" ? "Keunggulan Kami" : "Our Advantage"}
+    </h2>
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mt-10">
+
+      <div className="bg-white text-black p-6 rounded-xl shadow hover:shadow-xl transition">
+  <div className="text-2xl mb-2">👨‍💻</div>
+  <p className="font-semibold">Experienced Team</p>
+</div>
+
+      <div className="bg-white text-black p-6 rounded-xl shadow hover:shadow-xl transition">
+  <div className="text-2xl mb-2">🔒</div>
+  <p className="font-semibold">Security Focus</p>
+</div>
+
+      <div className="bg-white text-black p-6 rounded-xl shadow hover:shadow-xl transition">
+  <div className="text-2xl mb-2">🔄</div>
+  <p className="font-semibold">Integrated Solutions</p>
+</div>
+
+      <div className="bg-white text-black p-6 rounded-xl shadow hover:shadow-xl transition">
+  <div className="text-2xl mb-2">📞</div>
+  <p className="font-semibold">Responsive Support</p>
+</div>
+
+    </div>
+
+  </div>
+
+</section>
+
+{/*CORE VALUES */}
+<section className="py-16 px-4 bg-linear-to-b from-gray-100 to-gray-200 text-center">
+
+  <div className="max-w-5xl mx-auto">
+
+    <h2 className="text-2xl md:text-3xl font-bold mb-10">
+      Core Values
+    </h2>
+    <h3 className="font-semibold">Professional Excellence</h3>
+<p className="text-sm opacity-70 mt-1">
+  Delivering high-quality work with responsibility.
+</p>
+
+    <div className="grid md:grid-cols-2 gap-6">
+
+      <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl">
+        <h3 className="font-semibold">Professional Excellence</h3>
+      </div>
+
+      <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl">
+        <h3 className="font-semibold">Ethical Integrity</h3>
+      </div>
+
+      <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl">
+        <h3 className="font-semibold">Innovative Growth</h3>
+      </div>
+
+      <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl">
+        <h3 className="font-semibold">Strong Commitment</h3>
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
 
    {/* CLIENT SLIDER */}
@@ -638,31 +773,9 @@ useEffect(() => {
   </div>
 </section>
 
- {/* FOOTER */}
-<footer className="bg-linear-to-r from-blue-900 to-blue-800 text-white py-6 px-4 md:px-10 border-t border-white/20">
-
-  <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-
-    <div className="flex items-start gap-3 text-sm md:text-base">
-      <MapPin size={18} className="mt-1 shrink-0" />
-
-      <div className="leading-relaxed">
-        Jl. Perdana I No.10c, RT.7/RW.5, Petukangan Selatan,<br />
-        Pesanggrahan, Jakarta Selatan 12270
-      </div>
-    </div>
-
-    <div className="text-sm opacity-80">
-      © DOTHREE 2026
-    </div>
-
-  </div>
-
-</footer>
-
-
-  {/* CONTACT */}
-  <section id="contact" className="w-full scroll-mt-20">
+ {/* CONTACT */}
+ {showContact && (
+  <section id="contact" className="w-full scroll-mt-20 transition-all duration-500 animate-fade-in">
 
   <div className="grid md:grid-cols-3 min-h-65 md:min-h-75">
 
@@ -713,20 +826,48 @@ useEffect(() => {
 
     </div>
 
-    {/* KANAN (MAP) */}
-    <div className="md:col-span-2 h-65 md:h-75 shadow-lg">
-      <iframe
-  src="https://www.google.com/maps?q=PT+Dothree+Santana+Prisma+Jakarta&output=embed"
-  className="w-full h-full border-0"
-  loading="lazy"
-></iframe>
+   {/* KANAN (MAP) */}
+{showContact && (
+  <div className="md:col-span-2 h-65 md:h-75 shadow-lg">
+    <iframe
+      src="https://www.google.com/maps?q=PT+Dothree+Santana+Prisma+Jakarta&output=embed"
+      className="w-full h-full border-0"
+      loading="lazy"
+    />
+  </div>
+)}
+</div>
+</section>
+)}  
+
+
+
+ {/* FOOTER */}
+ {!showContact && (
+  <footer className="bg-linear-to-r from-blue-900 to-blue-800 text-white py-6 px-4 md:px-10 border-t border-white/20">
+
+  <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+
+    <div className="flex items-start gap-3 text-sm md:text-base">
+      <MapPin size={18} className="mt-1 shrink-0" />
+
+      <div className="leading-relaxed">
+        Jl. Perdana I No.10c, RT.7/RW.5, Petukangan Selatan,<br />
+        Pesanggrahan, Jakarta Selatan 12270
+      </div>
+    </div>
+
+    <div className="text-sm opacity-80">
+      © DOTHREE 2026
     </div>
 
   </div>
 
-</section>
+</footer>
+)}
 
 
+ 
 
 {showTop && (
   <button
