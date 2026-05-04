@@ -10,9 +10,8 @@ export default function Home() {
 
   // ================= CLIENT =================
   const clients = [
-    "axiata.png","ogilvy.png","okbank.png","ciputra.png","askrindo.png","kliring.png",
-    "idx.png","jamkrindo.png","jasindo.png","valdo.png","yazaki.png","pacific.png",
-    "aditama.png","chailease.png","kantar.png","nissin.png","sgi.png","sinarmas.png",
+    "kemenhub.png","kemendik.png","kemenag.png","jamkrida.png","indotekno.png","boltz.png","airnav.png","axiata.png","ogilvy.png",
+    "okbank.png","kliring.png","valdo.png","chailease.png","kantar.png","sgi.png","sinarmas.png",
     "tunaikita.png","weblab.png","shimizu.png"
   ];
 
@@ -26,43 +25,58 @@ export default function Home() {
   // ================= STATE =================
   const [active, setActive] = useState(0);
 const [isPaused, setIsPaused] = useState(false);
+const [visibleCards, setVisibleCards] = useState([false, false, false, false]);
+const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+useEffect(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const index = Number(entry.target.getAttribute("data-index"));
+
+        if (entry.isIntersecting) {
+          setVisibleCards((prev) => {
+            const updated = [...prev];
+            updated[index] = true;
+            return updated;
+          });
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  cardRefs.current.forEach((el) => {
+    if (el) observer.observe(el);
+  });
+
+  return () => observer.disconnect();
+}, []);
+
 const [showTop, setShowTop] = useState(false);
 const [showContact, setShowContact] = useState(false);
 const [searchOpen, setSearchOpen] = useState(false);
 const handleNavClick = (id: string) => {
-  const currentHash = window.location.hash.replace("#", "");
   const el = document.getElementById(id);
-
   if (!el) return;
 
-  if (currentHash === id) {
+  const yOffset = -90; // 🔥 sesuaikan tinggi navbar
+  const y =
+    el.getBoundingClientRect().top + window.pageYOffset + yOffset;
 
-   if (id === "home") {
-  
-  window.scrollTo({ top: 10, behavior: "smooth" });
+  window.scrollTo({
+    top: y,
+    behavior: "smooth",
+  });
+
+  // update URL hash
+  window.history.pushState(null, "", `#${id}`);
+
+  // highlight effect
+  el.classList.add("ring-4", "ring-blue-300");
 
   setTimeout(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, 150);
-
-  return;
-}
-
-    setTimeout(() => {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-
-      el.classList.add("ring-4", "ring-blue-300");
-
-      setTimeout(() => {
-        el.classList.remove("ring-4", "ring-blue-300");
-      }, 400);
-
-    }, 300);
-
-  } else {
-    el.scrollIntoView({ behavior: "smooth", block: "start" });
-    window.history.pushState(null, "", `#${id}`);
-  }
+    el.classList.remove("ring-4", "ring-blue-300");
+  }, 500);
 };
 const sectionRef = useRef<HTMLDivElement>(null);
 const [visible, setVisible] = useState(false);
@@ -71,28 +85,40 @@ const serviceRef = useRef<HTMLDivElement>(null);
 
 useEffect(() => {
   const observer = new IntersectionObserver(
-    ([entry]) => {
-      if (entry.isIntersecting) setVisible(true);
+    (entries) => {
+      entries.forEach((entry) => {
+        const index = Number(entry.target.getAttribute("data-index"));
+
+        if (entry.isIntersecting) {
+          setVisibleCards((prev) => {
+            const updated = [...prev];
+            updated[index] = true;
+            return updated;
+          });
+        }
+      });
     },
-    { threshold: 0.2 }
+    { threshold: 0.1 }
   );
 
-  if (serviceRef.current) {
-    observer.observe(serviceRef.current);
-  }
+  cardRefs.current.forEach((el) => {
+    if (el) observer.observe(el);
+  });
 
-  return () => {
-    if (serviceRef.current) {
-      observer.unobserve(serviceRef.current);
-    }
-  };
+  // 🔥 TAMBAHAN INI
+  setTimeout(() => {
+    setVisibleCards([true, true, true, true]);
+  }, 300);
+
+  return () => observer.disconnect();
 }, []);
 
+const [coreVisible, setCoreVisible] = useState(false);
 useEffect(() => {
   const observer = new IntersectionObserver(
     ([entry]) => {
       if (entry.isIntersecting) {
-        setVisible(true);
+        setCoreVisible(true);
       }
     },
     { threshold: 0.2 }
@@ -100,11 +126,8 @@ useEffect(() => {
 
   if (coreRef.current) observer.observe(coreRef.current);
 
-  return () => {
-    if (coreRef.current) observer.unobserve(coreRef.current);
-  };
+  return () => observer.disconnect();
 }, []);
-
 
 const [showNavbar, setShowNavbar] = useState(true);
 const [lastScroll, setLastScroll] = useState(0);
@@ -183,8 +206,226 @@ useEffect(() => {
   // ================= LANGUAGE =================
   const [lang, setLang] = useState<"id" | "en">("id");
 
+  const t = {
+  en: {
+    // HERO
+    heroTagline: "Trusted IT Partner",
+
+    // ABOUT
+    aboutTitle1: "About",
+    aboutTitle2: "Company",
+
+    aboutDesc1: `PT. DOTHREE SANTANA PRISMA is a company engaged in professional information technology services and procurement of goods. Established in 2017 and headquartered in South Jakarta, the company is committed to delivering integrated solutions that support operational efficiency, system security, and business growth across various sectors.`,
+
+    aboutDesc2: `By adopting a professional, structured, and customer-oriented approach, PT. DOTHREE SANTANA PRISMA provides IT solutions, system integration, cyber security services, managed services, as well as network construction and supporting installations.`,
+
+    // VISION MISSION
+    vision: "Vision",
+    mission: "Mission",
+
+    visionText:
+      "To become a trusted IT company delivering secure and integrated solutions.",
+
+    mission1: "Deliver reliable IT solutions",
+    mission2: "Ensure system security",
+    mission3: "Provide responsive support",
+
+     infra: "Infrastructure Professional Services",
+    network: "Network Professional Services",
+    storage: "Data Storage Services",
+    procurement: "Procurement of Goods and Services",
+
+    // SERVICES
+    servicesTitle: "OUR SERVICES",
+    servicesDesc:
+      "PT. DOTHREE SANTANA PRISMA delivers professional services designed to provide comprehensive solutions in information technology, system security, and procurement.",
+
+    service1Title: "IT Solutions and System Integrations",
+    service1Desc:
+      "Providing integrated IT solutions and system integration services to support efficient and reliable business operations.",
+
+    service2Title: "Cyber and Security Solutions",
+    service2Desc:
+      "Delivering cyber security services focused on protecting systems, networks, and data from digital threats.",
+
+    service3Title: "Professional Managed Services",
+    service3Desc:
+      "Providing continuous management and monitoring services to ensure system stability and operational reliability.",
+
+    service4Title: "Network Building Constructions",
+    service4Desc:
+      "Providing infrastructure construction and installation services to support network and operational systems.",
+
+    it: "IT Solution",
+cyber: "Cyber Security",
+managed: "Managed Services",
+net: "Infrastructure Network",
+
+    // CORE VALUES
+    coreTitle: "Core Values",
+    coreDesc:
+      "Our core values serve as the guiding principles that direct our decisions, strengthen our performance, and support long-term partnerships.",
+
+    core1: "Professional Excellence",
+    core1Desc:
+      "We perform every task with competence, responsibility, and high ethical standards.",
+
+    core2: "Ethical Integrity",
+    core2Desc:
+      "We uphold honesty, transparency, and compliance with regulations and standards.",
+
+    core3: "Innovative Growth",
+    core3Desc:
+      "We continuously develop adaptive and relevant solutions aligned with technological advancements.",
+
+    core4: "Strong Commitment",
+    core4Desc:
+      "We are committed to delivering high-quality services and achieving the best results for our clients.",
+
+     threat: "Threat Detection & Response",
+    cloud: "Network & Cloud Security",
+    appsec: "Application Security",
+    data: "Data Protection",
+    identity: "Identity & Access Security",
+
+    noc: "Network Operation Center (NOC)",
+    soc: "Security Operation Center (SOC)",
+
+    netInstall: "Network Installation",
+    cctv: "CCTV Installation",
+    gate: "Access Gate Installation",
+    me: "Mechanical Electrical Installation",
+    cable: "Cable Management",
+
+    
+    // ADVANTAGE
+    advantageTitle: "Our Advantage",
+    adv1: "Experienced Team",
+    adv2: "Security Focus",
+    adv3: "Integrated Solutions",
+    adv4: "Responsive Support",
+
+    // CONTACT
+    contact: "Contact Us",
+    clients: "Our Clients"
+    
+  },
+
+  id: {
+    // HERO
+    heroTagline: "Partner IT Terpercaya",
+
+    // ABOUT
+    aboutTitle1: "Tentang",
+    aboutTitle2: "Perusahaan",
+
+    aboutDesc1: `PT. DOTHREE SANTANA PRISMA adalah perusahaan yang bergerak di bidang layanan teknologi informasi profesional dan pengadaan barang. Didirikan pada tahun 2017 dan berkantor pusat di Jakarta Selatan, perusahaan berkomitmen untuk memberikan solusi terintegrasi yang mendukung efisiensi operasional, keamanan sistem, dan pertumbuhan bisnis di berbagai sektor.`,
+
+    aboutDesc2: `Dengan pendekatan profesional, terstruktur, dan berorientasi pada pelanggan, PT. DOTHREE SANTANA PRISMA menyediakan solusi IT, integrasi sistem, layanan keamanan siber, managed services, serta pembangunan jaringan dan instalasi pendukung.`,
+
+    // VISION MISSION
+    vision: "Visi",
+    mission: "Misi",
+
+    visionText:
+      "Menjadi perusahaan IT terpercaya yang memberikan solusi aman dan terintegrasi.",
+
+    mission1: "Memberikan solusi IT yang andal",
+    mission2: "Menjamin keamanan sistem",
+    mission3: "Memberikan dukungan yang responsif",
+
+     infra: "Layanan Infrastruktur Profesional",
+    network: "Layanan Jaringan Profesional",
+    storage: "Layanan Penyimpanan Data ",
+    procurement: "Pengadaan Barang dan Jasa",
+
+     threat: "Deteksi & Respon Ancaman",
+    cloud: "Keamanan Jaringan & Cloud",
+    appsec: "Keamanan Aplikasi",
+    data: "Perlindungan Data",
+    identity: "Keamanan Identitas & Akses",
+
+    noc: "Pusat Operasi Jaringan (NOC)",
+    soc: "Pusat Operasi Keamanan (SOC)",
+
+    netInstall: "Instalasi Jaringan",
+    cctv: "Instalasi CCTV",
+    gate: "Instalasi Gerbang Akses",
+    me: "Instalasi Mekanikal Elektrikal",
+    cable: "Manajemen Kabel",
+
+    // SERVICES
+    servicesTitle: "LAYANAN KAMI",
+    servicesDesc:
+      "PT. DOTHREE SANTANA PRISMA menyediakan layanan profesional yang dirancang untuk memberikan solusi menyeluruh di bidang teknologi informasi, keamanan sistem, dan pengadaan.",
+
+    service1Title: "Solusi IT dan Integrasi Sistem",
+    service1Desc:
+      "Menyediakan solusi IT terintegrasi dan layanan integrasi sistem untuk mendukung operasional bisnis yang efisien dan handal.",
+
+    service2Title: "Solusi Keamanan Siber",
+    service2Desc:
+      "Menyediakan layanan keamanan siber untuk melindungi sistem, jaringan, dan data dari ancaman digital.",
+
+    service3Title: "Layanan Managed Services Profesional",
+    service3Desc:
+      "Menyediakan layanan pengelolaan dan monitoring berkelanjutan untuk menjaga stabilitas dan keandalan sistem.",
+
+    service4Title: "Pembangunan Infrastruktur Jaringan",
+    service4Desc:
+      "Menyediakan layanan pembangunan dan instalasi infrastruktur untuk mendukung jaringan dan sistem operasional.",
+
+       it: "Solusi IT",
+    cyber: "Keamanan Siber",
+    managed: "Managed Service",
+    net: "Infrastruktur Jaringan",
+
+    // CORE VALUES
+    coreTitle: "Nilai Utama",
+    coreDesc:
+      "Nilai-nilai inti kami menjadi prinsip yang membimbing keputusan, memperkuat kinerja, dan mendukung kemitraan jangka panjang.",
+
+    core1: "Keunggulan Profesional",
+    core1Desc:
+      "Kami menjalankan setiap tugas dengan kompetensi, tanggung jawab, dan standar etika yang tinggi.",
+
+    core2: "Integritas Etika",
+    core2Desc:
+      "Kami menjunjung tinggi kejujuran, transparansi, serta kepatuhan terhadap regulasi dan standar.",
+
+    core3: "Pertumbuhan Inovatif",
+    core3Desc:
+      "Kami terus mengembangkan solusi yang adaptif dan relevan dengan perkembangan teknologi.",
+
+    core4: "Komitmen Tinggi",
+    core4Desc:
+      "Kami berkomitmen memberikan layanan berkualitas tinggi dan hasil terbaik bagi klien.",
+
+    // ADVANTAGE
+    advantageTitle: "Keunggulan Kami",
+    adv1: "Tim Berpengalaman",
+    adv2: "Fokus Keamanan",
+    adv3: "Solusi Terintegrasi",
+    adv4: "Dukungan Responsif",
+
+    // CONTACT
+    contact: "Kontak Kami",
+    clients: "Klien Kami"
+    // SERVICES LIST - CARD 1
+  
+  }
+
+  };
+
+  
+
+  
+
+
+
   // ================= DROPDOWN =================
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+ const [openDropdown, setOpenDropdown] = useState<string | null>(null); // desktop
+const [mobileDropdown, setMobileDropdown] = useState(false); // mobile
 
     const clientRef = useRef<HTMLDivElement>(null);
 
@@ -247,6 +488,13 @@ useEffect(() => {
   document.body.style.overflow = menu ? "hidden" : "auto";
 }, [menu]);
 
+const getAnimation = (i: number) => {
+  if (!visibleCards[i]) return "opacity-0";
+
+  return i % 2 === 0
+    ? "opacity-100 translate-x-0"
+    : "opacity-100 translate-x-0";
+};
 
   return (
     <main className="w-full">
@@ -309,41 +557,60 @@ useEffect(() => {
     </span>
   </div>
 
-  {/* DROPDOWN */}
+  {/* DROPDOWN SERVICES DEKSTOP*/}
   {openDropdown === "services" && (
     <div className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-lg p-2 w-48 z-50">
 
       <div
         onClick={() => {
-          handleNavClick("services"); setShowContact(false);
           setOpenDropdown(null);
+          handleNavClick("it-solution"); setShowContact(false);
+          setMobileDropdown(false);
+          
         }}
         className="p-2 hover:bg-gray-100 cursor-pointer"
       >
-        IT Solution
+        {t[lang].it}
       </div>
 
       <div
         onClick={() => {
-          handleNavClick("services"); setShowContact(false);
           setOpenDropdown(null);
+          handleNavClick("cyber-security"); setShowContact(false);
+          setMobileDropdown(false);
+          
         }}
         className="p-2 hover:bg-gray-100 cursor-pointer"
       >
-        Cyber Security
+        {t[lang].cyber}
       </div>
 
       <div
         onClick={() => {
-          handleNavClick("services"); setShowContact(false);
           setOpenDropdown(null);
+          handleNavClick("managed-services"); setShowContact(false);
+          setMobileDropdown(false);
+          
         }}
         className="p-2 hover:bg-gray-100 cursor-pointer"
       >
-        Managed Services
+        {t[lang].managed}
+        </div>
+
+          <div
+        onClick={() => {
+          setOpenDropdown(null);
+          handleNavClick("network-construction"); setShowContact(false);
+          setMobileDropdown(false);
+          
+        }}
+        className="p-2 hover:bg-gray-100 cursor-pointer"
+      >
+        {t[lang].net}
+        </div>
       </div>
 
-    </div>
+    
   )}
 
 </div>
@@ -352,7 +619,7 @@ useEffect(() => {
       {lang === "id" ? "Klien" : "Clients"}
     </a>
 
-    {/* ⚠️ PINDAHKAN KONTAK KE SINI */}
+    {/* ⚠️  KONTAK  */}
    <a
   onClick={() => {
     setShowContact(true); // 🔥 tampilkan contact dulu
@@ -431,11 +698,14 @@ useEffect(() => {
     handleNavClick("home");
     setShowContact(false);
     setMenu(false);
+    setMobileDropdown(false);
   }}
   className="font-bold text-blue-900 cursor-pointer active:scale-90 transition"
 >
   DOTHREE
+
 </div>
+
      <button
   onClick={() => setMenu(false)}
   className="transition active:scale-90"
@@ -449,108 +719,132 @@ useEffect(() => {
     {/* MENU */}
    <div className="flex flex-col gap-5">
 
+    {/*HOME*/}
  <a
   onClick={() => {
     handleNavClick("home");
     setMenu(false);
+    setMobileDropdown(false);
+    setShowContact(false);
   }}
-  className="cursor-pointer transition active:scale-95 hover:translate-x-1"
+  className="cursor-pointer transition hover:scale-110 active:scale-95 hover:translate-x-1"
 >
     {lang === "id" ? "Beranda" : "Home"}
   </a>
 
+  {/*TENTANG*/}
 <a
   onClick={() => {
     handleNavClick("about");
     setMenu(false);
+    setMobileDropdown(false);
+    setShowContact(false);
   }}
-  className="cursor-pointer transition active:scale-95 hover:translate-x-1"
+  className="cursor-pointer transition hover:scale-110 active:scale-95 hover:translate-x-1"
 >
     {lang === "id" ? "Tentang" : "About"}
   </a>
 
+    {/*SERVICES*/}
  <div>
 
-  {/* HEADER */}
+{/* HEADER MObile */}
   <div
     className="flex justify-between cursor-pointer transition active:scale-95"
-    onClick={() =>
-      setOpenDropdown(openDropdown === "services" ? null : "services")
-    }
+    onClick={() => setMobileDropdown(prev => !prev)}
   >
     <span>{lang === "id" ? "Layanan" : "Services"}</span>
-    <span className={`${openDropdown === "services" ? "rotate-180" : ""} transition`}>
+
+    <span className={`${mobileDropdown ? "rotate-180" : ""} transition`}>
       ▾
     </span>
   </div>
 
- {/* DROPDOWN */}
-<div
-  className={`pl-4 flex flex-col gap-2 overflow-hidden transition-all duration-300 ${
-    openDropdown === "services"
-      ? "max-h-40 opacity-100 mt-2"
-      : "max-h-0 opacity-0"
-  }`}
->
+  {/* DROPDOWN */}
+  <div
+    className={`pl-4 flex flex-col gap-2 overflow-hidden transition-all duration-300 ${
+      mobileDropdown
+        ? "max-h-40 opacity-100 mt-2"
+        : "max-h-0 opacity-0 pointer-events-none"
+    }`}
+  >
 
   <div
     onClick={() => {
-      handleNavClick("services");
+      handleNavClick("it-solution");
       setMenu(false);
-      setOpenDropdown(null);
+      setMobileDropdown(false);
       setShowContact(false);
     }}
-    className="cursor-pointer transition active:scale-95 hover:translate-x-1"
+    className="cursor-pointer transition hover:scale-110 active:scale-95 hover:translate-x-1"
   >
-    IT Solution
+    {t[lang].it}
   </div>
 
   <div
     onClick={() => {
-      handleNavClick("services");
+      handleNavClick("cyber-security");
       setMenu(false);
-      setOpenDropdown(null);
+      setMobileDropdown(false);
       setShowContact(false);
     }}
-    className="cursor-pointer transition active:scale-95 hover:translate-x-1"
+    className="cursor-pointer transition hover:scale-110 active:scale-95 hover:translate-x-1"
   >
-    Cyber Security
+      {t[lang].cyber}
   </div>
 
   <div
     onClick={() => {
-      handleNavClick("services");
+      handleNavClick("managed-services");
       setMenu(false);
-      setOpenDropdown(null);
+      setMobileDropdown(false);
       setShowContact(false);
     }}
-    className="flex justify-between items-center cursor-pointer transition active:scale-95 active:bg-gray-100 p-2 rounded-md"
+    className="cursor-pointer transition hover:scale-110 active:scale-95 hover:translate-x-1"
   >
-    Managed Services
+    {t[lang].managed}
+  </div>
+
+  <div
+    onClick={() => {
+      handleNavClick("network-construction");
+      setMenu(false);
+      setMobileDropdown(false);
+      setShowContact(false);
+    }}
+    className="cursor-pointer transition hover:scale-110 active:scale-95 hover:translate-x-1"
+  >
+    {t[lang].net}
   </div>
 
 </div>
-  
-
 </div>
 
+      {/*KLIEN*/}
   <a
   onClick={() => {
     handleNavClick("clients");
     setMenu(false);
+    setMobileDropdown(false);
     setShowContact(false);
   }}
-  className="cursor-pointer transition active:scale-95 hover:translate-x-1"
+  className="cursor-pointer transition hover:scale-110 active:scale-95 hover:translate-x-1"
 >
     {lang === "id" ? "Klien" : "Clients"}
   </a>
 
+    {/*KONTAK*/}
 <a
   onClick={() => {
     setShowContact(true);
-    setTimeout(() => handleNavClick("contact"), 100);
+    setMenu(false);
+    setMobileDropdown(false);
+
+    setTimeout(() => {
+      handleNavClick("contact");
+     }, 100);
   }}
-  className="cursor-pointer transition active:scale-95 hover:translate-x-1"
+  className="cursor-pointer transition hover:scale-110 active:scale-95 hover:translate-x-1"
 >
   {lang === "id" ? "Kontak" : "Contact"}
 </a>
@@ -564,7 +858,10 @@ useEffect(() => {
       <div className="flex gap-2">
 
   <button
-    onClick={() => setLang("en")}
+    onClick={() => {setLang("en");
+      setMobileDropdown(false);
+    }}
+    
     className={`px-3 py-1 transition
       ${lang === "en"
         ? "bg-red-500 text-white"
@@ -575,7 +872,9 @@ useEffect(() => {
   </button>
 
   <button
-    onClick={() => setLang("id")}
+    onClick={() => {setLang("id");
+      setMobileDropdown(false);
+    }}
     className={`px-3 py-1 transition
       ${lang === "id"
         ? "bg-red-500 text-white"
@@ -591,6 +890,7 @@ useEffect(() => {
   </div>
 </div>
 
+
    {/* HERO */}
 <section
   id="home"
@@ -600,7 +900,7 @@ useEffect(() => {
     DOTHREE
   </h1>
   <p className="mt-4 text-base md:text-lg opacity-90">
-    Trusted IT Partner
+  {t[lang].heroTagline}
   </p>
 </section>
 
@@ -609,7 +909,7 @@ useEffect(() => {
 <section id="about" className="w-full">
 
   {/* TOP HERO ABOUT */}
-  <div className="relative min-h-100 md:h-75 flex items-center justify-center text-center">
+  <div className="relative py-16 md:py-20 flex items-center justify-center text-center">
 
   
 
@@ -618,10 +918,10 @@ useEffect(() => {
 
   <div className="relative z-10 mt-10">
     <h2 className="text-4xl md:text-6xl font-extrabold text-black">
-      About
+      {t[lang].aboutTitle1}
     </h2>
     <h2 className="text-4xl md:text-6xl font-extrabold text-blue-700">
-      Company
+      {t[lang].aboutTitle2}
     </h2>
   </div>
 
@@ -631,33 +931,25 @@ useEffect(() => {
   <div className="flex justify-center -mt-12 relative z-20">
     <img
       src="/about.jpg.png"
-      className="w-28 h-28 md:w-40 md:h-40 rounded-full border-8 border-white object-cover shadow-2xl ring-4 ring-white"
+      className="w-28 h-28 md:w-40 md:h-40 rounded-full border-4 md:border-6 border-white object-cover shadow-xl ring-4 ring-white/80"
     />
   </div>
 
   {/* BOTTOM BLUE SECTION */}
-  <div className="bg-blue-900 text-white text-center py-20 px-4 md:px-10">
+  <div className="bg-blue-900 text-white text-center py-12 md:py-16 px-4 md:px-10">
 
-    <div className="max-w-4xl mx-auto text-center py-20 px-4">
+    <div className="max-w-4xl mx-auto text-center px-4">
 
       <h3 className="text-3xl md:text-4xl font-bold mb-6">
         PT. DOTHREE SANTANA PRISMA
       </h3>
 
       <p className="text-sm md:text-base leading-relaxed opacity-90">
-        PT. DOTHREE SANTANA PRISMA is a company engaged in professional
-        information technology services and procurement of goods.
-        Established in 2017 and headquartered in South Jakarta,
-        the company is committed to delivering integrated solutions
-        that support operational efficiency, system security,
-        and business growth across various sectors.
+        {t[lang].aboutDesc1}
       </p>
 
       <p className="text-sm md:text-base leading-relaxed opacity-90">
-        By adopting a professional, structured, and customer-oriented
-        approach, PT. DOTHREE SANTANA PRISMA provides IT solutions,
-        system integration, cyber security services, managed services,
-        as well as network construction and supporting installations.
+        {t[lang].aboutDesc2}
       </p>
 
     </div>
@@ -666,7 +958,7 @@ useEffect(() => {
 
 </section>
 
-<section className="py-20 px-4 bg-linear-to-b from-gray-50 to-gray-100 text-center">
+<section className="py-12 md:py-16 px-4 bg-linear-to-b from-gray-50 to-gray-100 text-center">
 
   <div className="max-w-4xl mx-auto">
 
@@ -680,11 +972,11 @@ useEffect(() => {
       <div className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition">
 
         <h3 className="text-blue-600 font-semibold mb-3">
-          Vision
+          {t[lang].vision}
         </h3>
 
-        <p className="text-gray-700 leading-relaxed">
-          To become a trusted IT company delivering secure and integrated solutions.
+        <p className="text-gray-700 leading-relaxed ">
+          {t[lang].visionText}
         </p>
 
       </div>
@@ -693,13 +985,13 @@ useEffect(() => {
       <div className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition">
 
         <h3 className="text-blue-600 font-semibold mb-3">
-          Mission
+          {t[lang].mission}
         </h3>
 
         <ul className="text-gray-700 space-y-2 text-left">
-          <li>• Deliver reliable IT solutions</li>
-          <li>• Ensure system security</li>
-          <li>• Provide responsive support</li>
+          <li>• {t[lang].mission1}</li>
+          <li>• {t[lang].mission2}</li>
+          <li>• {t[lang].mission3}</li>
         </ul>
 
       </div>
@@ -710,147 +1002,195 @@ useEffect(() => {
 
 </section>
 
+<div className="h-px bg-linear-to-r from-transparent via-blue-300/50 to-transparent my-6 md:my-8" />
+
  {/* SERVICES */}
-<section ref={sectionRef} className="py-20 px-4 bg-white">
+<section id="services" ref={sectionRef} className="py-12 md:py-8 px-10 bg-white scroll-mt-24">
 
   <div className="max-w-5xl mx-auto text-center">
 
     {/* TITLE */}
     <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
-      OUR SERVICES
+      {t[lang].servicesTitle}
     </h2>
 
     <p className="text-gray-600 max-w-3xl mx-auto mb-12">
-      <span className="font-semibold">PT. DOTHREE SANTANA PRISMA</span> delivers professional services
-      designed to provide comprehensive solutions in information technology, system security, and procurement.
+      <span className="font-semibold">PT. DOTHREE SANTANA PRISMA</span> {t[lang].servicesDesc}
     </p>
 
   </div>
 
+  <div className="space-y-12">
+
   {/* ===== CARD 1 ===== */}
-  <div className={`max-w-5xl mx-auto bg-white rounded-2xl shadow-md p-6 mb-10
-    hover:shadow-2xl hover:-translate-y-1 transition-all duration-700 transform
-    ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+  <div
+  id="it-solution"
+  ref={(el) => {
+  cardRefs.current[0] = el;
+}}
+  data-index="0"
+ className={`max-w-4xl mx-auto bg-white/90 backdrop-blur-sm
+rounded-2xl shadow-md p-5 md:p-6 mb-10
+flex flex-col items-center text-center
+transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
+hover:shadow-2xl hover:shadow-blue-500/30 hover:-translate-y-2 hover:scale-[1.02] hover:brightness-[1.02]
+${visibleCards[0] ? "opacity-100 translate-y-0 scale-100 " : "opacity-0 translate-y-10 scale-95"}
+`}
+>
 
     <div className="flex justify-center mb-8">
-      <div className="bg-linear-to-r from-blue-700 to-blue-500 text-white px-6 py-2 rounded-full font-semibold shadow-md">
-        1. IT Solutions and System Integrations
+      <div className="bg-linear-to-r from-blue-700 to-blue-500 text-white px-4 md:px-6 py-2 text-sm md:text-base rounded-full font-semibold shadow-md">
+      {t[lang].service1Title}
       </div>
     </div>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-      <div className="group h-56 md:h-64 overflow-hidden rounded-xl">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6">
+      <div className="group aspect-video overflow-hidden rounded-xl">
         <img src="/it1.png" className="w-full h-full object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-110" />
       </div>
-      <div className="group h-56 md:h-64 overflow-hidden rounded-xl">
+      <div className="group aspect-video overflow-hidden rounded-xl">
         <img src="/it2.png" className="w-full h-full object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-110" />
       </div>
     </div>
 
     <p className="text-gray-700 text-sm md:text-base mb-6 leading-relaxed text-center max-w-2xl mx-auto">
-      Providing integrated IT solutions and system integration services to support efficient and reliable business operations.
+{t[lang].service1Desc}
     </p>
 
-    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-8 
-text-sm md:text-base text-gray-700 max-w-2xl mx-auto text-left">
-      <li className="flex gap-2"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />Infrastructure Professional Services</li>
-      <li className="flex gap-2"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />Network Professional Services</li>
-      <li className="flex gap-2"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />Data Storage Professional Services</li>
-      <li className="flex gap-2"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />Procurement of Goods and Services</li>
+    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 
+text-sm md:text-base text-gray-700 max-w-xl mx-auto">
+      <li className="flex items-center gap-2 justify-center sm:justify-start"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />{t[lang].infra}</li>
+      <li className="flex items-center gap-2 justify-center sm:justify-start"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />{t[lang].network}</li>
+      <li className="flex items-center gap-2 justify-center sm:justify-start"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />{t[lang].storage}</li>
+      <li className="flex items-center gap-2 justify-center sm:justify-start"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />{t[lang].procurement}</li>
     </ul>
 
   </div>
 
   {/* ===== CARD 2 ===== */}
-  <div className={`max-w-5xl mx-auto bg-white rounded-2xl shadow-md p-6 mb-10
-    hover:shadow-2xl hover:-translate-y-1 transition-all duration-700 transform delay-200
-    ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+  <div
+  id="cyber-security"
+  ref={(el) => {
+  cardRefs.current[1] = el;
+}}
+  data-index="1"
+ className={`max-w-4xl mx-auto bg-white/90 backdrop-blur-sm
+rounded-2xl shadow-md p-5 md:p-6 mb-10
+flex flex-col items-center text-center
+transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
+hover:shadow-2xl hover:shadow-blue-500/30 hover:-translate-y-2 hover:scale-[1.02] hover:brightness-[1.02]
+${visibleCards[1] ? "opacity-100 translate-x-0 scale-100 " : "opacity-0 translate-x-10 scale-95"}
+`}
+>
 
     <div className="flex justify-center mb-8">
-      <div className="bg-linear-to-r from-blue-700 to-blue-500 text-white px-6 py-2 rounded-full font-semibold shadow-md">
-        2. Cyber and Security Solutions
+      <div className="bg-linear-to-r from-blue-700 to-blue-500 text-white px-4 md:px-6 py-2 text-sm md:text-base rounded-full font-semibold shadow-md">
+       {t[lang].service2Title}
       </div>
     </div>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-      <div className="group h-56 md:h-64 overflow-hidden rounded-xl">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6">
+       <div className="group aspect-video overflow-hidden rounded-xl">
         <img src="/cyber1.png" className="w-full h-full object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-110" />
       </div>
-      <div className="group h-56 md:h-64 overflow-hidden rounded-xl">
+       <div className="group aspect-video overflow-hidden rounded-xl">
         <img src="/cyber2.png" className="w-full h-full object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-110" />
       </div>
     </div>
 
     <p className="text-gray-700 text-sm md:text-base mb-6 leading-relaxed text-center max-w-2xl mx-auto">
-      Delivering cyber security services focused on protecting systems, networks, and data from digital threats.
+    {t[lang].service2Desc}
     </p>
 
-    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-8 
-text-sm md:text-base text-gray-700 max-w-2xl mx-auto text-left">
-      <li className="flex gap-2"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />Threat Detection & Response</li>
-      <li className="flex gap-2"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />Network & Cloud Security</li>
-      <li className="flex gap-2"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />Application Security</li>
-      <li className="flex gap-2"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />Data Protection</li>
-      <li className="flex gap-2"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />Identity & Access Security</li>
+    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 
+text-sm md:text-base text-gray-700 max-w-xl mx-auto">
+      <li className="flex items-center gap-2 justify-center sm:justify-start"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />{t[lang].threat}</li>
+      <li className="flex items-center gap-2 justify-center sm:justify-start"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />{t[lang].cloud}</li>
+      <li className="flex items-center gap-2 justify-center sm:justify-start"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />{t[lang].appsec}</li>
+      <li className="flex items-center gap-2 justify-center sm:justify-start"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />{t[lang].data}</li>
+      <li className="flex items-center gap-2 justify-center sm:justify-start"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />{t[lang].identity}</li>
     </ul>
 
   </div>
 
   {/* ===== CARD 3 ===== */}
-  <div className={`max-w-5xl mx-auto bg-white rounded-2xl shadow-md p-6
-    hover:shadow-2xl hover:-translate-y-1 transition-all duration-700 transform delay-300
-    ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+   <div
+   id="managed-services"
+  ref={(el) => {
+  cardRefs.current[2] = el;
+}}
+  data-index="2"
+className={`max-w-4xl mx-auto bg-white/90 backdrop-blur-sm
+rounded-2xl shadow-md p-5 md:p-6 mb-10
+flex flex-col items-center text-center
+transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
+hover:shadow-2xl hover:shadow-blue-500/30 hover:-translate-y-2 hover:scale-[1.02] hover:brightness-[1.02]
+${visibleCards[2] ? "opacity-100 translate-x-0 scale-100 " : "opacity-0 translate-x-10 scale-95"}
+`}
+>
 
     <div className="flex justify-center mb-8">
-      <div className="bg-linear-to-r from-blue-700 to-blue-500 text-white px-6 py-2 rounded-full font-semibold shadow-md">
-        3. Professional Managed Services
+      <div className="bg-linear-to-r from-blue-700 to-blue-500 text-white px-4 md:px-6 py-2 text-sm md:text-base rounded-full font-semibold shadow-md">
+       {t[lang].service3Title}
       </div>
     </div>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-      <div className="group h-56 md:h-64 overflow-hidden rounded-xl">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6">
+       <div className="group aspect-video overflow-hidden rounded-xl">
         <img src="/server.png" className="w-full h-full object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-110" />
       </div>
-      <div className="group h-56 md:h-64 overflow-hidden rounded-xl">
+       <div className="group aspect-video overflow-hidden rounded-xl">
         <img src="/monitoring.png" className="w-full h-full object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-110" />
       </div>
     </div>
 
     <p className="text-gray-700 text-sm md:text-base mb-6 leading-relaxed text-center max-w-2xl mx-auto">
-      Providing continuous management and monitoring services to ensure system stability and operational reliability.
+    {t[lang].service3Desc}
     </p>
 
-    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-8 
-text-sm md:text-base text-gray-700 max-w-2xl mx-auto text-left">
-      <li className="flex gap-2"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />Network Operation Center (NOC)</li>
-      <li className="flex gap-2"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />Security Operation Center (SOC)</li>
+    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 
+text-sm md:text-base text-gray-700 max-w-xl mx-auto">
+      <li className="flex items-center gap-2 justify-center sm:justify-start"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />{t[lang].noc}</li>
+      <li className="flex items-center gap-2 justify-center sm:justify-start"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />{t[lang].soc}</li>
     </ul>
 
   </div>
 
   {/* ===== CARD 4 ===== */}
-<div className={`max-w-5xl mx-auto bg-white rounded-2xl shadow-md p-6 mt-10
-  hover:shadow-2xl hover:-translate-y-1 transition-all duration-700 transform delay-400
-  ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+ <div
+ id="network-construction"
+  ref={(el) => {
+  cardRefs.current[3] = el;
+}}
+  data-index="3"
+className={`max-w-4xl mx-auto bg-white/90 backdrop-blur-sm
+rounded-2xl shadow-md p-5 md:p-6 mb-10
+flex flex-col items-center text-center
+transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
+hover:shadow-2xl hover:shadow-blue-500/30 hover:-translate-y-2 hover:scale-[1.02] hover:brightness-[1.02]
+${visibleCards[3] ? "opacity-100 translate-y-0 scale-100 " : "opacity-0 translate-y-10 scale-95"}
+`}
+>
 
   {/* HEADER */}
   <div className="flex justify-center mb-8">
-    <div className="bg-linear-to-r from-blue-700 to-blue-500 text-white px-6 py-2 rounded-full font-semibold shadow-md">
-      4. Network Building Constructions
+    <div className="bg-linear-to-r from-blue-700 to-blue-500 text-white px-4 md:px-6 py-2 text-sm md:text-base rounded-full font-semibold shadow-md">
+      {t[lang].service4Title}
+
     </div>
   </div>
 
   {/* IMAGE */}
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6">
     
-    <div className="group h-56 md:h-64 overflow-hidden rounded-xl">
+     <div className="group aspect-video overflow-hidden rounded-xl">
       <img
         src="/network1.png"
         className="w-full h-full object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-110"
       />
     </div>
 
-    <div className="group h-56 md:h-64 overflow-hidden rounded-xl">
+     <div className="group aspect-video overflow-hidden rounded-xl">
       <img
         src="/network2.png"
         className="w-full h-full object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-110"
@@ -861,40 +1201,41 @@ text-sm md:text-base text-gray-700 max-w-2xl mx-auto text-left">
 
   {/* DESC */}
   <p className="text-gray-700 text-sm md:text-base mb-6 leading-relaxed text-center max-w-2xl mx-auto">
-    Providing infrastructure construction and installation services to support network and operational systems.
+  {t[lang].service4Desc}
   </p>
 
   {/* LIST (2 KOLOM) */}
-  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-8 
-    text-sm md:text-base text-gray-700 max-w-2xl mx-auto text-left">
+  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 
+text-sm md:text-base text-gray-700 max-w-xl mx-auto">
 
-    <li className="flex items-center gap-2">
+    <li className="flex items-center gap-2 justify-center sm:justify-start">
       <CheckCircle className="text-blue-600 w-4 h-4" />
-      Network Installation
+      {t[lang].netInstall}
     </li>
 
-    <li className="flex items-center gap-2">
+    <li className="flex items-center gap-2 justify-center sm:justify-start">
       <CheckCircle className="text-blue-600 w-4 h-4" />
-      CCTV Installation
+      {t[lang].cctv}
     </li>
 
-    <li className="flex items-center gap-2">
+    <li className="flex items-center gap-2 justify-center sm:justify-start">
       <CheckCircle className="text-blue-600 w-4 h-4" />
-      Access Gate Installation
+      {t[lang].gate}
     </li>
 
-    <li className="flex items-center gap-2">
+    <li className="flex items-center gap-2 justify-center sm:justify-start">
       <CheckCircle className="text-blue-600 w-4 h-4" />
-      Mechanical Electrical Installation
+      {t[lang].me}
     </li>
 
-    <li className="flex items-center gap-2">
+    <li className="flex items-center gap-2 justify-center sm:justify-start">
       <CheckCircle className="text-blue-600 w-4 h-4" />
-      Cable Management
+      {t[lang].cable}
     </li>
 
   </ul>
 
+</div>
 </div>
 
 </section>
@@ -912,22 +1253,22 @@ text-sm md:text-base text-gray-700 max-w-2xl mx-auto text-left">
 
       <div className="bg-white text-black p-6 rounded-xl shadow hover:shadow-xl transition">
   <div className="text-2xl mb-2">👨‍💻</div>
-  <p className="font-semibold">Experienced Team</p>
+  <p className="font-semibold">{t[lang].adv1}</p>
 </div>
 
       <div className="bg-white text-black p-6 rounded-xl shadow hover:shadow-xl transition">
   <div className="text-2xl mb-2">🔒</div>
-  <p className="font-semibold">Security Focus</p>
+  <p className="font-semibold">{t[lang].adv2}</p>
 </div>
 
       <div className="bg-white text-black p-6 rounded-xl shadow hover:shadow-xl transition">
   <div className="text-2xl mb-2">🔄</div>
-  <p className="font-semibold">Integrated Solutions</p>
+  <p className="font-semibold">{t[lang].adv3}</p>
 </div>
 
       <div className="bg-white text-black p-6 rounded-xl shadow hover:shadow-xl transition">
   <div className="text-2xl mb-2">📞</div>
-  <p className="font-semibold">Responsive Support</p>
+  <p className="font-semibold">{t[lang].adv4}</p>
 </div>
 
     </div>
@@ -943,101 +1284,100 @@ ref={coreRef}
 className="relative py-20 px-4 bg-linear-to-b from-blue-900 to-blue-800 text-white overflow-hidden">
 {/* GRID BACKGROUND */}
 <div className="absolute inset-0 opacity-10 pointer-events-none
-[background-image:linear-linear(rgba(255,255,255,0.2)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.2)_1px,transparent_1px)]
-[background-size:40px_40px"></div>
-
+bg-[linear-gradient(rgba(255,255,255,0.15)_1px,transparent_1px)]
+bg-size-[40px_40px]">
+</div>
   <div className="max-w-5xl mx-auto text-center">
     </div>
 
     {/* TITLE */}
     <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-      Core Values
+      {t[lang].coreTitle}
     </h2>
 
     <p className="text-sm md:text-base text-white/80 max-w-2xl mx-auto mb-12 text-center">
-      Our core values serve as the guiding principles that direct our decisions,
-      strengthen our performance, and support long-term partnerships.
+      {t[lang].coreDesc}
     </p>
 
     {/* GRID */}
-    <div className="space-y-8">
+    <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto px-4">
 
       {/* CARD 1 */}
   <div className={`relative bg-linear-to-r from-blue-600 via-blue-500 to-blue-400
-p-6 rounded-2xl text-center
+py-5 px-6 rounded-2xl text-center
 border border-white/10
 shadow-[0_10px_40px_rgba(59,130,246,0.3)]
 hover:shadow-[0_20px_60px_rgba(59,130,246,0.5)]
 hover:-translate-y-1 hover:scale-[1.02] hover:brightness-110
 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] transform delay-100
-${visible ? "opacity-100 translate-x-0 scale-100" : "opacity-0 -translate-x-10 scale-95"}
+${coreVisible ? "opacity-100 translate-x-0 scale-100" : "opacity-0 -translate-x-10 scale-95"}
 `}>
 
-  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-800 px-4 py-1 rounded-md text-sm font-semibold shadow">
-    Professional Excellence
+  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-800 px-3 py-1 rounded-md text-sm font-semibold shadow">
+    {t[lang].core1}
   </div>
 
-  <p className="text-sm mt-4 text-white/90 leading-relaxed">
-    We perform every task with competence, responsibility, and high ethical standards.
+  <p className="text-sm mt-4 text-white/90 leading-relaxed max-w-2xl mx-auto">
+    {t[lang].core1Desc}
   </p>
 </div>
 
       {/* CARD 2 */}
    <div className={`relative bg-linear-to-r from-blue-600 via-blue-500 to-blue-400
-p-6 rounded-2xl text-center
+py-5 px-6 rounded-2xl text-center
 border border-white/10
 shadow-[0_10px_40px_rgba(59,130,246,0.3)]
 hover:shadow-[0_20px_60px_rgba(59,130,246,0.5)]
 hover:-translate-y-1 hover:scale-[1.02] hover:brightness-110
 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] transform delay-200
-${visible ? "opacity-100 translate-x-0 scale-100" : "opacity-0 translate-x-10 scale-95"}
+${coreVisible ? "opacity-100 translate-x-0 scale-100" : "opacity-0 translate-x-10 scale-95"}
 `}>
 
-  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-800 px-4 py-1 rounded-md text-sm font-semibold shadow">
-    Ethical Integrity
+  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-800 px-3 py-1 rounded-md text-sm font-semibold shadow">
+    {t[lang].core2}
   </div>
 
-  <p className="text-sm mt-4 text-white/90 leading-relaxed">
-    We uphold honesty, transparency, and compliance with regulations and standards.
+  <p className="text-sm mt-4 text-white/90 leading-relaxed max-w-2xl mx-auto">
+    {t[lang].core2Desc}
   </p>
 </div>
       {/* CARD 3 */}
     <div className={`relative bg-linear-to-r from-blue-600 via-blue-500 to-blue-400
-p-6 rounded-2xl text-center
+py-5 px-6 rounded-2xl text-center
 border border-white/10
 shadow-[0_10px_40px_rgba(59,130,246,0.3)]
 hover:shadow-[0_20px_60px_rgba(59,130,246,0.5)]
 hover:-translate-y-1 hover:scale-[1.02] hover:brightness-110
 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] transform delay-300
-${visible ? "opacity-100 translate-x-0 scale-100" : "opacity-0 -translate-x-10 scale-95"}
+${coreVisible ? "opacity-100 translate-x-0 scale-100" : "opacity-0 -translate-x-10 scale-95"}
 `}>
 
-  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-800 px-4 py-1 rounded-md text-sm font-semibold shadow">
-    Innovative Growth
+  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-800 px-3 py-1 rounded-md text-sm font-semibold shadow">
+    {t[lang].core3}
   </div>
 
-  <p className="text-sm mt-4 text-white/90 leading-relaxed">
-    We continuously develop adaptive and relevant solutions aligned with technological advancements.
+  <p className="text-sm mt-4 text-white/90 leading-relaxed max-w-2xl mx-auto">
+      {t[lang].core3Desc}
   </p>
 </div>
 
       {/* CARD 4 */}
    <div className={`relative bg-linear-to-r from-blue-600 via-blue-500 to-blue-400
-p-6 rounded-2xl text-center
+py-5 px-6 rounded-2xl text-center
 border border-white/10
 shadow-[0_10px_40px_rgba(59,130,246,0.3)]
 hover:shadow-[0_20px_60px_rgba(59,130,246,0.5)]
 hover:-translate-y-1 hover:scale-[1.02] hover:brightness-110
-transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] transform delay-500
-${visible ? "opacity-100 translate-x-0 scale-100" : "opacity-0 translate-x-10 scale-95"}
+transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] transform delay-400
+${coreVisible ? "opacity-100 translate-x-0 scale-100" : "opacity-0 translate-x-10 scale-95"}
 `}>
 
-  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-800 px-4 py-1 rounded-md text-sm font-semibold shadow">
-    Strong Commitment
+  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-800 px-3 py-1 rounded-md text-sm font-semibold shadow">
+    {t[lang].core4}
   </div>
 
-  <p className="text-sm mt-4 text-white/90 leading-relaxed">
-    We are committed to delivering high-quality services and achieving the best results for our clients.
+  <p className="text-sm mt-4 text-white/90 leading-relaxed max-w-2xl mx-auto">
+    {t[lang].core4Desc}
   </p>
 </div>
 
@@ -1087,7 +1427,7 @@ ${visible ? "opacity-100 translate-x-0 scale-100" : "opacity-0 translate-x-10 sc
          <div className="md:col-span-1 bg-blue-900 text-white px-6 py-6 md:px-10 md:py-8 flex flex-col justify-center">
 
       <h2 className="text-xl font-semibold mb-4">
-        {lang === "id" ? "Kontak Kami" : "Contact Us"}
+        {t[lang].contact}
       </h2>
 
       <div className="space-y-2 text-sm">
