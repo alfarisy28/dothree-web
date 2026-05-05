@@ -230,73 +230,75 @@ useEffect(() => {
     mission2: "Ensure system security",
     mission3: "Provide responsive support",
 
-     infra: "Infrastructure Professional Services",
-    network: "Network Professional Services",
-    storage: "Data Storage Services",
-    procurement: "Procurement of Goods and Services",
-
     // SERVICES
     servicesTitle: "OUR SERVICES",
     servicesDesc:
-      "PT. DOTHREE SANTANA PRISMA delivers professional services designed to provide comprehensive solutions in information technology, system security, and procurement.",
+      "We deliver professional services designed to provide comprehensive IT and security solutions.",
 
     service1Title: "IT Solutions and System Integrations",
     service1Desc:
-      "Providing integrated IT solutions and system integration services to support efficient and reliable business operations.",
+      "Providing integrated IT solutions to support efficient business operations.",
 
     service2Title: "Cyber and Security Solutions",
     service2Desc:
-      "Delivering cyber security services focused on protecting systems, networks, and data from digital threats.",
-
-    service3Title: "Professional Managed Services",
+      "Protecting systems, networks, and data from digital threats.",
+    focusDesc: "Main Focus : IT Infrastructure & Cyber Security",
+    service3Title: "Managed Services",
     service3Desc:
-      "Providing continuous management and monitoring services to ensure system stability and operational reliability.",
+      "Monitoring and maintaining system stability continuously.",
 
-    service4Title: "Network Building Constructions",
+    service4Title: "Network Infrastructure",
     service4Desc:
-      "Providing infrastructure construction and installation services to support network and operational systems.",
+      "Building and installing network infrastructure systems.",
 
+    // SERVICES LIST
     it: "IT Solution",
-cyber: "Cyber Security",
-managed: "Managed Services",
-net: "Infrastructure Network",
+    cyber: "Cyber Security",
+    managed: "Managed Services",
+    net: "Infrastructure Network",
+
+    // DETAIL LIST
+    infra: "Infrastructure Services",
+    network: "Network Services",
+    storage: "Data Storage",
+    procurement: "Procurement",
+
+    threat: "Threat Detection & Response",
+    cloud: "Cloud Security",
+    appsec: "Application Security",
+    data: "Data Protection",
+    identity: "Identity & Access",
+    vapt: "VAPT (Vulnerability Assessment & Penetration Testing)",
+
+    noc: "Network Operation Center",
+    soc: "Security Operation Center",
+
+    netInstall: "Network Installation",
+    cctv: "CCTV Installation",
+    gate: "Access Control",
+    me: "Mechanical Electrical",
+    cable: "Cable Management",
 
     // CORE VALUES
     coreTitle: "Core Values",
     coreDesc:
-      "Our core values serve as the guiding principles that direct our decisions, strengthen our performance, and support long-term partnerships.",
+      "Our core values guide decisions, strengthen performance, and support long-term partnerships.",
 
     core1: "Professional Excellence",
     core1Desc:
       "We perform every task with competence, responsibility, and high ethical standards.",
 
-    core2: "Ethical Integrity",
+    core2: "Integrity",
     core2Desc:
       "We uphold honesty, transparency, and compliance with regulations and standards.",
 
-    core3: "Innovative Growth",
+    core3: "Innovative",
     core3Desc:
       "We continuously develop adaptive and relevant solutions aligned with technological advancements.",
 
-    core4: "Strong Commitment",
+    core4: "Commitment",
     core4Desc:
       "We are committed to delivering high-quality services and achieving the best results for our clients.",
-
-     threat: "Threat Detection & Response",
-    cloud: "Network & Cloud Security",
-    appsec: "Application Security",
-    data: "Data Protection",
-    identity: "Identity & Access Security",
-
-    noc: "Network Operation Center (NOC)",
-    soc: "Security Operation Center (SOC)",
-
-    netInstall: "Network Installation",
-    cctv: "CCTV Installation",
-    gate: "Access Gate Installation",
-    me: "Mechanical Electrical Installation",
-    cable: "Cable Management",
-
     
     // ADVANTAGE
     advantageTitle: "Our Advantage",
@@ -305,9 +307,24 @@ net: "Infrastructure Network",
     adv3: "Integrated Solutions",
     adv4: "Responsive Support",
 
+    // COMMITMENT
+    commitmentTitle: "Service Commitment",
+    commitmentDesc:
+      "We are committed to delivering high-quality IT services with professional standards.",
+
+    commit1: "High-quality service",
+    commit2: "System & data security",
+    commit3: "Fast response support",
+    commit4: "Professional & transparent",
+
+    // PARTNERS
+    partnersTitle: "Technology Partners",
+    partnersDesc: "We collaborate with global trusted vendors",
+
     // CONTACT
     contact: "Contact Us",
-    clients: "Our Clients"
+    clients: "Our Clients",
+    clientsDesc: "Trusted by government institutions, national and multinational companies"
     
   },
 
@@ -319,85 +336,83 @@ net: "Infrastructure Network",
     aboutTitle1: "Tentang",
     aboutTitle2: "Perusahaan",
 
-    aboutDesc1: `PT. DOTHREE SANTANA PRISMA adalah perusahaan yang bergerak di bidang layanan teknologi informasi profesional dan pengadaan barang. Didirikan pada tahun 2017 dan berkantor pusat di Jakarta Selatan, perusahaan berkomitmen untuk memberikan solusi terintegrasi yang mendukung efisiensi operasional, keamanan sistem, dan pertumbuhan bisnis di berbagai sektor.`,
+    aboutDesc1: `PT. DOTHREE SANTANA PRISMA adalah perusahaan di bidang teknologi informasi dan pengadaan barang.`,
 
-    aboutDesc2: `Dengan pendekatan profesional, terstruktur, dan berorientasi pada pelanggan, PT. DOTHREE SANTANA PRISMA menyediakan solusi IT, integrasi sistem, layanan keamanan siber, managed services, serta pembangunan jaringan dan instalasi pendukung.`,
+    aboutDesc2: `Kami menyediakan solusi IT, keamanan siber, dan infrastruktur jaringan.`,
 
     // VISION MISSION
     vision: "Visi",
     mission: "Misi",
 
     visionText:
-      "Menjadi perusahaan IT terpercaya yang memberikan solusi aman dan terintegrasi.",
+      "Menjadi perusahaan IT terpercaya dengan solusi aman dan terintegrasi.",
 
-    mission1: "Memberikan solusi IT yang andal",
+    mission1: "Memberikan solusi IT",
     mission2: "Menjamin keamanan sistem",
-    mission3: "Memberikan dukungan yang responsif",
+    mission3: "Memberikan dukungan cepat",
 
-     infra: "Layanan Infrastruktur Profesional",
-    network: "Layanan Jaringan Profesional",
-    storage: "Layanan Penyimpanan Data ",
-    procurement: "Pengadaan Barang dan Jasa",
+    // DETAIL
+    infra: "Layanan Infrastruktur",
+    network: "Layanan Jaringan",
+    storage: "Penyimpanan Data",
+    procurement: "Pengadaan",
 
-     threat: "Deteksi & Respon Ancaman",
-    cloud: "Keamanan Jaringan & Cloud",
+    threat: "Deteksi Ancaman",
+    cloud: "Keamanan Cloud",
     appsec: "Keamanan Aplikasi",
     data: "Perlindungan Data",
-    identity: "Keamanan Identitas & Akses",
+    identity: "Akses & Identitas",
+    vapt: "VAPT (Vulnerability Assessment & Penetration Testing)",
 
     noc: "Pusat Operasi Jaringan (NOC)",
     soc: "Pusat Operasi Keamanan (SOC)",
 
     netInstall: "Instalasi Jaringan",
     cctv: "Instalasi CCTV",
-    gate: "Instalasi Gerbang Akses",
-    me: "Instalasi Mekanikal Elektrikal",
+    gate: "Akses Kontrol",
+    me: "Mekanikal Elektrikal",
     cable: "Manajemen Kabel",
 
     // SERVICES
     servicesTitle: "LAYANAN KAMI",
     servicesDesc:
-      "PT. DOTHREE SANTANA PRISMA menyediakan layanan profesional yang dirancang untuk memberikan solusi menyeluruh di bidang teknologi informasi, keamanan sistem, dan pengadaan.",
+      "Kami menyediakan layanan IT profesional dan keamanan sistem.",
 
     service1Title: "Solusi IT dan Integrasi Sistem",
-    service1Desc:
-      "Menyediakan solusi IT terintegrasi dan layanan integrasi sistem untuk mendukung operasional bisnis yang efisien dan handal.",
+    service1Desc: "Solusi IT untuk operasional bisnis.",
 
-    service2Title: "Solusi Keamanan Siber",
-    service2Desc:
-      "Menyediakan layanan keamanan siber untuk melindungi sistem, jaringan, dan data dari ancaman digital.",
+    service2Title: "Keamanan Siber",
+    service2Desc: "Melindungi sistem dan data.",
+    focusDesc: "Fokus Utama : Infrastruktur IT & Keamanan Siber",
+    service3Title: "Layanan Managed Services",
+    service3Desc: "Monitoring sistem berkelanjutan.",
 
-    service3Title: "Layanan Managed Services Profesional",
-    service3Desc:
-      "Menyediakan layanan pengelolaan dan monitoring berkelanjutan untuk menjaga stabilitas dan keandalan sistem.",
+    service4Title: "Infrastruktur Jaringan",
+    service4Desc:"Pembangunan jaringan.",
 
-    service4Title: "Pembangunan Infrastruktur Jaringan",
-    service4Desc:
-      "Menyediakan layanan pembangunan dan instalasi infrastruktur untuk mendukung jaringan dan sistem operasional.",
-
-       it: "Solusi IT",
+    // MENU
+    it: "Solusi IT",
     cyber: "Keamanan Siber",
     managed: "Managed Service",
     net: "Infrastruktur Jaringan",
 
     // CORE VALUES
     coreTitle: "Nilai Utama",
-    coreDesc:
-      "Nilai-nilai inti kami menjadi prinsip yang membimbing keputusan, memperkuat kinerja, dan mendukung kemitraan jangka panjang.",
+    coreDesc:"Nilai yang membimbing keputusan, memperkuat kinerja dan mendukung kemitraan jangka panjang.",
 
-    core1: "Keunggulan Profesional",
+    core1: "Profesional",
     core1Desc:
       "Kami menjalankan setiap tugas dengan kompetensi, tanggung jawab, dan standar etika yang tinggi.",
 
-    core2: "Integritas Etika",
+    core2: "Integritas",
     core2Desc:
       "Kami menjunjung tinggi kejujuran, transparansi, serta kepatuhan terhadap regulasi dan standar.",
 
-    core3: "Pertumbuhan Inovatif",
+    core3: "Inovatif",
     core3Desc:
       "Kami terus mengembangkan solusi yang adaptif dan relevan dengan perkembangan teknologi.",
 
-    core4: "Komitmen Tinggi",
+    core4: "Komitmen",
     core4Desc:
       "Kami berkomitmen memberikan layanan berkualitas tinggi dan hasil terbaik bagi klien.",
 
@@ -408,21 +423,44 @@ net: "Infrastructure Network",
     adv3: "Solusi Terintegrasi",
     adv4: "Dukungan Responsif",
 
+    // COMMITMENT
+    commitmentTitle: "Komitmen Layanan",
+    commitmentDesc:
+      "Kami berkomitmen memberikan layanan terbaik.",
+
+    commit1: "Layanan berkualitas",
+    commit2: "Keamanan sistem",
+    commit3: "Respon cepat",
+    commit4: "Profesional",
+
+    // PARTNERS
+    partnersTitle: "Produk & Teknologi",
+    partnersDesc: "Kerja sama vendor global",
+
     // CONTACT
     contact: "Kontak Kami",
-    clients: "Klien Kami"
+
+    // Client 
+    clients: "Klien Kami",
+    clientsDesc:   "Dipercaya oleh instansi pemerintah, perusahaan nasional dan multinasional"
     // SERVICES LIST - CARD 1
   
+  },
+  
+  } as const;
+
+  
+
+  useEffect(() => {
+  const browserLang = navigator.language;
+  if (browserLang.includes("id")) {
+    setLang("id");
+  } else {
+    setLang("en");
   }
+}, []);
 
-  };
-
-  
-
-  
-
-
-
+ 
   // ================= DROPDOWN =================
  const [openDropdown, setOpenDropdown] = useState<string | null>(null); // desktop
 const [mobileDropdown, setMobileDropdown] = useState(false); // mobile
@@ -1014,10 +1052,11 @@ const getAnimation = (i: number) => {
       {t[lang].servicesTitle}
     </h2>
 
-    <p className="text-gray-600 max-w-3xl mx-auto mb-12">
-      <span className="font-semibold">PT. DOTHREE SANTANA PRISMA</span> {t[lang].servicesDesc}
+    <p className="font-semibold text-gray-600 max-w-3xl mx-auto mb-12">
+      {t[lang].focusDesc}
     </p>
 
+  
   </div>
 
   <div className="space-y-12">
@@ -1053,16 +1092,35 @@ ${visibleCards[0] ? "opacity-100 translate-y-0 scale-100 " : "opacity-0 translat
       </div>
     </div>
 
-    <p className="text-gray-700 text-sm md:text-base mb-6 leading-relaxed text-center max-w-2xl mx-auto">
+    <p className="font-semibold text-gray-700 text-sm md:text-base mb-6 leading-relaxed text-center max-w-2xl mx-auto">
 {t[lang].service1Desc}
     </p>
 
-    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 
-text-sm md:text-base text-gray-700 max-w-xl mx-auto">
-      <li className="flex items-center gap-2 justify-center sm:justify-start"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />{t[lang].infra}</li>
-      <li className="flex items-center gap-2 justify-center sm:justify-start"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />{t[lang].network}</li>
-      <li className="flex items-center gap-2 justify-center sm:justify-start"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />{t[lang].storage}</li>
-      <li className="flex items-center gap-2 justify-center sm:justify-start"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />{t[lang].procurement}</li>
+    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-6 
+      text-sm md:text-base text-gray-700 
+      max-w-xl mx-auto 
+      text-left leading-snug items-start">
+
+      <li className="flex items-start gap-2">
+        <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
+        {t[lang].infra}
+      </li>
+
+      <li className="flex items-start gap-2">
+        <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
+        {t[lang].network}
+      </li>
+
+      <li className="flex items-start gap-2">
+        <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
+        {t[lang].storage}
+      </li>
+
+      <li className="flex items-start gap-2">
+        <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
+        {t[lang].procurement}
+      </li>
+
     </ul>
 
   </div>
@@ -1098,17 +1156,42 @@ ${visibleCards[1] ? "opacity-100 translate-x-0 scale-100 " : "opacity-0 translat
       </div>
     </div>
 
-    <p className="text-gray-700 text-sm md:text-base mb-6 leading-relaxed text-center max-w-2xl mx-auto">
+    <p className="font-semibold text-gray-700 text-sm md:text-base mb-6 leading-relaxed text-center max-w-2xl mx-auto">
     {t[lang].service2Desc}
     </p>
 
-    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 
-text-sm md:text-base text-gray-700 max-w-xl mx-auto">
-      <li className="flex items-center gap-2 justify-center sm:justify-start"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />{t[lang].threat}</li>
-      <li className="flex items-center gap-2 justify-center sm:justify-start"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />{t[lang].cloud}</li>
-      <li className="flex items-center gap-2 justify-center sm:justify-start"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />{t[lang].appsec}</li>
-      <li className="flex items-center gap-2 justify-center sm:justify-start"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />{t[lang].data}</li>
-      <li className="flex items-center gap-2 justify-center sm:justify-start"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />{t[lang].identity}</li>
+    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-6 text-sm md:text-base text-gray-700 max-w-xl mx-auto text-left leading-snug items-start">
+
+      <li className="flex items-start gap-2">
+        <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
+        {t[lang].threat}
+      </li>
+
+      <li className="flex items-start gap-2">
+        <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
+        {t[lang].cloud}
+      </li>
+
+      <li className="flex items-start gap-2">
+        <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
+        {t[lang].appsec}
+      </li>
+
+      <li className="flex items-start gap-2">
+        <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
+        {t[lang].data}
+      </li>
+
+      <li className="flex items-start gap-2">
+        <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
+        {t[lang].identity}
+      </li>
+
+      <li className="flex items-start gap-2">
+        <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
+        <span className="whitespace-pre-line">{t[lang].vapt}</span>
+      </li>
+
     </ul>
 
   </div>
@@ -1144,14 +1227,22 @@ ${visibleCards[2] ? "opacity-100 translate-x-0 scale-100 " : "opacity-0 translat
       </div>
     </div>
 
-    <p className="text-gray-700 text-sm md:text-base mb-6 leading-relaxed text-center max-w-2xl mx-auto">
+    <p className="font-semibold text-gray-700 text-sm md:text-base mb-6 leading-relaxed text-center max-w-2xl mx-auto">
     {t[lang].service3Desc}
     </p>
 
-    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 
-text-sm md:text-base text-gray-700 max-w-xl mx-auto">
-      <li className="flex items-center gap-2 justify-center sm:justify-start"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />{t[lang].noc}</li>
-      <li className="flex items-center gap-2 justify-center sm:justify-start"><CheckCircle className="text-blue-600 w-4 h-4 mt-1" />{t[lang].soc}</li>
+   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-6 text-sm md:text-base text-gray-700 max-w-xl mx-auto text-left leading-snug items-start">
+
+      <li className="flex items-start gap-2">
+        <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
+        {t[lang].noc}
+      </li>
+
+      <li className="flex items-start gap-2">
+        <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
+        {t[lang].soc}
+      </li>
+
     </ul>
 
   </div>
@@ -1200,36 +1291,36 @@ ${visibleCards[3] ? "opacity-100 translate-y-0 scale-100 " : "opacity-0 translat
   </div>
 
   {/* DESC */}
-  <p className="text-gray-700 text-sm md:text-base mb-6 leading-relaxed text-center max-w-2xl mx-auto">
+  <p className="font-semibold text-gray-700 text-sm md:text-base mb-6 leading-relaxed text-center max-w-2xl mx-auto">
   {t[lang].service4Desc}
   </p>
 
   {/* LIST (2 KOLOM) */}
-  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 
-text-sm md:text-base text-gray-700 max-w-xl mx-auto">
+      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-6 text-sm md:text-base text-gray-700 max-w-xl mx-auto text-left leading-snug items-start">
 
-    <li className="flex items-center gap-2 justify-center sm:justify-start">
-      <CheckCircle className="text-blue-600 w-4 h-4" />
+
+      <li className="flex items-start gap-2">
+      <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
       {t[lang].netInstall}
     </li>
 
-    <li className="flex items-center gap-2 justify-center sm:justify-start">
-      <CheckCircle className="text-blue-600 w-4 h-4" />
+      <li className="flex items-start gap-2">
+        <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
       {t[lang].cctv}
     </li>
 
-    <li className="flex items-center gap-2 justify-center sm:justify-start">
-      <CheckCircle className="text-blue-600 w-4 h-4" />
+      <li className="flex items-start gap-2">
+        <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
       {t[lang].gate}
     </li>
 
-    <li className="flex items-center gap-2 justify-center sm:justify-start">
-      <CheckCircle className="text-blue-600 w-4 h-4" />
+      <li className="flex items-start gap-2">
+        <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
       {t[lang].me}
     </li>
 
-    <li className="flex items-center gap-2 justify-center sm:justify-start">
-      <CheckCircle className="text-blue-600 w-4 h-4" />
+      <li className="flex items-start gap-2">
+        <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
       {t[lang].cable}
     </li>
 
@@ -1241,34 +1332,34 @@ text-sm md:text-base text-gray-700 max-w-xl mx-auto">
 </section>
 
 {/* ADVANTAGE */}
-<section className="py-16 px-4 bg-blue-900 text-white text-center">
+<section id="advantage" className="py-8 md:py-8 bg-white">
 
   <div className="max-w-6xl mx-auto">
 
-    <h2 className="text-2xl md:text-3xl font-bold mb-6">
+    <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">
       {lang === "id" ? "Keunggulan Kami" : "Our Advantage"}
     </h2>
 
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mt-10">
 
       <div className="bg-white text-black p-6 rounded-xl shadow hover:shadow-xl transition">
-  <div className="text-2xl mb-2">👨‍💻</div>
-  <p className="font-semibold">{t[lang].adv1}</p>
+  <div className="text-2xl mb-2 text-center">👨‍💻</div>
+  <p className="font-semibold text-center">{t[lang].adv1}</p>
 </div>
 
       <div className="bg-white text-black p-6 rounded-xl shadow hover:shadow-xl transition">
-  <div className="text-2xl mb-2">🔒</div>
-  <p className="font-semibold">{t[lang].adv2}</p>
+  <div className="text-2xl mb-2 text-center">🔒</div>
+  <p className="font-semibold text-center">{t[lang].adv2}</p>
 </div>
 
       <div className="bg-white text-black p-6 rounded-xl shadow hover:shadow-xl transition">
-  <div className="text-2xl mb-2">🔄</div>
-  <p className="font-semibold">{t[lang].adv3}</p>
+  <div className="text-2xl mb-2 text-center">🔄</div>
+  <p className="font-semibold text-center">{t[lang].adv3}</p>
 </div>
 
       <div className="bg-white text-black p-6 rounded-xl shadow hover:shadow-xl transition">
-  <div className="text-2xl mb-2">📞</div>
-  <p className="font-semibold">{t[lang].adv4}</p>
+  <div className="text-2xl mb-2 text-center">📞</div>
+  <p className="font-semibold text-center">{t[lang].adv4}</p>
 </div>
 
     </div>
@@ -1276,6 +1367,92 @@ text-sm md:text-base text-gray-700 max-w-xl mx-auto">
   </div>
 
 </section>
+
+<div className="h-px bg-linear-to-r from-transparent via-blue-300/40 to-transparent my-16" />
+
+
+{/* COMMIT */}
+<section id="commitment" className="py-4 md:py-4 px-4 bg-white">
+
+  <div className="max-w-5xl mx-auto text-center">
+
+    <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
+      {t[lang].commitmentTitle}
+    </h2>
+
+    <p className="font-semibold text-gray-600 max-w-2xl mx-auto mb-12">
+      {t[lang].commitmentDesc}
+    </p>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <div className="p-5 md:p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition">
+        ✔ {t[lang].commit1}
+      </div>
+
+      <div className="p-5 md:p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition">
+        ✔ {t[lang].commit2}
+      </div>
+
+      <div className="p-5 md:p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition">
+        ✔ {t[lang].commit3}
+      </div>
+
+      <div className="p-5 md:p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition">
+        ✔ {t[lang].commit4}
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+{/* PARTNERS */}
+<section id="partners" className="py-16 md:py-20 px-4 bg-gray-50">
+
+  <div className="max-w-6xl mx-auto text-center">
+
+    <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
+      {t[lang].partnersTitle}
+    </h2>
+
+    <p className="font-semibold text-gray-600 mb-12">
+      {t[lang].partnersDesc}
+    </p>
+
+    <div className="flex flex-wrap justify-center gap-8">
+
+      {[
+        "cisco.png",
+        "fortinet.png",
+        "microsoft.png",
+        "vmware.png",
+        "sophos.png",
+        "dell.png",
+        "hp.png",
+        "lenovo.png",
+      ].map((logo, i) => (
+        <div
+          key={i}
+          className="w-40 md:w-44 bg-white rounded-2xl p-4 flex items-center justify-center shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-105 transition-all duration-300"
+        >
+          <img
+            src={`/partners/${logo}`}
+            alt={logo}
+            className="object-contain max-h-20 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition duration-300"
+          />
+        </div>
+      ))}
+
+    </div>
+
+  </div>
+
+</section>
+
+<div className="h-px bg-linear-to-r from-transparent via-blue-300/40 to-transparent my-16 md:my-20" />
+
 
 {/*CORE VALUES */}
  
@@ -1295,7 +1472,7 @@ bg-size-[40px_40px]">
       {t[lang].coreTitle}
     </h2>
 
-    <p className="text-sm md:text-base text-white/80 max-w-2xl mx-auto mb-12 text-center">
+    <p className="font-semibold text-sm md:text-base text-white/80 max-w-2xl mx-auto mb-12 text-center">
       {t[lang].coreDesc}
     </p>
 
@@ -1391,28 +1568,31 @@ ${coreVisible ? "opacity-100 translate-x-0 scale-100" : "opacity-0 translate-x-1
   <div className="max-w-6xl mx-auto px-4">
 
     <h2 className="text-2xl font-bold text-center mb-10 text-gray-900">
-      {lang === "id" ? "Klien Kami" : "Our Clients"}
+      {t[lang].clients}
     </h2>
 
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+    <p className="font-semibold text-gray-600 mb-8 text-center">
+    {t[lang].clientsDesc}
+ </p>
 
-      {clients.map((client, i) => (
-        <div
-          key={i}
-          className="bg-white text-black rounded-2xl p-5 flex items-center justify-center
-          shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-        >
-          <Image
-            src={`/clients/${client}`}
-            alt={client}
-            width={120}
-            height={60}
-            className="object-contain max-h-12.5 w-auto opacity-80 hover:opacity-100 transition"
-          />
-        </div>
-      ))}
+   <div className="flex flex-wrap justify-center gap-6">
 
+  {clients.map((client, i) => (
+    <div
+      key={i}
+      className="w-36 md:w-40 bg-white rounded-2xl p-3 flex items-center justify-center shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-105 transition-all duration-300"
+    >
+      <Image
+        src={`/clients/${client}`}
+        alt={client}
+        width={200}
+        height={100}
+        className="object-contain max-h-20 w-auto opacity-80 hover:opacity-100 transition duration-300"
+      />
     </div>
+  ))}
+
+</div>
 
   </div>
 </section>
