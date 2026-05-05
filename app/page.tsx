@@ -1032,7 +1032,7 @@ const getAnimation = (i: number) => {
 <section id="about" className="w-full">
 
   {/* 🔵 TOP HEADER WITH BACKGROUND */}
-  <div className="relative h-70 md:h-85 flex items-center justify-center text-center overflow-hidden">
+  <div className="relative py-10 md:py-14 flex items-center justify-center text-center overflow-hidden">
     {/* BACKGROUND (HANYA DI HEADER) */}
     <div className="absolute inset-0 z-10">
       <img
@@ -1046,7 +1046,7 @@ const getAnimation = (i: number) => {
     <div className="absolute inset-0 bg-linear-to-b from-white/20 via-white/10 to-blue-900/40 z-0"></div>
 
     {/* CONTENT */}
-    <div className="relative z-10 mt-6">
+    <div className="relative z-10 mt-0">
       <Animate type="left">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
           {t[lang].aboutTitle1}
