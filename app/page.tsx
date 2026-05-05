@@ -973,138 +973,130 @@ const getAnimation = (i: number) => {
 </div>
 
 <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-blue-400/20 blur-[120px] rounded-full" />
-   {/* HERO */}
+  
+{/* HERO */}
 <section
-
   id="home"
-className="relative w-full text-center pt-20 pb-16 md:pt-24 md:pb-20 px-4 overflow-hidden bg-linear-to-br from-blue-50 via-white to-blue-100">
+  className="relative w-full text-center pt-20 pb-20 px-4 
+  bg-blue-950 text-white overflow-hidden"
+>
 
-    {/* 🔵 SHAPE DECOR */}
-  <div className="absolute bottom-20 left-20 w-52 h-52 bg-blue-300/20 blur-3xl rounded-full z-0" />
-  <div className="absolute top-12.5 right-15 w-37.5 h-37.5 bg-blue-500/20 blur-2xl rounded-full z-0" />
-
-  {/* BACKGROUND IMAGE */}
-  <div className="absolute inset-0 z-0">
-    <img
-      src="/hero.png"
-      alt="hero"
-      className="w-full h-full object-cover opacity-80"
-    />
-  </div>
-
-  {/* OVERLAY (BIAR TEXT JELAS) */}
-  <div className="absolute inset-0 bg-linear-to-br from-white/90 via-white/80 to-blue-100/80 z-0" />
+  {/* OPTIONAL SHAPE (BIAR HIDUP DIKIT) */}
+  <div className="absolute bottom-10 left-10 w-40 h-40 bg-blue-500/20 blur-3xl rounded-full" />
+  <div className="absolute top-10 right-10 w-32 h-32 bg-blue-400/20 blur-2xl rounded-full" />
 
   {/* CONTENT */}
   <div className="relative z-10 max-w-4xl mx-auto">
 
-          {/* 🔵 BADGE */}
-  <Animate>
-<Animate>
-  <div className="inline-block px-4 py-1 mb-4 text-sm bg-blue-100/70 text-blue-700 rounded-full border border-blue-200 backdrop-blur-sm">
-    {t[lang].heroBadge}
-  </div>
-</Animate>
-  </Animate>
-
+    {/* BADGE */}
     <Animate>
-<h1 className="text-4xl md:text-6xl font-extrabold bg-linear-to-r from-blue-800 to-blue-500 bg-clip-text text-transparent tracking-tight">        DOTHREE
+      <div className="inline-block px-4 py-1 mb-4 text-sm 
+      bg-white/10 text-white 
+      rounded-full border border-white/20 backdrop-blur-md">
+        {t[lang].heroBadge}
+      </div>
+    </Animate>
+
+    {/* TITLE */}
+    <Animate>
+      <h1 className="text-4xl md:text-6xl font-extrabold text-white">
+        DOTHREE
       </h1>
     </Animate>
 
-   <Animate delay={0.2}>
-  <p className="mt-4 text-base md:text-lg text-gray-700 font-semibold max-w-xl mx-auto leading-relaxed">
-    {t[lang].heroTagline}
-  </p>
-</Animate>
-      {/* 🔵 MINI LIST */}
-  <div className="mt-6 flex flex-wrap justify-center gap-4 text-blue-600 text-sm">
-  <span className="flex items-center gap-1 hover:scale-105 transition">
-    ✓ {t[lang].infra}
-  </span>
-  <span className="flex items-center gap-1 hover:scale-105 transition">
-    ✓ {t[lang].cyber}
-  </span>
-  <span className="flex items-center gap-1 hover:scale-105 transition">
-    ✓ {t[lang].network}
-  </span>
-</div>
+    {/* TAGLINE */}
+    <Animate delay={0.2}>
+      <p className="mt-4 text-base md:text-lg text-white/90 font-semibold max-w-xl mx-auto leading-relaxed">
+        {t[lang].heroTagline}
+      </p>
+    </Animate>
 
+    {/* MINI LIST */}
+    <div className="mt-6 flex flex-wrap justify-center gap-4 text-white/80 text-sm">
+      <span className="flex items-center gap-1 hover:scale-105 transition">
+        ✓ {t[lang].infra}
+      </span>
+      <span className="flex items-center gap-1 hover:scale-105 transition">
+        ✓ {t[lang].cyber}
+      </span>
+      <span className="flex items-center gap-1 hover:scale-105 transition">
+        ✓ {t[lang].network}
+      </span>
+    </div>
 
   </div>
-
 </section>
 <div className="h-20 bg-linear-to-b from-transparent to-gray-50" />
 
-{/*ABOUT*/}
-<section id="about" className="w-full py-12 md:py-16  px-4 bg-gray-50">
+{/* ================= ABOUT ================= */}
+<section id="about" className="w-full">
 
+  {/* 🔵 TOP HEADER WITH BACKGROUND */}
+  <div className="relative h-70 md:h-85 flex items-center justify-center text-center overflow-hidden">
+    {/* BACKGROUND (HANYA DI HEADER) */}
+    <div className="absolute inset-0 z-10">
+      <img
+        src="/logoabout.png"
+        alt="background"
+        className="w-full h-full object-cover opacity-100"
+      />
+    </div>
 
-          {/* BACKGROUND IMAGE */}
-  <div className="absolute inset-0 z-0">
-    <img
-      src="/logoabout.png"
-      alt="background"
-      className="w-full h-full object-cover opacity-50"
-    />
-  </div>
+    {/* OVERLAY BIAR TEXT JELAS */}
+    <div className="absolute inset-0 bg-linear-to-b from-white/20 via-white/10 to-blue-900/40 z-0"></div>
 
-  {/* TOP HERO ABOUT */}
-  <div className="relative py-16 md:py-20 flex items-center justify-center text-center">
-
-  
-
-  {/* OVERLAY */}
-  <div className="absolute inset-0 bg-linear-to-b from-white/60 via-white/40 to-blue-900/40"></div>
-
-  <div className="relative z-10 mt-10">
+    {/* CONTENT */}
+    <div className="relative z-10 mt-6">
       <Animate type="left">
-    <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
-      {t[lang].aboutTitle1}
-    </h2>
-    </Animate>
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+          {t[lang].aboutTitle1}
+        </h2>
+      </Animate>
 
-    <Animate type="right" delay={0.1}>
-    <h2 className="text-xl md:text-2xl font-bold text-blue-600 mb-6">
-      {t[lang].aboutTitle2}
-    </h2>
-    </Animate>
+      <Animate type="right" delay={0.1}>
+        <h2 className="text-xl md:text-2xl font-bold text-blue-600">
+          {t[lang].aboutTitle2}
+        </h2>
+      </Animate>
+    </div>
+
+    {/* 🔽 FADE TRANSITION KE BAWAH */}
+    <div className="absolute bottom-0 w-full h-20 bg-linear-to-b from-transparent to-blue-900"></div>
 
   </div>
 
-</div>
-
-  {/* CIRCLE IMAGE */}
+  {/* 🟢 FOTO BULAT */}
   <div className="flex justify-center -mt-12 relative z-20">
     <Animate delay={0.2}>
-    <img
-      src="/about.jpg.png"
-      className="w-28 h-28 md:w-40 md:h-40 rounded-full border-4 md:border-6 border-white object-cover shadow-xl ring-4 ring-white/80"
-    />
+      <img
+        src="/about.jpg.png"
+        alt="about"
+        className="w-28 h-28 md:w-40 md:h-40 rounded-full border-4 border-white object-cover shadow-xl ring-4 ring-white/80"
+      />
     </Animate>
   </div>
 
-  {/* BOTTOM BLUE SECTION */}
+  {/* 🔵 TEXT SECTION (BERSIH TANPA BACKGROUND IMAGE) */}
   <div className="bg-blue-900 text-white text-center py-12 md:py-16 px-4 md:px-10">
 
-    <div className="max-w-4xl mx-auto text-center px-4">
+    <div className="max-w-4xl mx-auto space-y-4">
 
-        <Animate delay={0.3}>
-      <p className="text-sm md:text-base leading-relaxed opacity-90">
-        {t[lang].aboutDesc1}
-      </p>
+      <Animate delay={0.3}>
+        <p className="text-sm md:text-base leading-relaxed opacity-90">
+          {t[lang].aboutDesc1}
+        </p>
       </Animate>
 
-        <Animate delay={0.3}>
-      <p className="text-sm md:text-base leading-relaxed opacity-90">
-        {t[lang].aboutDesc2}
-      </p>
+      <Animate delay={0.4}>
+        <p className="text-sm md:text-base leading-relaxed opacity-90">
+          {t[lang].aboutDesc2}
+        </p>
       </Animate>
 
-       <Animate delay={0.3}>
-      <p className="text-sm md:text-base leading-relaxed opacity-90">
-        {t[lang].aboutDesc3}
-      </p>
+      <Animate delay={0.5}>
+        <p className="text-sm md:text-base leading-relaxed opacity-90">
+          {t[lang].aboutDesc3}
+        </p>
       </Animate>
 
     </div>
