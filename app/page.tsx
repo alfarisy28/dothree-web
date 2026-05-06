@@ -1013,7 +1013,7 @@ px-4 bg-blue-950 text-white overflow-hidden"
   -translate-y-10 md:-translate-y-16
   drop-shadow-[0_0_40px_rgba(255,255,255,0.12)]"
 />
-  {/* OPTIONAL SHAPE */}
+  {/*  SHAPE */}
   <div className="absolute bottom-10 left-10 w-40 h-40 bg-blue-500/20 blur-3xl rounded-full" />
   <div className="absolute top-10 right-10 w-32 h-32 bg-blue-400/20 blur-2xl rounded-full" />
 
@@ -1810,7 +1810,7 @@ ${visibleCards[3] ? "opacity-100 translate-y-0 scale-100 " : "opacity-0 translat
  
 <section 
 ref={coreRef}
-className="relative py-14 md:py-20 px-4 bg-gradient-to-b from-[#0f172a] via-[#172554] to-[#1e3a8a] text-white overflow-hidden">
+className="relative py-14 md:py-20 px-4 bg-linear-to-b from-[#0f172a] via-[#172554] to-[#1e3a8a] text-white overflow-hidden">
 {/* GRID BACKGROUND */}
 <div className="absolute inset-0 z-0 opacity-10 pointer-events-none
 bg-[linear-gradient(rgba(255,255,255,0.15)_1px,transparent_1px)]
@@ -1823,7 +1823,7 @@ bg-size:[40px_40px]">
       {t[lang].coreTitle}
     </h2>
 
-    <p className="text-sm md:text-base font-light tracking-wide leading-relaxed md:text-base text-white/80 max-w-2xl mx-auto mb-8 text-center">
+    <p className="text-sm md:text-base font-light tracking-wide leading-relaxed  text-white/80 max-w-2xl mx-auto mb-8 text-center">
       {t[lang].coreDesc}
     </p>
 
