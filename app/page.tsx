@@ -587,24 +587,32 @@ const getAnimation = (i: number) => {
   initial={{ y: -80, opacity: 0 }}
   animate={{ y: 0, opacity: 1 }}
   transition={{ duration: 0.5 }}
-  className={`fixed top-0 left-0 w-full z-50 bg-white transition-transform duration-500 ${
+  className={`fixed top-0 left-0 w-full z-50 bg-white border-b border-gray-100 transition-transform duration-500 ${
     showNavbar ? "translate-y-0 shadow-md" : "-translate-y-full"
   }`}
     >
 
 
- <div className="flex items-center justify-between px-6 py-3">
+<div className="max-w-[1400px] mx-auto flex items-center h-20 px-6 md:px-10">
 
   {/* LOGO */}
-  <div
-    onClick={() => handleNavClick("home")}
-className="font-semibold tracking-[2px] text-blue-900 text-2xl cursor-pointer">
-      DOTHREE
-  </div>
+<div className="mr-auto">
+    <div
+  onClick={() => handleNavClick("home")}
+  className="cursor-pointer"
+>
+  <Image
+    src="/logo3.png"
+    alt="Dothree"
+    width={220}
+    height={60}
+    className="object-contain"
+  />
+</div>
+</div>
 
   {/* MENU NAVBAR */}
-<div className="hidden md:flex items-center gap-8 text-[15px] font-light tracking-wide">
-    <button onClick={() => { handleNavClick("home");
+<div className="hidden md:flex items-center gap-8 text-[15px] font-light tracking-wide mr-10">    <button onClick={() => { handleNavClick("home");
       setShowContact(false);
     }} className="cursor-pointer hover:text-blue-600">
       {lang === "id" ? "Beranda" : "Home"}
