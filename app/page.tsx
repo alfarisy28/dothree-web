@@ -1010,8 +1010,8 @@ px-4 bg-blue-950 text-white overflow-hidden"
   className="object-contain
 object-center
 opacity-[0.08] md:opacity-[0.14]
-scale-[1] md:scale-[1.8]
-translate-y-4 md:translate-y-8
+scale-[0.8] md:scale-[1.8]
+translate-y-8 md:translate-y-8
 drop-shadow-[0_0_18px_rgba(255,255,255,0.06)]"
 />
   {/*  SHAPE */}
@@ -1024,15 +1024,15 @@ drop-shadow-[0_0_18px_rgba(255,255,255,0.06)]"
     {/* TITLE */}
     <Animate>
 <h1 className="relative z-20
--text-[38px] sm:text-5xl md:text-7xl lg:text-7xl
+text-4xl sm:text-5xl md:text-6xl lg:text-7xl
 font-bold
 tracking-tight md:tracking-[-2px]
 leading-none
 text-center
 text-white
 drop-shadow-[0_4px_14px_rgba(0,0,0,0.28)]
-md:whitespace-nowrap
--translate-y-5">
+max-w-[95%] mx-auto
+md:whitespace-nowrap">
   PT DOTHREE SANTANA PRISMA
 </h1>
     </Animate>
