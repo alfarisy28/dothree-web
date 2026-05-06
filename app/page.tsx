@@ -1011,7 +1011,7 @@ px-4 bg-blue-950 text-white overflow-hidden"
 object-center
 opacity-[0.10] md:opacity-[0.14]
 scale-[1.15] md:scale-[2]
-translate-y-6 md:translate-y-8
+translate-y-0.3 md:translate-y-10
 drop-shadow-[0_0_18px_rgba(255,255,255,0.05)]"
 />
   {/*  SHAPE */}
