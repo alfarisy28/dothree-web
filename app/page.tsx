@@ -995,19 +995,24 @@ const getAnimation = (i: number) => {
 {/* HERO */}
 <section
   id="home"
-  className="relative w-full text-center pt-16 pb-16 md:pt-20 md:pb-20 px-4 
-  bg-blue-950 text-white overflow-hidden"
+  className="relative w-full text-center
+pt-20 pb-14
+md:pt-24 md:pb-24
+px-4 bg-blue-950 text-white overflow-hidden"
 >
 
   {/* BACKGROUND LOGO */}
-  <Image
-    src="/logo2.png"
-    alt="Background Logo"
-    fill
-    priority
-    className="object-contain opacity-[0.20] scale-[1.2] md:scale-[2]"
-  />
-
+<Image
+  src="/logo2.png"
+  alt="Background Logo"
+  fill
+  priority
+  className="object-contain
+  opacity-[0.08] md:opacity-[0.16]
+  scale-[1.1] md:scale-[2.2]
+  -translate-y-10 md:-translate-y-16
+  drop-shadow-[0_0_40px_rgba(255,255,255,0.12)]"
+/>
   {/* OPTIONAL SHAPE */}
   <div className="absolute bottom-10 left-10 w-40 h-40 bg-blue-500/20 blur-3xl rounded-full" />
   <div className="absolute top-10 right-10 w-32 h-32 bg-blue-400/20 blur-2xl rounded-full" />
@@ -1017,8 +1022,13 @@ const getAnimation = (i: number) => {
 
     {/* TITLE */}
     <Animate>
-<h1 className="text-2xl md:text-5xl lg:text-6xl font-semibold tracking-[-1px] md:tracking-[-2px] leading-tight md:whitespace-nowrap">        PT DOTHREE SANTANA PRISMA
-      </h1>
+<h1 className="text-[30px] md:text-5xl lg:text-6xl
+font-semibold
+tracking-tight
+leading-[1.15]
+md:whitespace-nowrap
+max-w-3xl
+mx-auto">      </h1>
     </Animate>
 
     {/* TAGLINE */}
@@ -1029,7 +1039,11 @@ const getAnimation = (i: number) => {
     </Animate>
 
     {/* MINI LIST */}
-<div className="mt-6 flex flex-wrap justify-center gap-2 md:gap-4 text-white/80 text-xs md:text-sm px-2">      <span className="flex items-center gap-1 hover:scale-105 transition">
+<div className="mt-7 flex flex-wrap justify-center
+gap-x-4 gap-y-2
+text-white/80
+text-xs md:text-sm
+px-4">  <span className="flex items-center gap-1 hover:scale-105 transition">
         ✓ {t[lang].infra}
       </span>
       <span className="flex items-center gap-1 hover:scale-105 transition">
