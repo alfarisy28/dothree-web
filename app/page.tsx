@@ -1024,7 +1024,7 @@ drop-shadow-[0_0_18px_rgba(255,255,255,0.05)]"
     {/* TITLE */}
     <Animate>
 <h1 className="relative z-20
-text-[16px] sm:text-5xl md:text-6xl lg:text-7xl
+text-[clamp(20px,5vw,72px)]
 font-bold
 tracking-tight md:tracking-[-2px]
 leading-none
