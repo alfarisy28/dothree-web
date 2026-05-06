@@ -1012,8 +1012,7 @@ const getAnimation = (i: number) => {
 
     {/* TITLE */}
     <Animate>
-      <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-[-2px] leading-tight whitespace-nowrap">
-        PT DOTHREE SANTANA PRISMA
+<h1 className="text-2xl md:text-5xl lg:text-6xl font-semibold tracking-[-1px] md:tracking-[-2px] leading-tight md:whitespace-nowrap">        PT DOTHREE SANTANA PRISMA
       </h1>
     </Animate>
 
@@ -1025,8 +1024,7 @@ const getAnimation = (i: number) => {
     </Animate>
 
     {/* MINI LIST */}
-    <div className="mt-6 flex flex-wrap justify-center gap-4 text-white/80 text-sm">
-      <span className="flex items-center gap-1 hover:scale-105 transition">
+<div className="mt-6 flex flex-wrap justify-center gap-2 md:gap-4 text-white/80 text-xs md:text-sm px-2">      <span className="flex items-center gap-1 hover:scale-105 transition">
         ✓ {t[lang].infra}
       </span>
       <span className="flex items-center gap-1 hover:scale-105 transition">
@@ -1063,7 +1061,7 @@ className="grid grid-cols-1 md:grid-cols-2 items-stretch bg-[#F7F4F1]">
 </div>
 
   {/* RIGHT CONTENT */}
-<div className="flex items-center px-7 md:px-16 pt-2 pb-8 md:py-10 bg-[#F5F3F1]">        <div className="max-w-2xl flex flex-col justify-center h-full">
+<div className="flex items-center px-4 md:px-16 pt-2 pb-8 md:py-10 bg-[#F5F3F1]">        <div className="max-w-2xl flex flex-col justify-center h-full">
 
       {/* TITLE */}
       <Animate type="left">
@@ -1116,7 +1114,7 @@ className="grid grid-cols-1 md:grid-cols-2 items-stretch bg-[#F7F4F1]">
     <div className="grid md:grid-cols-2 gap-6 items-stretch">
 
      {/* VISION */}
-<div className="bg-white p-8 md:p-10 rounded-3xl shadow-lg border border-gray-200/80 backdrop-blur-sm
+<div className="bg-white p-5 md:p-10 rounded-3xl shadow-lg border border-gray-200/80 backdrop-blur-sm
 hover:-translate-y-2 hover:shadow-2xl hover:scale-[1.02]
 hover:border-blue-300
 transition-all duration-300 ease-out">
@@ -1712,7 +1710,7 @@ ${visibleCards[3] ? "opacity-100 translate-y-0 scale-100 " : "opacity-0 translat
 
      
 
-    <div className="flex flex-wrap justify-center gap-5">
+    <div className="flex flex-wrap justify-center gap-3 md:gap-5">
 
      {[
   "cisco.png",
@@ -1748,8 +1746,12 @@ ${visibleCards[3] ? "opacity-100 translate-y-0 scale-100 " : "opacity-0 translat
 
 </section>
 
-<div className="py-8 bg-white">
-  <div className="h-px bg-gray-200/70"></div>
+<div className="relative h-20 overflow-hidden bg-white">
+
+  <div className="absolute inset-x-0 top-0 h-px bg-gray-200/60" />
+
+  <div className="absolute inset-0 bg-linear-to-b from-blue-50/40 to-transparent blur-2xl" />
+
 </div>
 {/*CORE VALUES */}
  
@@ -1858,8 +1860,12 @@ ${coreVisible ? "opacity-100 translate-x-0 scale-100" : "opacity-0 translate-x-1
 <div className="absolute bottom-0 left-0 w-full h-12 bg-linear-to-t from-blue-900 to-transparent"></div>
 </section>
 
-<div className="py-8 bg-white">
-  <div className="h-px bg-gray-200/70"></div>
+<div className="relative h-20 overflow-hidden bg-white">
+
+  <div className="absolute inset-x-0 top-0 h-px bg-gray-200/60" />
+
+  <div className="absolute inset-0 bg-linear-to-b from-blue-50/40 to-transparent blur-2xl" />
+
 </div>
 
    {/* CLIENT */}
@@ -1903,7 +1909,7 @@ ${coreVisible ? "opacity-100 translate-x-0 scale-100" : "opacity-0 translate-x-1
   className="
     w-36
     md:w-44
-    h-32
+    h-24 md:h-32
     bg-white/90
     backdrop-blur-sm
     rounded-3xl
@@ -2020,19 +2026,47 @@ ${coreVisible ? "opacity-100 translate-x-0 scale-100" : "opacity-0 translate-x-1
 
  {/* FOOTER */}
  {!showContact && (
-  <footer className="bg-linear-to-r from-blue-900 to-blue-800 text-white py-6 px-4 md:px-10 border-t border-white/20">
+<footer className="relative bg-linear-to-r from-blue-900 to-blue-800 text-white py-3 px-4 md:px-8 border-t border-white/20 overflow-hidden">
 
-  <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+  {/* DESKTOP LOGO */}
+  <div className="hidden md:block absolute left-4 top-1/2 -translate-y-1/2">
 
-    <div className="flex items-start gap-3 text-sm md:text-base">
-      <MapPin size={18} className="mt-1 shrink-0" />
+    <Image
+      src="/logo2.png"
+      alt="Dothree"
+      width={95}
+      height={24}
+      className="object-contain opacity-80"
+    />
 
-      <div className="leading-relaxed">
-           {t[lang].workshopOffice}
-      </div>
+  </div>
+
+  <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
+
+    {/* MOBILE LOGO */}
+    <div className="md:hidden">
+      <Image
+        src="/logo2.png"
+        alt="Dothree"
+        width={90}
+        height={22}
+        className="object-contain opacity-80"
+      />
     </div>
 
-    <div className="text-sm opacity-80">
+    {/* ADDRESS */}
+    <div className="flex items-center justify-center gap-2 text-xs md:text-[15px] text-center md:text-left">
+
+      <MapPin size={14} className="shrink-0" />
+
+      <div className="leading-relaxed">
+        {t[lang].workshopOffice}
+      </div>
+
+    </div>
+
+    {/* COPYRIGHT */}
+    <div className="text-xs md:text-sm opacity-80 whitespace-nowrap">
       © DOTHREE 2026
     </div>
 
