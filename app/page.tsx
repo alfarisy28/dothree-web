@@ -1796,7 +1796,7 @@ ${visibleCards[3] ? "opacity-100 translate-y-0 scale-100 " : "opacity-0 translat
  
 <section 
 ref={coreRef}
-className="relative py-12 md:py-16 px-4 bg-linear-to-b from-blue-900 to-blue-800 text-white overflow-hidden">
+className="relative py-14 md:py-20 px-4 bg-gradient-to-b from-[#0f172a] via-[#172554] to-[#1e3a8a] text-white overflow-hidden">
 {/* GRID BACKGROUND */}
 <div className="absolute inset-0 z-0 opacity-10 pointer-events-none
 bg-[linear-gradient(rgba(255,255,255,0.15)_1px,transparent_1px)]
@@ -1805,11 +1805,11 @@ bg-size:[40px_40px]">
 <div className="relative z-10"></div>
   
     {/* TITLE */}
-    <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4 text-center">
+    <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-5 text-center">
       {t[lang].coreTitle}
     </h2>
 
-    <p className="text-[15px] font-light tracking-wide md:text-base text-white/80 max-w-2xl mx-auto mb-8 text-center">
+    <p className="text-sm md:text-base font-light tracking-wide leading-relaxed md:text-base text-white/80 max-w-2xl mx-auto mb-8 text-center">
       {t[lang].coreDesc}
     </p>
 
@@ -1817,80 +1817,80 @@ bg-size:[40px_40px]">
     <div className="grid md:grid-cols-2 gap-5 max-w-5xl mx-auto px-4">
 
       {/* CARD 1 */}
-  <div className={`relative bg-linear-to-r from-blue-600 via-blue-500 to-blue-400
+  <div className={`relative bg-white/10 backdrop-blur-md
 py-5 px-6 rounded-2xl text-center
 border border-white/10
-shadow-[0_10px_40px_rgba(59,130,246,0.3)]
-hover:shadow-[0_20px_60px_rgba(59,130,246,0.5)]
-hover:-translate-y-1 hover:scale-[1.02] hover:brightness-110
+shadow-[0_10px_30px_rgba(0,0,0,0.25)]
+hover:shadow-[0_20px_50px_rgba(0,0,0,0.35)]
+hover:-translate-y-2 hover:scale-[1.01]
 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] transform delay-100
 ${coreVisible ? "opacity-100 translate-x-0 scale-100" : "opacity-0 -translate-x-10 scale-95"}
 `}>
 
-  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-800 px-3 py-1 rounded-md text-sm font-semibold shadow">
+  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-white/15 backdrop-blur-md border border-white/10 px-4 py-1.5 rounded-xl text-sm font-semibold shadow-lg">
     {t[lang].core1}
   </div>
 
-  <p className="text-sm mt-4 text-white/90 leading-relaxed max-w-2xl mx-auto">
+  <p className="text-sm md:text-base mt-4 text-white/85 leading-relaxed max-w-2xl mx-auto">
     {t[lang].core1Desc}
   </p>
 </div>
 
       {/* CARD 2 */}
-   <div className={`relative bg-linear-to-r from-blue-600 via-blue-500 to-blue-400
+   <div className={`relative bg-white/10 backdrop-blur-md
 py-5 px-6 rounded-2xl text-center
 border border-white/10
-shadow-[0_10px_40px_rgba(59,130,246,0.3)]
-hover:shadow-[0_20px_60px_rgba(59,130,246,0.5)]
-hover:-translate-y-1 hover:scale-[1.02] hover:brightness-110
+shadow-[0_10px_30px_rgba(0,0,0,0.25)]
+hover:shadow-[0_20px_50px_rgba(0,0,0,0.35)]
+hover:-translate-y-2 hover:scale-[1.01]
 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] transform delay-200
 ${coreVisible ? "opacity-100 translate-x-0 scale-100" : "opacity-0 translate-x-10 scale-95"}
 `}>
 
-  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-800 px-3 py-1 rounded-md text-sm font-semibold shadow">
+  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-white/15 backdrop-blur-md border border-white/10 px-4 py-1.5 rounded-xl text-sm font-semibold shadow-lg">
     {t[lang].core2}
   </div>
 
-  <p className="text-sm mt-4 text-white/90 leading-relaxed max-w-2xl mx-auto">
+  <p className="text-sm md:text-base mt-4 text-white/85 leading-relaxed max-w-2xl mx-auto">
     {t[lang].core2Desc}
   </p>
 </div>
       {/* CARD 3 */}
-    <div className={`relative bg-linear-to-r from-blue-600 via-blue-500 to-blue-400
+    <div className={`relative bg-white/10 backdrop-blur-md
 py-5 px-6 rounded-2xl text-center
 border border-white/10
-shadow-[0_10px_40px_rgba(59,130,246,0.3)]
-hover:shadow-[0_20px_60px_rgba(59,130,246,0.5)]
-hover:-translate-y-1 hover:scale-[1.02] hover:brightness-110
+shadow-[0_10px_30px_rgba(0,0,0,0.25)]
+hover:shadow-[0_20px_50px_rgba(0,0,0,0.35)]
+hover:-translate-y-2 hover:scale-[1.01]
 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] transform delay-300
 ${coreVisible ? "opacity-100 translate-x-0 scale-100" : "opacity-0 -translate-x-10 scale-95"}
 `}>
 
-  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-800 px-3 py-1 rounded-md text-sm font-semibold shadow">
+  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-white/15 backdrop-blur-md border border-white/10 px-4 py-1.5 rounded-xl text-sm font-semibold shadow-lg">
     {t[lang].core3}
   </div>
 
-  <p className="text-sm mt-4 text-white/90 leading-relaxed max-w-2xl mx-auto">
+  <p className="text-sm md:text-base mt-4 text-white/85 leading-relaxed max-w-2xl mx-auto">
       {t[lang].core3Desc}
   </p>
 </div>
 
       {/* CARD 4 */}
-   <div className={`relative bg-linear-to-r from-blue-600 via-blue-500 to-blue-400
+   <div className={`relative bg-white/10 backdrop-blur-md
 py-5 px-6 rounded-2xl text-center
 border border-white/10
-shadow-[0_10px_40px_rgba(59,130,246,0.3)]
-hover:shadow-[0_20px_60px_rgba(59,130,246,0.5)]
-hover:-translate-y-1 hover:scale-[1.02] hover:brightness-110
+shadow-[0_10px_30px_rgba(0,0,0,0.25)]
+hover:shadow-[0_20px_50px_rgba(0,0,0,0.35)]
+hover:-translate-y-2 hover:scale-[1.01]
 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] transform delay-400
 ${coreVisible ? "opacity-100 translate-x-0 scale-100" : "opacity-0 translate-x-10 scale-95"}
 `}>
 
-  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-800 px-3 py-1 rounded-md text-sm font-semibold shadow">
+  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-white/15 backdrop-blur-md border border-white/10 px-4 py-1.5 rounded-xl text-sm font-semibold shadow-lg">
     {t[lang].core4}
   </div>
 
-  <p className="text-sm mt-4 text-white/90 leading-relaxed max-w-2xl mx-auto">
+  <p className="text-sm md:text-base mt-4 text-white/85 leading-relaxed max-w-2xl mx-auto">
     {t[lang].core4Desc}
   </p>
 </div>
