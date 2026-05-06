@@ -354,9 +354,14 @@ const menuItems = [
     commit4: "Professional & transparent",
 
     // PARTNERS
-    partnersTitle: "Technology Partners",
+    partnersTitle: "Technology Solutions We Offer",
     partnersDesc: "We collaborate with global trusted vendors",
 
+    headOffice:
+  "Head Office (3rd Floor, Graha Mampang, Mampang Prapatan Raya Street Kav.100, RT 007/003, Duren Tiga, Pancoran, South Jakarta 12760).",
+
+workshopOffice:
+  "Workshop Office (Perdana 1 Street No. 10C, RT 007/005, Pesanggrahan, South Jakarta 12270).",
     // CONTACT
     contact: "Contact Us",
     clients: "Our Clients",
@@ -471,16 +476,18 @@ const menuItems = [
     commit4: "Profesional",
 
     // PARTNERS
-    partnersTitle: "Produk & Teknologi",
-    partnersDesc: "Kerja sama vendor global",
+    partnersTitle: "Produk Yang Kami Tawarkan",
 
     // CONTACT
     contact: "Kontak Kami",
-
+    headOffice:
+    "Head Office (Graha Mampang LT.3 Jalan. Mampang Prapatan Raya Kav.100 RT 007/003 Duren Tiga Pancoran Jakarta Selatan 12760).",
+     workshopOffice:
+    "Workshop Office (Jalan. Perdana 1 No. 10C RT 007/005 Pesanggrahan Jakarta Selatan 12270).",
     // Client 
     clients: "Klien Kami",
     clientsDesc:   "Dipercaya oleh instansi pemerintah, perusahaan nasional dan multinasional"
-    // SERVICES LIST - CARD 1
+    
   
   },
   
@@ -591,14 +598,12 @@ const getAnimation = (i: number) => {
   {/* LOGO */}
   <div
     onClick={() => handleNavClick("home")}
-    className="font-bold text-blue-900 text-lg cursor-pointer"
-  >
-    DOTHREE
+className="font-semibold tracking-[2px] text-blue-900 text-2xl cursor-pointer">
+      DOTHREE
   </div>
 
   {/* MENU NAVBAR */}
-  <div className="hidden md:flex items-center gap-8 text-sm">
-
+<div className="hidden md:flex items-center gap-8 text-[15px] font-light tracking-wide">
     <button onClick={() => { handleNavClick("home");
       setShowContact(false);
     }} className="cursor-pointer hover:text-blue-600">
@@ -977,36 +982,36 @@ const getAnimation = (i: number) => {
 {/* HERO */}
 <section
   id="home"
-  className="relative w-full text-center pt-20 pb-20 px-4 
+  className="relative w-full text-center pt-16 pb-16 md:pt-20 md:pb-20 px-4 
   bg-blue-950 text-white overflow-hidden"
 >
 
-  {/* OPTIONAL SHAPE (BIAR HIDUP DIKIT) */}
+  {/* BACKGROUND LOGO */}
+  <Image
+    src="/logo2.png"
+    alt="Background Logo"
+    fill
+    priority
+    className="object-contain opacity-[0.20] scale-[1.2] md:scale-[2]"
+  />
+
+  {/* OPTIONAL SHAPE */}
   <div className="absolute bottom-10 left-10 w-40 h-40 bg-blue-500/20 blur-3xl rounded-full" />
   <div className="absolute top-10 right-10 w-32 h-32 bg-blue-400/20 blur-2xl rounded-full" />
 
   {/* CONTENT */}
   <div className="relative z-10 max-w-4xl mx-auto">
 
-    {/* BADGE */}
-    <Animate>
-      <div className="inline-block px-4 py-1 mb-4 text-sm 
-      bg-white/10 text-white 
-      rounded-full border border-white/20 backdrop-blur-md">
-        {t[lang].heroBadge}
-      </div>
-    </Animate>
-
     {/* TITLE */}
     <Animate>
-      <h1 className="text-4xl md:text-6xl font-extrabold text-white">
-        DOTHREE
+      <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-[-2px] leading-tight whitespace-nowrap">
+        PT DOTHREE SANTANA PRISMA
       </h1>
     </Animate>
 
     {/* TAGLINE */}
     <Animate delay={0.2}>
-      <p className="mt-4 text-base md:text-lg text-white/90 font-semibold max-w-xl mx-auto leading-relaxed">
+      <p className="mt-4 text-base md:text-lg text-white/90 font-light max-w-xl mx-auto leading-relaxed">
         {t[lang].heroTagline}
       </p>
     </Animate>
@@ -1026,76 +1031,59 @@ const getAnimation = (i: number) => {
 
   </div>
 </section>
-<div className="h-20 bg-linear-to-b from-transparent to-gray-50" />
+
+
+<div className="py-8 bg-white">
+  <div className="h-px bg-gray-200/70"></div>
+</div>
 
 {/* ================= ABOUT ================= */}
-<section id="about" className="w-full">
+<section
+  id="about"
+className="grid grid-cols-1 md:grid-cols-2 items-stretch bg-[#F7F4F1]">
+{/* LEFT IMAGE */}
 
-  {/* 🔵 TOP HEADER WITH BACKGROUND */}
-  <div className="relative py-10 md:py-14 flex items-center justify-center text-center overflow-hidden">
-    {/* BACKGROUND (HANYA DI HEADER) */}
-    <div className="absolute inset-0 z-10">
-      <img
-        src="/logoabout.png"
-        alt="background"
-        className="w-full h-full object-cover opacity-100"
-      />
-    </div>
+<div className="relative h-60 md:min-h-full p-4 pb-1 bg-[#F5F3F1] flex items-start">
 
-    {/* OVERLAY BIAR TEXT JELAS */}
-    <div className="absolute inset-0 bg-linear-to-b from-white/20 via-white/10 to-blue-900/40 z-0"></div>
+  <img
+    src="/about.png"
+    alt="about"
+    className="w-full h-full max-h-[calc(100%-24px)] object-cover rounded-sm object-center grayscale contrast-125 brightness-105"
+  />
 
-    {/* CONTENT */}
-    <div className="relative z-10 mt-0">
+
+</div>
+
+  {/* RIGHT CONTENT */}
+<div className="flex items-center px-7 md:px-16 pt-2 pb-8 md:py-10 bg-[#F5F3F1]">        <div className="max-w-2xl flex flex-col justify-center h-full">
+
+      {/* TITLE */}
       <Animate type="left">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
-          {t[lang].aboutTitle1}
-        </h2>
+      <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-[#2A1D1A] mb-8 mt-4 md:mt-0">
+  {lang === "id" ? "TENTANG KAMI" : "ABOUT US"}
+</h2>
       </Animate>
 
-      <Animate type="right" delay={0.1}>
-        <h2 className="text-xl md:text-2xl font-bold text-blue-600">
-          {t[lang].aboutTitle2}
-        </h2>
+      {/* COMPANY */}
+      <Animate delay={0.1}>
+        <h3 className="text-xl md:text-3xl font-semibold tracking-tight text-[#2A1D1A] mb-6">
+          PT. DOTHREE SANTANA PRISMA
+        </h3>
       </Animate>
-    </div>
 
-    {/* 🔽 FADE TRANSITION KE BAWAH */}
-    <div className="absolute bottom-0 w-full h-20 bg-linear-to-b from-transparent to-blue-900"></div>
-
-  </div>
-
-  {/* 🟢 FOTO BULAT */}
-  <div className="flex justify-center -mt-12 relative z-20">
-    <Animate delay={0.2}>
-      <img
-        src="/about.jpg.png"
-        alt="about"
-        className="w-28 h-28 md:w-40 md:h-40 rounded-full border-4 border-white object-cover shadow-xl ring-4 ring-white/80"
-      />
-    </Animate>
-  </div>
-
-  {/* 🔵 TEXT SECTION (BERSIH TANPA BACKGROUND IMAGE) */}
-  <div className="bg-blue-900 text-white text-center py-12 md:py-16 px-4 md:px-10">
-
-    <div className="max-w-4xl mx-auto space-y-4">
-
-      <Animate delay={0.3}>
-        <p className="text-sm md:text-base leading-relaxed opacity-90">
+      {/* DESC 1 */}
+      <Animate delay={0.2}>
+        <p className="text-[15px] md:text-[17px] leading-[1.7] tracking-wide text-[#2A1D1A]/90 mb-8">
           {t[lang].aboutDesc1}
         </p>
       </Animate>
 
-      <Animate delay={0.4}>
-        <p className="text-sm md:text-base leading-relaxed opacity-90">
-          {t[lang].aboutDesc2}
-        </p>
-      </Animate>
+    
 
-      <Animate delay={0.5}>
-        <p className="text-sm md:text-base leading-relaxed opacity-90">
-          {t[lang].aboutDesc3}
+      {/* DESC 2 */}
+      <Animate delay={0.4}>
+        <p className="text-[17px] leading-[1.7] tracking-wide text-[#2A1D1A]/90">
+          {t[lang].aboutDesc2} {t[lang].aboutDesc3}
         </p>
       </Animate>
 
@@ -1105,52 +1093,87 @@ const getAnimation = (i: number) => {
 
 </section>
 
-<section className="py-12 md:py-16 px-4 bg-linear-to-b from-gray-50 to-gray-100 text-center">
 
-  <div className="max-w-4xl mx-auto">
+
+      {/*VISI*/}
+<section className=" py-16 md:py-20 px-4 bg-linear-to-b from-white to-gray-100 text-center">
+
+
+  <div className="max-w-5xl mx-auto">
         <Animate>
-    <h2 className="text-3xl md:text-4xl font-bold mb-10">
+    <h2 className="text-2xl md:text-4xl font-semibold tracking-tight text-[#2A1D1A] mb-10">
       {lang === "id" ? "Visi & Misi" : "Vision & Mission"}
     </h2> </Animate>
 
-    <div className="grid md:grid-cols-2 gap-8">
+    <div className="grid md:grid-cols-2 gap-6 items-stretch">
 
-      {/* VISION */}
-      <div className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition">
-          
-          <Animate delay={0.1}>
-        <h3 className="text-blue-600 font-semibold mb-3">
-          {t[lang].vision} 
-        </h3> </Animate>
+     {/* VISION */}
+<div className="bg-white p-8 md:p-10 rounded-3xl shadow-lg border border-gray-200/80 backdrop-blur-sm
+hover:-translate-y-2 hover:shadow-2xl hover:scale-[1.02]
+hover:border-blue-300
+transition-all duration-300 ease-out">
 
-          <Animate delay={0.2}> 
-        <p className="text-gray-700 leading-relaxed ">
-         {t[lang].visionText} 
-        </p> </Animate>
+  <Animate delay={0.05}>
+    <div className="flex justify-center mb-5">
+      <Image
+  src="/visi.png"
+  alt="Visi"
+  width={150}
+  height={150}
+  className="object-contain drop-shadow-xl transition duration-300 hover:scale-110"
+/>
+    </div>
+  </Animate>
 
-      </div>
+  <Animate delay={0.1}>
+    <h3 className="text-blue-600 text-xl font-semibold mb-3">
+      {t[lang].vision}
+    </h3>
+  </Animate>
 
-      {/* MISSION */}
-      <div className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition">
+  <Animate delay={0.2}>
+    <p className="text-gray-700 leading-relaxed text-[15px] md:text-base">
+      {t[lang].visionText}
+    </p>
+  </Animate>
 
-          <Animate delay={0.5}>
-        <h3 className="text-blue-600 font-semibold mb-3">
-          {t[lang].mission} 
-        </h3> </Animate>
+</div>
 
-     <ul className="text-gray-700 space-y-2 text-center">
+    {/* MISSION */}
+<div className="bg-white p-8 md:p-10 rounded-3xl shadow-lg border border-gray-200/80 backdrop-blur-sm
+hover:-translate-y-2 hover:shadow-2xl hover:scale-[1.02]
+hover:border-blue-300
+transition-all duration-300 ease-out">
 
-  {[t[lang].mission1, t[lang].mission2, t[lang].mission3].map((item, i) => (
-    <Animate key={i} delay={i * 0.1}>
-      <li className="leading-relaxed">
-        {item}
-      </li>
-    </Animate>
-  ))}
+  <Animate delay={0.05}>
+    <div className="flex justify-center mb-5">
+      <Image
+  src="/misi.png"
+  alt="Misi"
+  width={150}
+  height={150}
+  className="object-contain drop-shadow-xl transition duration-300 hover:scale-110"
+/>
+    </div>
+  </Animate>
 
-</ul>
+  <Animate delay={0.5}>
+    <h3 className="text-blue-700 text-xl font-semibold mb-5">
+      {t[lang].mission}
+    </h3>
+  </Animate>
 
-      </div>
+  <ul className="text-gray-700 space-y-4 text-center text-[15px] md:text-base">
+    {[t[lang].mission1, t[lang].mission2, t[lang].mission3].map((item, i) => (
+      <Animate key={i} delay={i * 0.1}>
+        <li className="leading-relaxed">
+          {item}
+        </li>
+      </Animate>
+    ))}
+  </ul>
+
+</div>
 
     </div>
 
@@ -1158,107 +1181,25 @@ const getAnimation = (i: number) => {
 
 </section>
 
-<div className="h-px bg-linear-to-r from-transparent via-blue-300/50 to-transparent my-6 md:my-8" />
+<div className="py-8 bg-white">
+  <div className="h-px bg-gray-200/70"></div>
+</div>
 
  {/* SERVICES */}
-<section id="services" ref={sectionRef} className="py-16 md:py-20 px-4 bg-blue-50 scroll-mt-24">
+<section id="services" ref={sectionRef} className="py-10 md:py-14 px-4 bg-blue-50 scroll-mt-24">
 
   <div className="max-w-5xl mx-auto text-center">
 
     {/* TITLE */}
-    <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
+    <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-blue-900 mb-4">
       {t[lang].servicesTitle}
     </h2>
-
-    <p className="font-semibold text-gray-600 max-w-3xl mx-auto mb-12">
-      {t[lang].focusDesc}
-    </p>
-
   
   </div>
 
-  <div className="space-y-12">
+  <div className="space-y-8">
 
-  {/* ===== CARD 1 ===== */}
-  <div
-  id="it-solution"
-  ref={(el) => {
-  cardRefs.current[0] = el;
-}}
-  data-index="0"
- className={`max-w-4xl mx-auto bg-white/90 backdrop-blur-sm
-rounded-2xl shadow-md p-5 md:p-6 mb-10
-flex flex-col items-center text-center
-transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
-hover:shadow-2xl hover:shadow-blue-500/30 hover:-translate-y-2 hover:scale-[1.02] hover:brightness-[1.02]
-${visibleCards[0] ? "opacity-100 translate-y-0 scale-100 " : "opacity-0 translate-y-10 scale-95"}
-`}
->
-
-    <div className="flex justify-center mb-8">
-      <div className="bg-linear-to-r from-blue-700 to-blue-500 text-white px-4 md:px-6 py-2 text-sm md:text-base rounded-full font-semibold shadow-md">
-     <Animate delay={0.1}>
-      {t[lang].service1Title}
-      </Animate>
-      </div>
-    </div>
-
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6">
-      <div className="group aspect-video overflow-hidden rounded-xl">
-        <Animate type="zoom">
-        <img src="/it1.png" className="w-full h-full object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-110" />
-        </Animate>
-      </div>
-      <div className="group aspect-video overflow-hidden rounded-xl">
-        <Animate type="zoom">
-        <img src="/it2.png" className="w-full h-full object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-110" />
-        </Animate>
-      </div>
-    </div>
-
-      <Animate delay={0.2}>
-    <p className="font-semibold text-gray-700 text-sm md:text-base mb-6 leading-relaxed text-center max-w-2xl mx-auto">
-     {t[lang].service1Desc} 
-    </p> </Animate>
-
-    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-6 
-      text-sm md:text-base text-gray-700 
-      max-w-xl mx-auto 
-      text-left leading-snug items-start">
-
-        <Animate delay={0}>
-      <li className="flex items-start gap-2">
-        <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
-        {t[lang].infra}
-      </li>
-      </Animate>
-
-        <Animate delay={0.05}>
-      <li className="flex items-start gap-2">
-        <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
-        {t[lang].network}
-      </li>
-        </Animate>
-
-        <Animate delay={0.1}>
-      <li className="flex items-start gap-2">
-        <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
-        {t[lang].storage}
-      </li>
-        </Animate>
-
-        <Animate delay={0.15}>
-      <li className="flex items-start gap-2">
-        <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
-        {t[lang].procurement}
-      </li>
-      </Animate>
-
-    </ul>
-
-  </div>
-
-  {/* ===== CARD 2 ===== */}
+      {/* ===== CARD 1 ===== */}
   <div
   id="cyber-security"
   ref={(el) => {
@@ -1266,7 +1207,7 @@ ${visibleCards[0] ? "opacity-100 translate-y-0 scale-100 " : "opacity-0 translat
 }}
   data-index="1"
  className={`max-w-4xl mx-auto bg-white/90 backdrop-blur-sm
-rounded-2xl shadow-md p-5 md:p-6 mb-10
+rounded-2xl shadow-md p-5 md:p-6 mb-6
 flex flex-col items-center text-center
 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
 hover:shadow-2xl hover:shadow-blue-500/30 hover:-translate-y-2 hover:scale-[1.02] hover:brightness-[1.02]
@@ -1340,6 +1281,86 @@ ${visibleCards[1] ? "opacity-100 translate-x-0 scale-100 " : "opacity-0 translat
 
   </div>
 
+  {/* ===== CARD 2 ===== */}
+  <div
+  id="it-solution"
+  ref={(el) => {
+  cardRefs.current[0] = el;
+}}
+  data-index="0"
+ className={`max-w-4xl mx-auto bg-white/90 backdrop-blur-sm
+rounded-2xl shadow-md p-5 md:p-6 mb-6
+flex flex-col items-center text-center
+transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
+hover:shadow-2xl hover:shadow-blue-500/30 hover:-translate-y-2 hover:scale-[1.02] hover:brightness-[1.02]
+${visibleCards[0] ? "opacity-100 translate-y-0 scale-100 " : "opacity-0 translate-y-10 scale-95"}
+`}
+>
+
+    <div className="flex justify-center mb-8">
+      <div className="bg-linear-to-r from-blue-700 to-blue-500 text-white px-4 md:px-6 py-2 text-sm md:text-base rounded-full font-semibold shadow-md">
+     <Animate delay={0.1}>
+      {t[lang].service1Title}
+      </Animate>
+      </div>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6">
+      <div className="group aspect-video overflow-hidden rounded-xl">
+        <Animate type="zoom">
+        <img src="/it1.png" className="w-full h-full object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-110" />
+        </Animate>
+      </div>
+      <div className="group aspect-video overflow-hidden rounded-xl">
+        <Animate type="zoom">
+        <img src="/it2.png" className="w-full h-full object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-110" />
+        </Animate>
+      </div>
+    </div>
+
+      <Animate delay={0.2}>
+    <p className="font-semibold text-gray-700 text-sm md:text-base mb-6 leading-relaxed text-center max-w-2xl mx-auto">
+     {t[lang].service1Desc} 
+    </p> </Animate>
+
+    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-6 
+      text-sm md:text-base text-gray-700 
+      max-w-xl mx-auto 
+      text-left leading-snug items-start">
+
+        <Animate delay={0}>
+      <li className="flex items-start gap-2">
+        <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
+        {t[lang].infra}
+      </li>
+      </Animate>
+
+        <Animate delay={0.05}>
+      <li className="flex items-start gap-2">
+        <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
+        {t[lang].network}
+      </li>
+        </Animate>
+
+        <Animate delay={0.1}>
+      <li className="flex items-start gap-2">
+        <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
+        {t[lang].storage}
+      </li>
+        </Animate>
+
+        <Animate delay={0.15}>
+      <li className="flex items-start gap-2">
+        <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
+        {t[lang].procurement}
+      </li>
+      </Animate>
+
+    </ul>
+
+  </div>
+
+
   {/* ===== CARD 3 ===== */}
    <div
    id="managed-services"
@@ -1348,7 +1369,7 @@ ${visibleCards[1] ? "opacity-100 translate-x-0 scale-100 " : "opacity-0 translat
 }}
   data-index="2"
 className={`max-w-4xl mx-auto bg-white/90 backdrop-blur-sm
-rounded-2xl shadow-md p-5 md:p-6 mb-10
+rounded-2xl shadow-md p-5 md:p-6 mb-6
 flex flex-col items-center text-center
 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
 hover:shadow-2xl hover:shadow-blue-500/30 hover:-translate-y-2 hover:scale-[1.02] hover:brightness-[1.02]
@@ -1407,7 +1428,7 @@ ${visibleCards[2] ? "opacity-100 translate-x-0 scale-100 " : "opacity-0 translat
 }}
   data-index="3"
 className={`max-w-4xl mx-auto bg-white/90 backdrop-blur-sm
-rounded-2xl shadow-md p-5 md:p-6 mb-10
+rounded-2xl shadow-md p-5 md:p-6 mb-6
 flex flex-col items-center text-center
 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
 hover:shadow-2xl hover:shadow-blue-500/30 hover:-translate-y-2 hover:scale-[1.02] hover:brightness-[1.02]
@@ -1492,92 +1513,209 @@ ${visibleCards[3] ? "opacity-100 translate-y-0 scale-100 " : "opacity-0 translat
 
 </section>
 
-{/* ADVANTAGE */}
-<section id="advantage" className="py-12 md:py-16 bg-blue-50 px-4">
-
-  <div className="max-w-6xl mx-auto">
-
-    <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">
-      <Animate> {lang === "id" ? "Keunggulan Kami" : "Our Advantage"} </Animate>
-    </h2>
-
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mt-10">
-
-  {[
-    { icon: "👨‍💻", text: t[lang].adv1 },
-    { icon: "🔒", text: t[lang].adv2 },
-    { icon: "🔄", text: t[lang].adv3 },
-    { icon: "📞", text: t[lang].adv4 },
-  ].map((item, i) => (
-    <Animate key={i} delay={i * 0.1}>
-      <div className="bg-white text-black p-6 rounded-xl shadow hover:shadow-xl transition">
-        <div className="text-2xl mb-2 text-center">{item.icon}</div>
-        <p className="font-semibold text-center">{item.text}</p>
-      </div>
-    </Animate>
-  ))}
-
+<div className="py-8 bg-white">
+  <div className="h-px bg-gray-200/70"></div>
 </div>
+
+{/* ================= ADVANTAGE + COMMITMENT ================= */}
+<section className="py-10 md:py-14 bg-blue-50 px-4">
+
+  <div className="max-w-7xl mx-auto">
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+      {/* ================= LEFT ================= */}
+<div className="bg-white border border-gray-200 rounded-3xl p-8 md:p-10 shadow-sm h-full">
+        <Animate>
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-blue-900 text-center mb-8">
+            {lang === "id" ? "Keunggulan Kami" : "Our Advantage"}
+          </h2>
+        </Animate>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+
+          {[
+            { icon: "👨‍💻", text: t[lang].adv1 },
+            { icon: "🔒", text: t[lang].adv2 },
+            { icon: "🔄", text: t[lang].adv3 },
+            { icon: "📞", text: t[lang].adv4 },
+          ].map((item, i) => (
+
+            <Animate key={i} delay={i * 0.1}>
+<div className="bg-gray-50 border border-gray-100 rounded-2xl min-h-42.5 p-6 flex flex-col items-center justify-center text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                <div className="text-3xl mb-4">
+                  {item.icon}
+                </div>
+
+                <p className="font-medium text-gray-900">
+                  {item.text}
+                </p>
+
+              </div>
+            </Animate>
+
+          ))}
+
+        </div>
+
+      </div>
+
+      {/* ================= RIGHT ================= */}
+<div className="bg-white border border-gray-200 rounded-3xl p-8 md:p-10 shadow-sm h-full">
+    
+        <Animate>
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-blue-900 text-center mb-8">
+            {t[lang].commitmentTitle}
+          </h2>
+        </Animate>
+
+        { /*<Animate delay={0.1}>
+          <p className="font-normal text-gray-600 max-w-2xl mx-auto mb-10 text-center leading-relaxed">
+            {t[lang].commitmentDesc}
+          </p>
+        </Animate> */}
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+
+          {[
+            t[lang].commit1,
+            t[lang].commit2,
+            t[lang].commit3,
+            t[lang].commit4,
+          ].map((item, i) => (
+
+            <Animate key={i} delay={i * 0.1}>
+<div className="bg-gray-50 border border-gray-100 rounded-2xl min-h-42.5 p-6 flex flex-col items-center justify-center text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+               <div className="text-3xl mb-4 text-green-600">
+                  ✔
+                </div>
+
+                <p className="font-medium text-gray-900">
+                        {item}
+                </p>
+              </div>
+            </Animate>
+
+          ))}
+
+        </div>
+
+      </div>
+
     </div>
 
+  </div>
+
 </section>
 
-<div className="h-px bg-lineaar-to-r from-transparent via-blue-300/40 to-transparent my-16" />
+<div className="py-8 bg-white">
+  <div className="h-px bg-gray-200/70"></div>
+</div>
 
+{/* ================= PRODUK KAMI ================= */}
+<section
+  className="relative overflow-hidden"
+  style={{
+    backgroundImage: "url('/logoproduk.png')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  }}
+>
 
-{/* COMMIT */}
-<section id="commitment" className="py-12 md:py-16 px-4 bg-blue-50">
+  {/* OVERLAY */}
+  <div className="bg-black/40">
 
-  <div className="max-w-5xl mx-auto text-center">
+    <div className="max-w-7xl mx-auto px-6 py-14 md:py-20">
 
+      {/* TITLE */}
       <Animate>
-    <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
-      {t[lang].commitmentTitle}
-    </h2> </Animate>
+        <h2 className="text-white text-4xl md:text-6xl font-semibold leading-tight max-w-md">
+          {lang === "id"
+            ? "PRODUK\nUTAMA KAMI"
+            : "OUR MAIN\nPRODUCTS"}
+        </h2>
+      </Animate>
 
-      <Animate delay={0.1}>
-    <p className="font-semibold text-gray-600 max-w-2xl mx-auto mb-12">
-      {t[lang].commitmentDesc}
-    </p> </Animate>
+    </div>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+  </div>
 
-  {[
-    t[lang].commit1,
-    t[lang].commit2,
-    t[lang].commit3,
-    t[lang].commit4,
-  ].map((item, i) => (
-    <Animate key={i} delay={i * 0.1}>
-      <div className="p-5 md:p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
-        ✔ {item}
+  {/* LOGO AREA */}
+  <div className="bg-white py-8 md:py-10">
+
+    <div className="max-w-6xl mx-auto px-4">
+
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 items-center">
+
+        {[
+          "kaspersky.png",
+          "fortra.png",
+          "qualys.png",
+        ].map((logo, i) => (
+
+          <Animate key={i} delay={i * 0.1}>
+            <div className="flex justify-center">
+
+              <img
+                src={`/products/${logo}`}
+                className="object-contain h-16 md:h-20 w-auto hover:scale-105 transition duration-300"
+              />
+
+            </div>
+          </Animate>
+
+        ))}
+
       </div>
-    </Animate>
-  ))}
 
-</div>
-</div>
+    </div>
+
+  </div>
 
 </section>
+
+<div className="py-8 bg-white">
+  <div className="h-px bg-gray-200/70"></div>
+</div>
 
 {/* PARTNERS */}
-<section id="partners" className="py-16 md:py-20 px-4 bg-gray-50">
+<section id="partners" className="py-10 md:py-14 px-4 bg-gray-50">
 
   <div className="max-w-6xl mx-auto text-center">
-      <Animate>
-    <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
+     <Animate>
+  <div className="text-center mb-12">
+
+    <h2
+      className="
+        text-3xl
+        md:text-5xl
+        font-semibold
+        tracking-[-1px]
+        text-blue-900
+        mb-4
+      "
+    >
       {t[lang].partnersTitle}
-    </h2> </Animate>
+    </h2>
 
-      <Animate delay={0.1}>
-    <p className="font-semibold text-gray-600 mb-12">
-      {t[lang].partnersDesc}
-    </p> </Animate>
+    <div className="w-24 h-1 bg-blue-900/80 mx-auto rounded-full" />
 
-    <div className="flex flex-wrap justify-center gap-8">
+  </div>
+</Animate>
+
+     
+
+    <div className="flex flex-wrap justify-center gap-5">
 
      {[
   "cisco.png",
+  "aruba.png",
+  "bitdefender.png",
+  "darktrace.png",
+  "radware.png",
+  "sangfor.png",
+  "segura.png",
+  "sonicwall.png",
+  "zimperium.png",
   "fortinet.png",
   "microsoft.png",
   "vmware.png",
@@ -1602,33 +1740,32 @@ ${visibleCards[3] ? "opacity-100 translate-y-0 scale-100 " : "opacity-0 translat
 
 </section>
 
-<div className="h-px bg-linear-to-r from-transparent via-blue-300/40 to-transparent my-16 md:my-20" />
-
-
+<div className="py-8 bg-white">
+  <div className="h-px bg-gray-200/70"></div>
+</div>
 {/*CORE VALUES */}
  
 <section 
 ref={coreRef}
-className="relative py-20 px-4 bg-linear-to-b from-blue-900 to-blue-800 text-white overflow-hidden">
+className="relative py-12 md:py-16 px-4 bg-linear-to-b from-blue-900 to-blue-800 text-white overflow-hidden">
 {/* GRID BACKGROUND */}
-<div className="absolute inset-0 opacity-10 pointer-events-none
+<div className="absolute inset-0 z-0 opacity-10 pointer-events-none
 bg-[linear-gradient(rgba(255,255,255,0.15)_1px,transparent_1px)]
-bg-size-[40px_40px]">
+bg-size:[40px_40px]">
 </div>
-  <div className="max-w-5xl mx-auto text-center">
-    </div>
-
+<div className="relative z-10"></div>
+  
     {/* TITLE */}
-    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
+    <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4 text-center">
       {t[lang].coreTitle}
     </h2>
 
-    <p className="font-semibold text-sm md:text-base text-white/80 max-w-2xl mx-auto mb-12 text-center">
+    <p className="text-[15px] font-light tracking-wide md:text-base text-white/80 max-w-2xl mx-auto mb-8 text-center">
       {t[lang].coreDesc}
     </p>
 
     {/* GRID */}
-    <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto px-4">
+    <div className="grid md:grid-cols-2 gap-5 max-w-5xl mx-auto px-4">
 
       {/* CARD 1 */}
   <div className={`relative bg-linear-to-r from-blue-600 via-blue-500 to-blue-400
@@ -1710,35 +1847,82 @@ ${coreVisible ? "opacity-100 translate-x-0 scale-100" : "opacity-0 translate-x-1
 </div>
 
   </div>
-<div className="absolute bottom-0 left-0 w-full h-32 bg-linear-to-t from-blue-900 to-transparent"></div>
+<div className="absolute bottom-0 left-0 w-full h-12 bg-linear-to-t from-blue-900 to-transparent"></div>
 </section>
 
-   {/* CLIENT SLIDER */}
-<section id="clients" className="w-full py-16 bg-white">
+<div className="py-8 bg-white">
+  <div className="h-px bg-gray-200/70"></div>
+</div>
+
+   {/* CLIENT */}
+<section
+  id="clients"
+  className="w-full py-14 md:py-20 bg-linear-to-b from-white to-blue-50"
+>
 
   <div className="max-w-6xl mx-auto px-4">
 
-      <Animate>
-    <h2 className="text-2xl font-bold text-center mb-10 text-gray-900">
+     <Animate>
+  <div className="text-center mb-12">
+
+    <h2
+      className="
+        text-3xl
+        md:text-5xl
+        font-semibold
+        tracking-[-1px]
+        text-blue-900
+        mb-4
+      "
+    >
       {t[lang].clients}
-    </h2> </Animate>
+    </h2>
+
+    <div className="w-24 h-1 bg-linear-to-r from-blue-900 to-blue-500 mx-auto rounded-full" />
+
+  </div>
+</Animate>
 
       <Animate delay={0.1}>
-    <p className="font-semibold text-gray-600 mb-8 text-center">
-    {t[lang].clientsDesc}
+<p className="text-gray-500 text-base md:text-lg leading-relaxed max-w-3xl mx-auto mb-12 text-center">    {t[lang].clientsDesc}
  </p> </Animate>
 
-   <div className="flex flex-wrap justify-center gap-6">
+   <div className="flex flex-wrap justify-center gap-4">
 
  {clients.map((client, i) => (
   <Animate key={i} delay={i * 0.05} type="zoom">
-    <div className="w-36 md:w-40 bg-white rounded-2xl p-3 flex items-center justify-center shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-105 transition-all duration-300">
-      <Image
+<div
+  className="
+    w-36
+    md:w-44
+    h-32
+    bg-white/90
+    backdrop-blur-sm
+    rounded-3xl
+    p-5
+    flex items-center justify-center
+    border border-gray-100
+    shadow-sm
+    hover:shadow-2xl
+    hover:-translate-y-2
+    hover:scale-105
+    transition-all duration-300
+  "
+>      <Image
         src={`/clients/${client}`}
         alt={client}
         width={200}
         height={100}
-        className="object-contain max-h-20 w-auto opacity-80 hover:opacity-100 transition"
+        className="
+  object-contain
+  max-h-16
+  md:max-h-20
+  w-auto
+  opacity-80
+  hover:opacity-100
+  hover:scale-105
+  transition duration-300
+"
       />
     </div>
   </Animate>
@@ -1748,6 +1932,7 @@ ${coreVisible ? "opacity-100 translate-x-0 scale-100" : "opacity-0 translate-x-1
 
   </div>
 </section>
+
 
  {/* CONTACT */}
  {showContact && (
@@ -1784,19 +1969,26 @@ ${coreVisible ? "opacity-100 translate-x-0 scale-100" : "opacity-0 translate-x-1
         </a>
 
         {/* MAPS */}
-        <a
-          href="https://maps.app.goo.gl/C7uEnmFcgEtyrxhy6"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-start gap-3 hover:opacity-80 transition"
-        >
-          <MapPin size={16} className="mt-1" />
-          <span className="text-sm leading-relaxed">
-            PT DOTHREE SANTANA PRISMA<br />
-            Jl. Perdana 1 No. 10c,<br />
-            Jakarta Selatan
-          </span>
-        </a>
+       <a
+  href="https://maps.app.goo.gl/C7uEnmFcgEtyrxhy6"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-start gap-3 hover:opacity-80 transition"
+>
+  <MapPin size={16} className="mt-1 shrink-0" />
+
+  <div className="flex flex-col gap-4">
+
+    <span className="text-sm leading-relaxed">
+      {t[lang].headOffice}
+    </span>
+
+    <span className="text-sm leading-relaxed">
+      {t[lang].workshopOffice}
+    </span>
+
+  </div>
+</a>
 
       </div>
 
@@ -1828,8 +2020,7 @@ ${coreVisible ? "opacity-100 translate-x-0 scale-100" : "opacity-0 translate-x-1
       <MapPin size={18} className="mt-1 shrink-0" />
 
       <div className="leading-relaxed">
-        Jl. Perdana I No.10c, RT.7/RW.5, Petukangan Selatan,<br />
-        Pesanggrahan, Jakarta Selatan 12270
+           {t[lang].workshopOffice}
       </div>
     </div>
 

@@ -1,4 +1,13 @@
 export default {
-  darkMode: "media", // ikut dark mode device
+  darkMode: "media",
+
   content: ["./app/**/*.{js,ts,jsx,tsx}"],
+
+  theme: {
+    extend: {
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+      },
+    },
+  },
 };
