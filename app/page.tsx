@@ -3,10 +3,11 @@ import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { ArrowUp } from "lucide-react";
-import { CheckCircle } from "lucide-react";
+import { Users, ShieldCheck, Network, Headphones, Rocket, CheckCircle, CheckCircle2,} from "lucide-react";
 import Animate from "./components/Animate";
 import { i } from "framer-motion/client";
 import { motion } from "framer-motion";
+
 
 
 export default function Home() {
@@ -338,20 +339,22 @@ const menuItems = [
     
     // ADVANTAGE
     advantageTitle: "Our Advantage",
-    adv1: "Experienced Team",
-    adv2: "Security Focus",
-    adv3: "Integrated Solutions",
-    adv4: "Responsive Support",
+    adv1:   "Experienced and professional team in information technology and procurement services.",
+    adv2:   "Strong focus on security, reliability, and service quality.",
+    adv3:   "Integrated IT and procurement solutions delivered comprehensively.",
+    adv4:   "Responsive and solution-oriented approach for every client requirement.",
+    adv5:   "Commitment to innovation and continuous improvement.",
 
     // COMMITMENT
     commitmentTitle: "Service Commitment",
     commitmentDesc:
       "We are committed to delivering high-quality IT services with professional standards.",
 
-    commit1: "High-quality service",
-    commit2: "System & data security",
-    commit3: "Fast response support",
-    commit4: "Professional & transparent",
+    commit1:   "Deliver reliable and high-quality IT and procurement services in accordance with agreed standards.",
+    commit2:   "Ensure system security, data protection, and compliance with applicable regulations.",
+    commit3:   "Provide responsive support and timely solutions to meet client needs.",
+    commit4:   "Maintain professionalism, transparency, and accountability in every engagement.",
+    commit5:   "Build long-term partnerships through consistent performance and continuous improvement.",
 
     // PARTNERS
     partnersTitle: "Technology Solutions We Offer",
@@ -460,20 +463,22 @@ workshopOffice:
 
     // ADVANTAGE
     advantageTitle: "Keunggulan Kami",
-    adv1: "Tim Berpengalaman",
-    adv2: "Fokus Keamanan",
-    adv3: "Solusi Terintegrasi",
-    adv4: "Dukungan Responsif",
+    adv1:   "Tim yang berpengalaman dan profesional dalam bidang teknologi informasi dan pengadaan.",
+    adv2:   "Fokus yang kuat pada keamanan, keandalan, dan kualitas layanan.",
+    adv3:   "Layanan TI dan pengadaan yang terintegrasi secara menyeluruh.",
+    adv4:   "Pendekatan yang responsif dan berorientasi pada solusi untuk setiap kebutuhan klien.",
+    adv5:   "Komitmen terhadap inovasi dan peningkatan berkelanjutan.",
 
     // COMMITMENT
     commitmentTitle: "Komitmen Layanan",
     commitmentDesc:
       "Kami berkomitmen memberikan layanan terbaik.",
 
-    commit1: "Layanan berkualitas",
-    commit2: "Keamanan sistem",
-    commit3: "Respon cepat",
-    commit4: "Profesional",
+    commit1:   "Memberikan layanan TI dan pengadaan yang andal dan berkualitas tinggi sesuai dengan standar yang disepakati.",
+    commit2:   "Memastikan keamanan sistem, perlindungan data, dan kepatuhan terhadap peraturan yang berlaku.",
+    commit3:   "Memberikan dukungan responsif dan solusi tepat waktu untuk memenuhi kebutuhan klien.",
+    commit4:   "Menjaga profesionalisme, transparansi, dan akuntabilitas dalam setiap keterlibatan.",
+    commit5:  "Membangun kemitraan jangka panjang melalui kinerja yang konsisten dan peningkatan berkelanjutan.",
 
     // PARTNERS
     partnersTitle: "Produk Yang Kami Tawarkan",
@@ -593,7 +598,7 @@ const getAnimation = (i: number) => {
     >
 
 
-<div className="max-w-[1400px] mx-auto flex items-center h-20 px-6 md:px-10">
+<div className="max-w-350 mx-auto flex items-center h-20 px-6 md:px-10">
 
   {/* LOGO */}
 <div className="mr-auto">
@@ -1102,38 +1107,57 @@ className="grid grid-cols-1 md:grid-cols-2 items-stretch bg-[#F7F4F1]">
 
 
       {/*VISI*/}
-<section className=" py-16 md:py-20 px-4 bg-linear-to-b from-white to-gray-100 text-center">
+<section className="relative overflow-hidden py-16 md:py-20 px-4 bg-linear-to-b from-white via-blue-50/30 to-gray-100 text-center">
 
+{/* BACKGROUND EFFECT */}
+<div className="absolute inset-0 overflow-hidden pointer-events-none">
+
+  <div className="absolute top-10 left-10 w-72 h-72 bg-blue-200/20 blur-3xl rounded-full" />
+
+  <div className="absolute bottom-0 right-0 w-80 h-80 bg-blue-300/10 blur-3xl rounded-full" />
+
+</div>
 
   <div className="max-w-5xl mx-auto">
         <Animate>
-    <h2 className="text-2xl md:text-4xl font-semibold tracking-tight text-[#2A1D1A] mb-10">
-      {lang === "id" ? "Visi & Misi" : "Vision & Mission"}
+<h2 className="text-3xl md:text-5xl font-semibold tracking-tight bg-linear-to-r from-blue-900 to-blue-600 bg-clip-text text-transparent mb-12">      {lang === "id" ? "Visi & Misi" : "Vision & Mission"}
     </h2> </Animate>
 
-    <div className="grid md:grid-cols-2 gap-6 items-stretch">
+
+<div className="relative grid md:grid-cols-2 gap-6 items-stretch">
+  <div className="hidden md:block absolute left-1/2 top-10 bottom-10 w-px bg-linear-to-b from-transparent via-blue-200 to-transparent" />
 
      {/* VISION */}
-<div className="bg-white p-5 md:p-10 rounded-3xl shadow-lg border border-gray-200/80 backdrop-blur-sm
-hover:-translate-y-2 hover:shadow-2xl hover:scale-[1.02]
+<div className="relative overflow-hidden bg-white/70 backdrop-blur-sm backdrop-saturate-150 p-5 md:p-10 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-gray-200/80
+hover:-translate-y-3 hover:rotate-[0.3deg] hover:shadow-2xl hover:scale-[1.02]
 hover:border-blue-300
 transition-all duration-300 ease-out">
 
+  <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-blue-700 via-blue-400 to-cyan-300" />
+
+   {/* GLOW */}
+  <div className="absolute -top-10 -right-10 w-32 h-32 bg-blue-200/30 blur-3xl rounded-full" />
+
   <Animate delay={0.05}>
-    <div className="flex justify-center mb-5">
-      <Image
-  src="/visi.png"
-  alt="Visi"
-  width={150}
-  height={150}
-  className="object-contain drop-shadow-xl transition duration-300 hover:scale-110"
-/>
-    </div>
+   <div className="flex justify-center mb-4">
+
+  <div className="w-40 h-40 rounded-full bg-linear-to-b from-blue-50 to-white border border-blue-100 shadow-inner flex items-center justify-center">
+
+    <Image
+      src="/visi.png"
+      alt="Visi"
+      width={190}
+      height={190}
+      className="object-contain drop-shadow-xl transition duration-500 hover:scale-110"
+    />
+
+  </div>
+
+</div>
   </Animate>
 
   <Animate delay={0.1}>
-    <h3 className="text-blue-600 text-xl font-semibold mb-3">
-      {t[lang].vision}
+<h3 className="text-blue-700 text-3xl md:text-4xl font-bold mb-5 tracking-tight">      {t[lang].vision}
     </h3>
   </Animate>
 
@@ -1146,35 +1170,46 @@ transition-all duration-300 ease-out">
 </div>
 
     {/* MISSION */}
-<div className="bg-white p-8 md:p-10 rounded-3xl shadow-lg border border-gray-200/80 backdrop-blur-sm
-hover:-translate-y-2 hover:shadow-2xl hover:scale-[1.02]
+<div className="relative overflow-hidden bg-white/70 backdrop-blur-sm backdrop-saturate-150 p-5 md:p-10 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-gray-200/80
+hover:-translate-y-3 hover:rotate-[0.3deg] hover:shadow-2xl hover:scale-[1.02]
 hover:border-blue-300
 transition-all duration-300 ease-out">
 
+<div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-blue-700 via-blue-400 to-cyan-300" />
   <Animate delay={0.05}>
-    <div className="flex justify-center mb-5">
-      <Image
-  src="/misi.png"
-  alt="Misi"
-  width={150}
-  height={150}
-  className="object-contain drop-shadow-xl transition duration-300 hover:scale-110"
-/>
-    </div>
+    <div className="flex justify-center mb-4">
+
+  <div className="w-40 h-40 rounded-full bg-linear-to-b from-blue-50 to-white border border-blue-100 shadow-inner flex items-center justify-center">
+
+    <Image
+      src="/visi.png"
+      alt="Visi"
+      width={190}
+      height={190}
+      className="object-contain drop-shadow-xl transition duration-500 hover:scale-110"
+    />
+
+  </div>
+
+</div>
   </Animate>
 
   <Animate delay={0.5}>
-    <h3 className="text-blue-700 text-xl font-semibold mb-5">
-      {t[lang].mission}
+<h3 className="text-blue-700 text-3xl md:text-4xl font-bold mb-5 tracking-tight">
+        {t[lang].mission}
     </h3>
   </Animate>
 
-  <ul className="text-gray-700 space-y-4 text-center text-[15px] md:text-base">
+  <ul className="text-gray-700 space-y-5 text-[15px] md:text-base max-w-md mx-auto">
     {[t[lang].mission1, t[lang].mission2, t[lang].mission3].map((item, i) => (
       <Animate key={i} delay={i * 0.1}>
-        <li className="leading-relaxed">
-          {item}
-        </li>
+        <li className="leading-relaxed flex items-start gap-3 text-left">
+
+  <span className="text-blue-600 mt-1">✦</span>
+
+  <span>{item}</span>
+
+</li>
       </Animate>
     ))}
   </ul>
@@ -1197,8 +1232,8 @@ transition-all duration-300 ease-out">
   <div className="max-w-5xl mx-auto text-center">
 
     {/* TITLE */}
-    <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-blue-900 mb-4">
-      {t[lang].servicesTitle}
+<h2 className="text-4xl md:text-6xl font-bold tracking-tight bg-linear-to-r from-blue-900 to-blue-600 bg-clip-text text-transparent mb-6">
+        {t[lang].servicesTitle}
     </h2>
   
   </div>
@@ -1540,16 +1575,17 @@ ${visibleCards[3] ? "opacity-100 translate-y-0 scale-100 " : "opacity-0 translat
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
 
           {[
-            { icon: "👨‍💻", text: t[lang].adv1 },
-            { icon: "🔒", text: t[lang].adv2 },
-            { icon: "🔄", text: t[lang].adv3 },
-            { icon: "📞", text: t[lang].adv4 },
+            { icon: <Users size={34} strokeWidth={1.8} />, text: t[lang].adv1 },
+            { icon: <ShieldCheck size={34} strokeWidth={1.8} />, text: t[lang].adv2 },
+            { icon: <Network size={34} strokeWidth={1.8} />, text: t[lang].adv3 },
+            { icon: <Headphones size={34} strokeWidth={1.8} />, text: t[lang].adv4 },
+            { icon: <Rocket size={34} strokeWidth={1.8} />, text: t[lang].adv5 },
           ].map((item, i) => (
 
             <Animate key={i} delay={i * 0.1}>
 <div className="bg-gray-50 border border-gray-100 rounded-2xl min-h-42.5 p-6 flex flex-col items-center justify-center text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-                <div className="text-3xl mb-4">
-                  {item.icon}
+<div className="text-blue-700 mb-4 flex justify-center">
+                    {item.icon}
                 </div>
 
                 <p className="font-medium text-gray-900">
@@ -1587,12 +1623,13 @@ ${visibleCards[3] ? "opacity-100 translate-y-0 scale-100 " : "opacity-0 translat
             t[lang].commit2,
             t[lang].commit3,
             t[lang].commit4,
+            t[lang].commit5,
           ].map((item, i) => (
 
             <Animate key={i} delay={i * 0.1}>
 <div className="bg-gray-50 border border-gray-100 rounded-2xl min-h-42.5 p-6 flex flex-col items-center justify-center text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-               <div className="text-3xl mb-4 text-green-600">
-                  ✔
+               <div className="mb-4 text-green-600 flex justify-center">
+                  <CheckCircle2 size={34} strokeWidth={2} />
                 </div>
 
                 <p className="font-medium text-gray-900">
@@ -1630,12 +1667,11 @@ ${visibleCards[3] ? "opacity-100 translate-y-0 scale-100 " : "opacity-0 translat
   {/* OVERLAY */}
   <div className="bg-black/40">
 
-    <div className="max-w-7xl mx-auto px-6 py-14 md:py-20">
+<div className="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-20">
 
       {/* TITLE */}
       <Animate>
-        <h2 className="text-white text-4xl md:text-6xl font-semibold leading-tight max-w-md">
-          {lang === "id"
+<h2 className="text-white text-3xl md:text-6xl font-semibold leading-tight max-w-55 md:max-w-md">          {lang === "id"
             ? "PRODUK\nUTAMA KAMI"
             : "OUR MAIN\nPRODUCTS"}
         </h2>
@@ -1646,27 +1682,30 @@ ${visibleCards[3] ? "opacity-100 translate-y-0 scale-100 " : "opacity-0 translat
   </div>
 
   {/* LOGO AREA */}
-  <div className="bg-white py-8 md:py-10">
+  <div className="bg-white py-5 md:py-10">
 
     <div className="max-w-6xl mx-auto px-4">
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 items-center">
-
-        {[
+<div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 items-stretch">
+          {[
           "kaspersky.png",
           "fortra.png",
           "qualys.png",
         ].map((logo, i) => (
 
           <Animate key={i} delay={i * 0.1}>
-            <div className="flex justify-center">
+           <div className="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition duration-300 flex items-center justify-center p-4 min-h-30 md:min-h-42.5">
 
-              <img
-                src={`/products/${logo}`}
-                className="object-contain h-16 md:h-20 w-auto hover:scale-105 transition duration-300"
-              />
+  <img
+    src={`/products/${logo}`}
+    className={`object-contain w-auto transition duration-300 hover:scale-105 ${
+      logo === "qualys.png"
+        ? "max-h-12 md:max-h-20"
+        : "max-h-14 md:max-h-24"
+    }`}
+  />
 
-            </div>
+</div>
           </Animate>
 
         ))}
