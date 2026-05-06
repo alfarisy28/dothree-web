@@ -1008,27 +1008,33 @@ px-4 bg-blue-950 text-white overflow-hidden"
   fill
   priority
   className="object-contain
-  opacity-[0.08] md:opacity-[0.16]
-  scale-[1.1] md:scale-[2.2]
-  -translate-y-10 md:-translate-y-16
-  drop-shadow-[0_0_40px_rgba(255,255,255,0.12)]"
+object-center
+opacity-[0.08] md:opacity-[0.14]
+scale-[1] md:scale-[1.8]
+translate-y-4 md:translate-y-8
+drop-shadow-[0_0_18px_rgba(255,255,255,0.06)]"
 />
   {/*  SHAPE */}
   <div className="absolute bottom-10 left-10 w-40 h-40 bg-blue-500/20 blur-3xl rounded-full" />
   <div className="absolute top-10 right-10 w-32 h-32 bg-blue-400/20 blur-2xl rounded-full" />
 
   {/* CONTENT */}
-  <div className="relative z-10 max-w-4xl mx-auto">
+  <div className="relative z-10 max-w-7xl mx-auto flex flex-col items-center justify-center">
 
     {/* TITLE */}
     <Animate>
-<h1 className="text-[30px] md:text-5xl lg:text-6xl
-font-semibold
-tracking-tight
-leading-[1.15]
+<h1 className="relative z-20
+-text-[38px] sm:text-5xl md:text-7xl lg:text-7xl
+font-bold
+tracking-tight md:tracking-[-2px]
+leading-none
+text-center
+text-white
+drop-shadow-[0_4px_14px_rgba(0,0,0,0.28)]
 md:whitespace-nowrap
-max-w-3xl
-mx-auto">      </h1>
+-translate-y-5">
+  PT DOTHREE SANTANA PRISMA
+</h1>
     </Animate>
 
     {/* TAGLINE */}
