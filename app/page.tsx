@@ -251,42 +251,42 @@ const menuItems = [
     aboutTitle1: "About Us",
     aboutTitle2: "PT. DOTHREE SANTANA PRISMA",
 
-    aboutDesc1:     "PT. DOTHREE SANTANA PRISMA is a national private IT company established in 2017. The company focuses on IT infrastructure development and data security services in Indonesia.",
+    aboutDesc1:     "PT. DOTHREE SANTANA PRISMA is a national private IT company established in 2017. The company focuses on IT infrastructure development and data security services in Indonesia",
 
-    aboutDesc2:     "The company consistently focuses on data security services for national and multinational companies, as well as government institutions and ministries.",
-    aboutDesc3:     "Dothree has two main business sectors: IT Infrastructure Development and Data Security. The services offered include Infrastructure Services, Data Security, Application Security, and Network Security.",
+    aboutDesc2:     "The company consistently focuses on data security services for national and multinational companies, as well as government institutions and ministries",
+    aboutDesc3:     "Dothree has two main business sectors: IT Infrastructure Development and Data Security. The services offered include Infrastructure Services, Data Security, Application Security, and Network Security",
 
     // VISION MISSION
     vision: "Vision",
     mission: "Mission",
 
     visionText:
-      "To become a trusted IT company delivering secure and integrated solutions.",
+        "To become a committed and trusted IT company in Indonesia.",
 
-    mission1: "Deliver reliable IT solutions",
-    mission2: "Ensure system security",
-    mission3: "Provide responsive support",
+    mission1:   "Providing and delivering high-quality services and solutions for customers.",
+    mission2:   "Delivering superior and competitive products with the latest technology.",
+    mission3:   "Presenting IT professionals who are committed with integrity and responsibility.",
 
     // SERVICES
     servicesTitle: "OUR SERVICES",
     servicesDesc:
-      "We deliver professional services designed to provide comprehensive IT and security solutions.",
+      "We deliver professional services designed to provide comprehensive IT and security solutions",
 
     service1Title: "IT Solutions and System Integrations",
     service1Desc:
-      "Providing integrated IT solutions to support efficient business operations.",
+      "Providing integrated IT solutions to support efficient business operations",
 
     service2Title: "Cyber and Security Solutions",
     service2Desc:
-      "Protecting systems, networks, and data from digital threats.",
+      "Protecting systems, networks, and data from digital threats",
     focusDesc: "Main Focus : IT Infrastructure & Cyber Security",
     service3Title: "Managed Services",
     service3Desc:
-      "Monitoring and maintaining system stability continuously.",
+      "Monitoring and maintaining system stability continuously",
 
     service4Title: "Network Infrastructure",
     service4Desc:
-      "Building and installing network infrastructure systems.",
+      "Building and installing network infrastructure systems",
 
     // SERVICES LIST
     it: "IT Solution",
@@ -319,52 +319,52 @@ const menuItems = [
     // CORE VALUES
     coreTitle: "Core Values",
     coreDesc:
-      "Our core values guide decisions, strengthen performance, and support long-term partnerships.",
+      "Our core values guide decisions, strengthen performance, and support long-term partnerships",
 
     core1: "Professional Excellence",
     core1Desc:
-      "We perform every task with competence, responsibility, and high ethical standards.",
+      "We perform every task with competence, responsibility, and high ethical standards",
 
     core2: "Integrity",
     core2Desc:
-      "We uphold honesty, transparency, and compliance with regulations and standards.",
+      "We uphold honesty, transparency, and compliance with regulations and standards",
 
     core3: "Innovative",
     core3Desc:
-      "We continuously develop adaptive and relevant solutions aligned with technological advancements.",
+      "We continuously develop adaptive and relevant solutions aligned with technological advancements",
 
     core4: "Commitment",
     core4Desc:
-      "We are committed to delivering high-quality services and achieving the best results for our clients.",
+      "We are committed to delivering high-quality services and achieving the best results for our clients",
     
     // ADVANTAGE
     advantageTitle: "Our Advantage",
-    adv1:   "Experienced and professional team in information technology and procurement services.",
-    adv2:   "Strong focus on security, reliability, and service quality.",
-    adv3:   "Integrated IT and procurement solutions delivered comprehensively.",
-    adv4:   "Responsive and solution-oriented approach for every client requirement.",
-    adv5:   "Commitment to innovation and continuous improvement.",
+    adv1:   "Experienced and professional team in information technology and procurement services",
+    adv2:   "Strong focus on security, reliability, and service quality",
+    adv3:   "Integrated IT and procurement solutions delivered comprehensively",
+    adv4:   "Responsive and solution-oriented approach for every client requirement",
+    adv5:   "Commitment to innovation and continuous improvement",
 
     // COMMITMENT
     commitmentTitle: "Service Commitment",
     commitmentDesc:
-      "We are committed to delivering high-quality IT services with professional standards.",
+      "We are committed to delivering high-quality IT services with professional standards",
 
-    commit1:   "Deliver reliable and high-quality IT and procurement services in accordance with agreed standards.",
-    commit2:   "Ensure system security, data protection, and compliance with applicable regulations.",
-    commit3:   "Provide responsive support and timely solutions to meet client needs.",
-    commit4:   "Maintain professionalism, transparency, and accountability in every engagement.",
-    commit5:   "Build long-term partnerships through consistent performance and continuous improvement.",
+    commit1:   "Deliver reliable and high-quality IT and procurement services in accordance with agreed standards",
+    commit2:   "Ensure system security, data protection, and compliance with applicable regulations",
+    commit3:   "Provide responsive support and timely solutions to meet client needs",
+    commit4:   "Maintain professionalism, transparency, and accountability in every engagement",
+    commit5:   "Build long-term partnerships through consistent performance and continuous improvement",
 
     // PARTNERS
     partnersTitle: "Technology Solutions We Offer",
     partnersDesc: "We collaborate with global trusted vendors",
 
     headOffice:
-  "Head Office (3rd Floor, Graha Mampang, Mampang Prapatan Raya Street Kav.100, RT 007/003, Duren Tiga, Pancoran, South Jakarta 12760).",
+  "Head Office (3rd Floor, Graha Mampang, Mampang Prapatan Raya Street Kav.100, RT 007/003, Duren Tiga, Pancoran, South Jakarta 12760)",
 
 workshopOffice:
-  "Workshop Office (Perdana 1 Street No. 10C, RT 007/005, Pesanggrahan, South Jakarta 12270).",
+  "Workshop Office (Perdana 1 Street No. 10C, RT 007/005, Pesanggrahan, South Jakarta 12270)",
     // CONTACT
     contact: "Contact Us",
     clients: "Our Clients",
@@ -381,20 +381,20 @@ workshopOffice:
     aboutTitle1: "Tentang Kami",
     aboutTitle2: "PT. DOTHREE SANTANA PRISMA",
 
-    aboutDesc1:     "PT. DOTHREE SANTANA PRISMA adalah perusahaan IT swasta nasional yang didirikan pada tahun 2017. Perusahaan ini berfokus pada pengembangan infrastruktur IT serta keamanan data di Indonesia.",
-    aboutDesc2:     "PT. DOTHREE SANTANA PRISMA secara konsisten berfokus pada layanan keamanan data baik untuk perusahaan nasional maupun multinasional, serta kementerian dan lembaga.",
-    aboutDesc3:     "Dothree memiliki dua sektor bisnis utama yaitu Pengembangan Infrastruktur IT dan Keamanan Data. Produk yang ditawarkan meliputi layanan Infrastruktur, Keamanan Data, Keamanan Aplikasi, dan Keamanan Jaringan.",
+    aboutDesc1:     "PT. DOTHREE SANTANA PRISMA adalah perusahaan IT swasta nasional yang didirikan pada tahun 2017. Perusahaan ini berfokus pada pengembangan infrastruktur IT serta keamanan data di Indonesia",
+    aboutDesc2:     "PT. DOTHREE SANTANA PRISMA secara konsisten berfokus pada layanan keamanan data baik untuk perusahaan nasional maupun multinasional, serta kementerian dan lembaga",
+    aboutDesc3:     "Dothree memiliki dua sektor bisnis utama yaitu Pengembangan Infrastruktur IT dan Keamanan Data. Produk yang ditawarkan meliputi layanan Infrastruktur, Keamanan Data, Keamanan Aplikasi, dan Keamanan Jaringan",
 
     // VISION MISSION
     vision: "Visi",
     mission: "Misi",
 
     visionText:
-      "Menjadi perusahaan IT terpercaya dengan solusi aman dan terintegrasi.",
+      "Menjadi Perusahaan IT yang berkomitmen dan terpercaya di Indonesia.",
 
-    mission1: "Memberikan solusi IT",
-    mission2: "Menjamin keamanan sistem",
-    mission3: "Memberikan dukungan cepat",
+    mission1:   "Memberikan dan menawarkan layanan serta solusi yang berkualitas bagi pelanggan.",
+    mission2:   "Memiliki produk yang unggul dan kompeten dengan teknologi terkini.",
+    mission3:   "Menghadirkan Profesional IT yang berkomitmen dengan integritas dan tanggung jawab.",
 
     // DETAIL
     infra: "Layanan Infrastruktur",
@@ -421,19 +421,19 @@ workshopOffice:
     // SERVICES
     servicesTitle: "LAYANAN KAMI",
     servicesDesc:
-      "Kami menyediakan layanan IT profesional dan keamanan sistem.",
+      "Kami menyediakan layanan IT profesional dan keamanan sistem",
 
     service1Title: "Solusi IT dan Integrasi Sistem",
-    service1Desc: "Solusi IT untuk operasional bisnis.",
+    service1Desc: "Solusi IT untuk operasional bisnis",
 
     service2Title: "Keamanan Siber",
-    service2Desc: "Melindungi sistem dan data.",
+    service2Desc: "Melindungi sistem dan data",
     focusDesc: "Fokus Utama : Infrastruktur IT & Keamanan Siber",
     service3Title: "Layanan Managed Services",
-    service3Desc: "Monitoring sistem berkelanjutan.",
+    service3Desc: "Monitoring sistem berkelanjutan",
 
     service4Title: "Infrastruktur Jaringan",
-    service4Desc:"Pembangunan jaringan.",
+    service4Desc:"Pembangunan jaringan",
 
     // MENU
     it: "Solusi IT",
@@ -443,42 +443,42 @@ workshopOffice:
 
     // CORE VALUES
     coreTitle: "Nilai Utama",
-    coreDesc:"Nilai yang membimbing keputusan, memperkuat kinerja dan mendukung kemitraan jangka panjang.",
+    coreDesc:"Nilai yang membimbing keputusan, memperkuat kinerja dan mendukung kemitraan jangka panjang",
 
     core1: "Profesional",
     core1Desc:
-      "Kami menjalankan setiap tugas dengan kompetensi, tanggung jawab, dan standar etika yang tinggi.",
+      "Kami menjalankan setiap tugas dengan kompetensi, tanggung jawab, dan standar etika yang tinggi",
 
     core2: "Integritas",
     core2Desc:
-      "Kami menjunjung tinggi kejujuran, transparansi, serta kepatuhan terhadap regulasi dan standar.",
+      "Kami menjunjung tinggi kejujuran, transparansi, serta kepatuhan terhadap regulasi dan standar",
 
     core3: "Inovatif",
     core3Desc:
-      "Kami terus mengembangkan solusi yang adaptif dan relevan dengan perkembangan teknologi.",
+      "Kami terus mengembangkan solusi yang adaptif dan relevan dengan perkembangan teknologi",
 
     core4: "Komitmen",
     core4Desc:
-      "Kami berkomitmen memberikan layanan berkualitas tinggi dan hasil terbaik bagi klien.",
+      "Kami berkomitmen memberikan layanan berkualitas tinggi dan hasil terbaik bagi klien",
 
     // ADVANTAGE
     advantageTitle: "Keunggulan Kami",
-    adv1:   "Tim yang berpengalaman dan profesional dalam bidang teknologi informasi dan pengadaan.",
-    adv2:   "Fokus yang kuat pada keamanan, keandalan, dan kualitas layanan.",
-    adv3:   "Layanan TI dan pengadaan yang terintegrasi secara menyeluruh.",
-    adv4:   "Pendekatan yang responsif dan berorientasi pada solusi untuk setiap kebutuhan klien.",
-    adv5:   "Komitmen terhadap inovasi dan peningkatan berkelanjutan.",
+    adv1:   "Tim yang berpengalaman dan profesional dalam bidang teknologi informasi dan pengadaan",
+    adv2:   "Fokus yang kuat pada keamanan, keandalan, dan kualitas layanan",
+    adv3:   "Layanan TI dan pengadaan yang terintegrasi secara menyeluruh",
+    adv4:   "Pendekatan yang responsif dan berorientasi pada solusi untuk setiap kebutuhan klien",
+    adv5:   "Komitmen terhadap inovasi dan peningkatan berkelanjutan",
 
     // COMMITMENT
     commitmentTitle: "Komitmen Layanan",
     commitmentDesc:
-      "Kami berkomitmen memberikan layanan terbaik.",
+      "Kami berkomitmen memberikan layanan terbaik",
 
-    commit1:   "Memberikan layanan TI dan pengadaan yang andal dan berkualitas tinggi sesuai dengan standar yang disepakati.",
-    commit2:   "Memastikan keamanan sistem, perlindungan data, dan kepatuhan terhadap peraturan yang berlaku.",
-    commit3:   "Memberikan dukungan responsif dan solusi tepat waktu untuk memenuhi kebutuhan klien.",
-    commit4:   "Menjaga profesionalisme, transparansi, dan akuntabilitas dalam setiap keterlibatan.",
-    commit5:  "Membangun kemitraan jangka panjang melalui kinerja yang konsisten dan peningkatan berkelanjutan.",
+    commit1:   "Memberikan layanan TI dan pengadaan yang andal dan berkualitas tinggi sesuai dengan standar yang disepakati",
+    commit2:   "Memastikan keamanan sistem, perlindungan data, dan kepatuhan terhadap peraturan yang berlaku",
+    commit3:   "Memberikan dukungan responsif dan solusi tepat waktu untuk memenuhi kebutuhan klien",
+    commit4:   "Menjaga profesionalisme, transparansi, dan akuntabilitas dalam setiap keterlibatan",
+    commit5:  "Membangun kemitraan jangka panjang melalui kinerja yang konsisten dan peningkatan berkelanjutan",
 
     // PARTNERS
     partnersTitle: "Produk Yang Kami Tawarkan",
@@ -486,9 +486,9 @@ workshopOffice:
     // CONTACT
     contact: "Kontak Kami",
     headOffice:
-    "Head Office (Graha Mampang LT.3 Jalan. Mampang Prapatan Raya Kav.100 RT 007/003 Duren Tiga Pancoran Jakarta Selatan 12760).",
+    "Head Office (Graha Mampang LT.3 Jalan. Mampang Prapatan Raya Kav.100 RT 007/003 Duren Tiga Pancoran Jakarta Selatan 12760)",
      workshopOffice:
-    "Workshop Office (Jalan. Perdana 1 No. 10C RT 007/005 Pesanggrahan Jakarta Selatan 12270).",
+    "Workshop Office (Jalan. Perdana 1 No. 10C RT 007/005 Pesanggrahan Jakarta Selatan 12270)",
     // Client 
     clients: "Klien Kami",
     clientsDesc:   "Dipercaya oleh instansi pemerintah, perusahaan nasional dan multinasional"
@@ -592,7 +592,10 @@ const getAnimation = (i: number) => {
   initial={{ y: -80, opacity: 0 }}
   animate={{ y: 0, opacity: 1 }}
   transition={{ duration: 0.5 }}
-  className={`fixed top-0 left-0 w-full z-50 bg-white border-b border-gray-100 transition-transform duration-500 ${
+className={`fixed top-0 left-0 w-full z-50
+bg-white/80 backdrop-blur-xl
+border-b border-black/5
+shadow-[0_4px_20px_rgba(0,0,0,0.04)]    ${
     showNavbar ? "translate-y-0 shadow-md" : "-translate-y-full"
   }`}
     >
@@ -607,7 +610,7 @@ const getAnimation = (i: number) => {
   className="cursor-pointer"
 >
   <Image
-    src="/logo3.png"
+    src="/logo4.png"
     alt="Dothree"
     width={220}
     height={60}
@@ -1015,24 +1018,28 @@ translate-y-0.3 md:translate-y-10
 drop-shadow-[0_0_18px_rgba(255,255,255,0.05)]"
 />
   {/*  SHAPE */}
-  <div className="absolute bottom-10 left-10 w-40 h-40 bg-blue-500/20 blur-3xl rounded-full" />
-  <div className="absolute top-10 right-10 w-32 h-32 bg-blue-400/20 blur-2xl rounded-full" />
+  <div className="absolute bottom-10 left-10 w-40 h-40 bg-blue-400/10 blur-2xl rounded-full" />
+  <div className="absolute top-10 right-10 w-32 h-32 bg-blue-400/10 blur-2xl rounded-full" />
 
   {/* CONTENT */}
   <div className="relative z-10 max-w-7xl mx-auto flex flex-col items-center justify-center">
 
     {/* TITLE */}
     <Animate>
-<h1 className="relative z-20
-text-[clamp(20px,5vw,72px)]
-font-bold
-tracking-tight md:tracking-[-2px]
-leading-none
-text-center
-text-white
-drop-shadow-[0_4px_14px_rgba(0,0,0,0.28)]
-whitespace-nowrap
-mx-auto">
+<h1
+  className="
+  relative z-20
+  text-[clamp(22px,4.5vw,72px)]
+  font-semibold
+  tracking-[-1px]
+  leading-[0.95]
+  text-center
+  text-white
+  whitespace-nowrap
+  mx-auto
+  drop-shadow-[0_2px_8px_rgba(0,0,0,0.18)]
+"
+>
   PT DOTHREE SANTANA PRISMA
 </h1>
     </Animate>
@@ -1126,115 +1133,240 @@ className="grid grid-cols-1 md:grid-cols-2 items-stretch bg-[#F7F4F1]">
 
 
 
-      {/*VISI*/}
+     {/*VISI*/}
 <section className="relative overflow-hidden py-16 md:py-20 px-4 bg-linear-to-b from-white via-blue-50/30 to-gray-100 text-center">
 
-{/* BACKGROUND EFFECT */}
-<div className="absolute inset-0 overflow-hidden pointer-events-none">
+  {/* BACKGROUND EFFECT */}
+  <div className="absolute inset-0 overflow-hidden pointer-events-none">
 
-  <div className="absolute top-10 left-10 w-72 h-72 bg-blue-200/20 blur-3xl rounded-full" />
+    <div className="absolute top-10 left-10 w-72 h-72 bg-blue-200/20 blur-3xl rounded-full" />
 
-  <div className="absolute bottom-0 right-0 w-80 h-80 bg-blue-300/10 blur-3xl rounded-full" />
-
-</div>
-
-  <div className="max-w-5xl mx-auto">
-        <Animate>
-<h2 className="text-3xl md:text-5xl font-semibold tracking-tight bg-linear-to-r from-blue-900 to-blue-600 bg-clip-text text-transparent mb-12">      {lang === "id" ? "Visi & Misi" : "Vision & Mission"}
-    </h2> </Animate>
-
-
-<div className="relative grid md:grid-cols-2 gap-6 items-stretch">
-  <div className="hidden md:block absolute left-1/2 top-10 bottom-10 w-px bg-linear-to-b from-transparent via-blue-200 to-transparent" />
-
-     {/* VISION */}
-<div className="relative overflow-hidden bg-white/70 backdrop-blur-sm backdrop-saturate-150 p-5 md:p-10 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-gray-200/80
-hover:-translate-y-3 hover:rotate-[0.3deg] hover:shadow-2xl hover:scale-[1.02]
-hover:border-blue-300
-transition-all duration-300 ease-out">
-
-  <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-blue-700 via-blue-400 to-cyan-300" />
-
-   {/* GLOW */}
-  <div className="absolute -top-10 -right-10 w-32 h-32 bg-blue-200/30 blur-3xl rounded-full" />
-
-  <Animate delay={0.05}>
-   <div className="flex justify-center mb-4">
-
-  <div className="w-40 h-40 rounded-full bg-linear-to-b from-blue-50 to-white border border-blue-100 shadow-inner flex items-center justify-center">
-
-    <Image
-      src="/visi.png"
-      alt="Visi"
-      width={190}
-      height={190}
-      className="object-contain drop-shadow-xl transition duration-500 hover:scale-110"
-    />
+    <div className="absolute bottom-0 right-0 w-80 h-80 bg-blue-300/10 blur-3xl rounded-full" />
 
   </div>
 
-</div>
-  </Animate>
+  <div className="max-w-6xl mx-auto">
 
-  <Animate delay={0.1}>
-<h3 className="text-blue-700 text-3xl md:text-4xl font-bold mb-5 tracking-tight">      {t[lang].vision}
-    </h3>
-  </Animate>
+    <Animate>
+      <h2 className="text-3xl md:text-5xl font-semibold tracking-tight bg-linear-to-r from-blue-900 to-blue-600 bg-clip-text text-transparent mb-12">
+        {lang === "id" ? "Visi & Misi" : "Vision & Mission"}
+      </h2>
+    </Animate>
 
-  <Animate delay={0.2}>
-    <p className="text-gray-700 leading-relaxed text-[15px] md:text-base">
-      {t[lang].visionText}
-    </p>
-  </Animate>
+    <div className="grid gap-8">
 
-</div>
+      {/* ================= VISION ================= */}
+      <div className="
+      relative
+      overflow-hidden
+      bg-white/70
+      backdrop-blur-sm
+      backdrop-saturate-150
+      p-5 md:p-8
+      rounded-3xl
+      shadow-[0_10px_40px_rgba(0,0,0,0.08)]
+      border border-gray-200/80
+      hover:-translate-y-2
+      hover:shadow-2xl
+      hover:border-blue-300
+      transition-all duration-300 ease-out
+      ">
 
-    {/* MISSION */}
-<div className="relative overflow-hidden bg-white/70 backdrop-blur-sm backdrop-saturate-150 p-5 md:p-10 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-gray-200/80
-hover:-translate-y-3 hover:rotate-[0.3deg] hover:shadow-2xl hover:scale-[1.02]
-hover:border-blue-300
-transition-all duration-300 ease-out">
+        {/* TOP LINE */}
+        <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-blue-700 via-blue-400 to-cyan-300" />
 
-<div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-blue-700 via-blue-400 to-cyan-300" />
-  <Animate delay={0.05}>
-    <div className="flex justify-center mb-4">
+        {/* GLOW */}
+        <div className="absolute -top-10 -right-10 w-32 h-32 bg-blue-200/30 blur-3xl rounded-full" />
 
-  <div className="w-40 h-40 rounded-full bg-linear-to-b from-blue-50 to-white border border-blue-100 shadow-inner flex items-center justify-center">
+        <div className="flex flex-col md:flex-row items-center gap-6">
 
-    <Image
-      src="/visi.png"
-      alt="Visi"
-      width={190}
-      height={190}
-      className="object-contain drop-shadow-xl transition duration-500 hover:scale-110"
-    />
+          {/* IMAGE */}
+          <Animate delay={0.05}>
+<div className="
+group
+relative
+w-full
+md:w-[460px]
+h-[180px] sm:h-[200px] md:h-[220px]
+min-h-[180px]
+overflow-hidden
+flex items-center justify-center
+rounded-[30px]
+bg-blue-950
+shadow-[0_20px_50px_rgba(37,99,235,0.12)]
+shrink-0
+">
 
-  </div>
+              <Image
+  src="/visi1.png"
+  alt="Vision"
+  width={1200}
+  height={700}
+  className="
+  w-full
+  h-full
+  object-cover
+  scale-[1.08]
+  transition duration-700
+  group-hover:scale-[1.14]
+  "
+/>
 
-</div>
-  </Animate>
+              <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/10" />
 
-  <Animate delay={0.5}>
-<h3 className="text-blue-700 text-3xl md:text-4xl font-bold mb-5 tracking-tight">
-        {t[lang].mission}
-    </h3>
-  </Animate>
+            </div>
+          </Animate>
 
-  <ul className="text-gray-700 space-y-5 text-[15px] md:text-base max-w-md mx-auto">
-    {[t[lang].mission1, t[lang].mission2, t[lang].mission3].map((item, i) => (
-      <Animate key={i} delay={i * 0.1}>
-        <li className="leading-relaxed flex items-start gap-3 text-left">
+          {/* CONTENT */}
+          <div className="flex-1 text-left">
 
-  <span className="text-blue-600 mt-1">✦</span>
+            <Animate delay={0.1}>
+              <h3 className="
+              text-blue-700
+              text-3xl md:text-4xl
+              font-extrabold
+              tracking-tight
+              mb-3
+              ">
+                {t[lang].vision}
+              </h3>
+            </Animate>
 
-  <span>{item}</span>
+            <Animate delay={0.2}>
+              <p className="
+              text-gray-700
+              leading-snug
+              text-[15px] md:text-base
+              ">
+                {t[lang].visionText}
+              </p>
+            </Animate>
 
-</li>
-      </Animate>
-    ))}
-  </ul>
+          </div>
 
-</div>
+        </div>
+
+      </div>
+
+      {/* ================= MISSION ================= */}
+      <div className="
+      relative
+      overflow-hidden
+      bg-white/70
+      backdrop-blur-sm
+      backdrop-saturate-150
+      p-5 md:p-8
+      rounded-3xl
+      shadow-[0_10px_40px_rgba(0,0,0,0.08)]
+      border border-gray-200/80
+      hover:-translate-y-2
+      hover:shadow-2xl
+      hover:border-blue-300
+      transition-all duration-300 ease-out
+      ">
+
+        {/* TOP LINE */}
+        <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-blue-700 via-blue-400 to-cyan-300" />
+
+        {/* GLOW */}
+        <div className="absolute -top-10 -right-10 w-32 h-32 bg-blue-200/30 blur-3xl rounded-full" />
+
+        <div className="flex flex-col md:flex-row items-center gap-6">
+
+          {/* IMAGE */}
+          <Animate delay={0.05}>
+<div className="
+group
+relative
+w-full
+md:w-[460px]
+h-[180px] sm:h-[200px] md:h-[220px]
+min-h-[180px]
+overflow-hidden
+flex items-center justify-center
+rounded-[30px]
+bg-blue-950
+shadow-[0_20px_50px_rgba(37,99,235,0.12)]
+shrink-0
+">
+
+             <Image
+  src="/misi1.png"
+  alt="Mission"
+  width={1200}
+  height={700}
+  className="
+  w-full
+  h-full
+  object-cover
+  scale-[1.08]
+  transition duration-700
+  group-hover:scale-[1.14]
+  "
+/>
+
+              <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/10" />
+
+            </div>
+          </Animate>
+
+          {/* CONTENT */}
+          <div className="flex-1 text-left">
+
+            <Animate delay={0.1}>
+              <h3 className="
+              text-blue-700
+              text-3xl md:text-4xl
+              font-extrabold
+              tracking-tight
+              mb-3
+              ">
+                {t[lang].mission}
+              </h3>
+            </Animate>
+
+            <ul className="text-gray-700 space-y-2 text-[15px] md:text-base">
+
+              {[t[lang].mission1, t[lang].mission2, t[lang].mission3].map((item, i) => (
+
+                <Animate key={i} delay={i * 0.1}>
+
+                  <li className="
+                  group
+                  leading-snug
+                  flex items-start gap-3
+                  text-left
+                  px-2 py-2
+                  rounded-2xl
+                  transition-all duration-300
+                  hover:bg-blue-50
+                  hover:translate-x-1
+                  ">
+
+                    <span className="
+                    text-blue-600 mt-1
+                    transition duration-300
+                    group-hover:text-blue-800
+                    group-hover:scale-110
+                    ">
+                      ✦
+                    </span>
+
+                    <span>{item}</span>
+
+                  </li>
+
+                </Animate>
+
+              ))}
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
 
     </div>
 
@@ -1258,7 +1390,7 @@ transition-all duration-300 ease-out">
   
   </div>
 
-  <div className="space-y-8">
+<div className="max-w-7xl mx-auto">
 
       {/* ===== CARD 1 ===== */}
   <div
@@ -1267,80 +1399,248 @@ transition-all duration-300 ease-out">
   cardRefs.current[1] = el;
 }}
   data-index="1"
- className={`max-w-4xl mx-auto bg-white/90 backdrop-blur-sm
-rounded-2xl shadow-md p-5 md:p-6 mb-6
-flex flex-col items-center text-center
-transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
-hover:shadow-2xl hover:shadow-blue-500/30 hover:-translate-y-2 hover:scale-[1.02] hover:brightness-[1.02]
-${visibleCards[1] ? "opacity-100 translate-x-0 scale-100 " : "opacity-0 translate-x-10 scale-95"}
+className={`
+bg-gradient-to-br from-white to-blue-50/40
+backdrop-blur-sm
+rounded-[28px]
+border border-blue-100
+shadow-[0_25px_70px_rgba(37,99,235,0.10)]
+p-5 md:p-6
+flex flex-col
+transition-all duration-500
+hover:-translate-y-1
+hover:shadow-[0_35px_90px_rgba(37,99,235,0.16)]
 `}
 >
+  
 
     <div className="flex justify-center mb-8">
-      <div className="bg-linear-to-r from-blue-700 to-blue-500 text-white px-4 md:px-6 py-2 text-sm md:text-base rounded-full font-semibold shadow-md">
-       <Animate delay={0.1}> {t[lang].service2Title} </Animate>
+<div className="
+bg-gradient-to-r from-blue-700 to-blue-500
+text-white
+px-6 md:px-6
+py-3 md:py-4
+text-xl md:text-3xl
+rounded-full
+font-bold
+tracking-tight
+shadow-[0_12px_35px_rgba(37,99,235,0.35)]
+">       <Animate delay={0.1}> {t[lang].service2Title} </Animate>
       </div>
     </div>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6">
-       <div className="group aspect-video overflow-hidden rounded-xl">
-                <Animate type="zoom">
-        <img src="/cyber1.png" className="w-full h-full object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-110" />
-      </Animate>
-      </div>
-       <div className="group aspect-video overflow-hidden rounded-xl">
-                <Animate type="zoom">
-        <img src="/cyber2.png" className="w-full h-full object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-110" />
-                </Animate>
-      </div>
-    </div>
+   <div className="group relative h-[220px] md:h-[280px]
+bg-blue-950
+overflow-hidden rounded-[32px] mb-5 flex items-center justify-center">
+
+  <Animate type="zoom">
+    <img
+      src="/cyber0.png"
+className="w-full h-full
+object-cover object-center
+scale-[1.40] md:scale-[1.20]
+transition duration-700
+group-hover:scale-[1.15]"    />
+    <div className="absolute inset-0 bg-gradient-to-r from-black/45 via-black/10 to-transparent" />
+  </Animate>
+
+</div>
 
       <Animate delay={0.2}>
-    <p className="font-semibold text-gray-700 text-sm md:text-base mb-6 leading-relaxed text-center max-w-2xl mx-auto">
+<p className="
+font-semibold
+text-[22px] md:text-2xl lg:text-3xl
+leading-tight
+text-center
+max-w-none
+md:whitespace-nowrap
+mx-auto mb-8 md:mb-10
+">
      {t[lang].service2Desc} 
     </p> </Animate>
 
-    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-6 text-sm md:text-base text-gray-700 max-w-xl mx-auto text-left leading-snug items-start">
+<ul className="
+grid grid-cols-1 md:grid-cols-3
+gap-x-6 gap-y-0.5
+max-w-5xl mx-auto
+text-left
+text-[15px] md:text-lg
+text-gray-800
+leading-relaxed
+">
+            <Animate delay={0}>
+<li className="
+group
+flex items-start gap-3
+min-h-[24px]
+px-1 py-1
+rounded-2xl
+transition-all duration-300
+hover:bg-white
+hover:shadow-[0_10px_25px_rgba(37,99,235,0.12)]
+hover:-translate-y-1
+cursor-default
+">    
+<CheckCircle
+  className="
+  text-blue-600
+  w-4 h-4 mt-[3px] shrink-0
+  transition duration-300
+  group-hover:scale-110
+  group-hover:text-blue-700
+"
+/>
+    <span className="transition duration-300 group-hover:text-blue-900">
+  {t[lang].threat}
+</span>
+  </li>
+</Animate>
 
-              <Animate delay={0}>
-      <li className="flex items-start gap-2">
-        <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
-        {t[lang].threat}
-      </li> </Animate>
+<Animate delay={0.05}>
+<li className="
+group
+flex items-start gap-3
+min-h-[24px]
+px-1 py-1
+rounded-2xl
+transition-all duration-300
+hover:bg-white
+hover:shadow-[0_10px_25px_rgba(37,99,235,0.12)]
+hover:-translate-y-1
+cursor-default
+">   
+ <CheckCircle
+  className="
+  text-blue-600
+  w-4 h-4 mt-[3px] shrink-0
+  transition duration-300
+  group-hover:scale-110
+  group-hover:text-blue-700
+"
+/>
+    <span className="transition duration-300 group-hover:text-blue-900">
+  {t[lang].cloud}
+</span>
+  </li>
+</Animate>
 
-                <Animate delay={0.05}>
-      <li className="flex items-start gap-2">
-        <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
-        {t[lang].cloud}
-      </li> </Animate>
+<Animate delay={0.1}>
+<li className="
+group
+flex items-start gap-3
+min-h-[24px]
+px-1 py-1
+rounded-2xl
+transition-all duration-300
+hover:bg-white
+hover:shadow-[0_10px_25px_rgba(37,99,235,0.12)]
+hover:-translate-y-1
+cursor-default
+">
+     <CheckCircle
+  className="
+  text-blue-600
+  w-4 h-4 mt-[3px] shrink-0
+  transition duration-300
+  group-hover:scale-110
+  group-hover:text-blue-700
+"
+/>
+    <span className="transition duration-300 group-hover:text-blue-900">
+  {t[lang].appsec}
+</span>
+  </li>
+</Animate>
 
-                <Animate delay={0.1}>
-      <li className="flex items-start gap-2">
-        <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
-        {t[lang].appsec}
-      </li> </Animate>
+<Animate delay={0.15}>
+<li className="
+group
+flex items-start gap-3
+min-h-[24px]
+px-1 py-1
+rounded-2xl
+transition-all duration-300
+hover:bg-white
+hover:shadow-[0_10px_25px_rgba(37,99,235,0.12)]
+hover:-translate-y-1
+cursor-default
+">   
+<CheckCircle
+  className="
+  text-blue-600
+  w-4 h-4 mt-[3px] shrink-0
+  transition duration-300
+  group-hover:scale-110
+  group-hover:text-blue-700
+"
+/>
+    <span className="transition duration-300 group-hover:text-blue-900">
+  {t[lang].data}
+</span>
+  </li>
+</Animate>
 
-                <Animate delay={0.15}>
-      <li className="flex items-start gap-2">
-        <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
-        {t[lang].data}
-      </li> </Animate>
+<Animate delay={0.2}>
+<li className="
+group
+flex items-start gap-3
+min-h-[24px]
+px-1 py-1
+rounded-2xl
+transition-all duration-300
+hover:bg-white
+hover:shadow-[0_10px_25px_rgba(37,99,235,0.12)]
+hover:-translate-y-1
+cursor-default
+">   
+ <CheckCircle
+  className="
+  text-blue-600
+  w-4 h-4 mt-[3px] shrink-0
+  transition duration-300
+  group-hover:scale-110
+  group-hover:text-blue-700
+"
+/>
+    <span className="transition duration-300 group-hover:text-blue-900">
+  {t[lang].identity}
+</span>
+  </li>
+</Animate>
 
-                  <Animate delay={0.2}>
-      <li className="flex items-start gap-2">
-        <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
-        {t[lang].identity}
-      </li> </Animate>
-
-                <Animate delay={0.25}>
-      <li className="flex items-start gap-2">
-        <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
-        <span className="whitespace-pre-line">{t[lang].vapt}</span>
-      </li> </Animate>
+<Animate delay={0.25}>
+<li className="
+group
+flex items-start gap-3
+min-h-[24px]
+px-1 py-1
+rounded-2xl
+transition-all duration-300
+hover:bg-white
+hover:shadow-[0_10px_25px_rgba(37,99,235,0.12)]
+hover:-translate-y-1
+cursor-default
+">  
+ <CheckCircle
+  className="
+  text-blue-600
+  w-4 h-4 mt-[3px] shrink-0
+  transition duration-300
+  group-hover:scale-110
+  group-hover:text-blue-700
+"
+/>
+<span className="transition duration-300 group-hover:text-blue-900">
+  {t[lang].vapt}
+</span>
+  </li>
+</Animate>
 
     </ul>
 
   </div>
+
+<div className="grid md:grid-cols-3 gap-5 mt-5">
 
   {/* ===== CARD 2 ===== */}
   <div
@@ -1349,71 +1649,174 @@ ${visibleCards[1] ? "opacity-100 translate-x-0 scale-100 " : "opacity-0 translat
   cardRefs.current[0] = el;
 }}
   data-index="0"
- className={`max-w-4xl mx-auto bg-white/90 backdrop-blur-sm
-rounded-2xl shadow-md p-5 md:p-6 mb-6
-flex flex-col items-center text-center
-transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
-hover:shadow-2xl hover:shadow-blue-500/30 hover:-translate-y-2 hover:scale-[1.02] hover:brightness-[1.02]
-${visibleCards[0] ? "opacity-100 translate-y-0 scale-100 " : "opacity-0 translate-y-10 scale-95"}
+className={`h-full w-full mx-auto bg-white/90 backdrop-blur-sm
+rounded-2xl
+border border-black/5
+shadow-[0_10px_30px_rgba(0,0,0,0.05)]
+p-5 mb-6
+flex flex-col text-left
+transition-all duration-500 ease-out
+hover:-translate-y-1
+hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)]
 `}
 >
 
-    <div className="flex justify-center mb-8">
-      <div className="bg-linear-to-r from-blue-700 to-blue-500 text-white px-4 md:px-6 py-2 text-sm md:text-base rounded-full font-semibold shadow-md">
-     <Animate delay={0.1}>
-      {t[lang].service1Title}
-      </Animate>
-      </div>
-    </div>
+  <div className="flex justify-center mb-5">
+  <div className="
+  inline-flex items-center justify-center
+  bg-gradient-to-r from-blue-700 to-blue-500
+  text-white
+px-4 md:px-5 py-2
+  rounded-full
+text-base md:text-lg
+  font-bold
+  tracking-tight
+  shadow-[0_10px_30px_rgba(37,99,235,0.25)]
+  ">
+    {t[lang].service1Title}
+  </div>
+</div>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6">
-      <div className="group aspect-video overflow-hidden rounded-xl">
-        <Animate type="zoom">
-        <img src="/it1.png" className="w-full h-full object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-110" />
-        </Animate>
-      </div>
-      <div className="group aspect-video overflow-hidden rounded-xl">
-        <Animate type="zoom">
-        <img src="/it2.png" className="w-full h-full object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-110" />
-        </Animate>
-      </div>
-    </div>
+<div className="w-full h-32 overflow-hidden rounded-2xl mb-4">
+  <Animate type="zoom">
+    <img
+      src="/itsolusi.png"
+      className="w-full h-full object-cover hover:scale-105 transition duration-700"
+    />
+  </Animate>
+</div>
 
       <Animate delay={0.2}>
-    <p className="font-semibold text-gray-700 text-sm md:text-base mb-6 leading-relaxed text-center max-w-2xl mx-auto">
+    <p className="
+font-semibold
+tracking-tight
+text-gray-700
+text-[15px] md:text-lg
+leading-relaxed
+text-center
+max-w-xl
+mx-auto
+mb-5
+">
      {t[lang].service1Desc} 
     </p> </Animate>
 
-    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-6 
-      text-sm md:text-base text-gray-700 
-      max-w-xl mx-auto 
-      text-left leading-snug items-start">
+<ul className="
+flex flex-col
+gap-y-1
+text-[15px] md:text-base
+text-gray-700
+max-w-md mx-auto
+leading-snug
+">
 
         <Animate delay={0}>
-      <li className="flex items-start gap-2">
-        <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
-        {t[lang].infra}
+<li className="
+group
+flex items-start gap-3
+min-h-[20px]
+px-2 py-[6px]
+rounded-2xl
+transition-all duration-300
+hover:bg-white
+hover:shadow-[0_10px_25px_rgba(37,99,235,0.12)]
+hover:-translate-y-1
+cursor-default
+">
+        <CheckCircle
+className="
+text-blue-600
+w-4 h-4 mt-[3px] shrink-0
+transition duration-300
+group-hover:scale-110
+group-hover:text-blue-700
+"
+/>
+       <span className="transition duration-300 group-hover:text-blue-900">
+  {t[lang].infra}
+</span>
       </li>
       </Animate>
 
         <Animate delay={0.05}>
-      <li className="flex items-start gap-2">
-        <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
+<li className="
+group
+flex items-start gap-3
+min-h-[20px]
+px-2 py-[6px]
+rounded-2xl
+transition-all duration-300
+hover:bg-white
+hover:shadow-[0_10px_25px_rgba(37,99,235,0.12)]
+hover:-translate-y-1
+cursor-default
+">
+        <CheckCircle
+className="
+text-blue-600
+w-4 h-4 mt-[3px] shrink-0
+transition duration-300
+group-hover:scale-110
+group-hover:text-blue-700
+"
+/>
         {t[lang].network}
       </li>
         </Animate>
 
         <Animate delay={0.1}>
-      <li className="flex items-start gap-2">
-        <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
-        {t[lang].storage}
+<li className="
+group
+flex items-start gap-3
+min-h-[20px]
+px-2 py-[6px]
+rounded-2xl
+transition-all duration-300
+hover:bg-white
+hover:shadow-[0_10px_25px_rgba(37,99,235,0.12)]
+hover:-translate-y-1
+cursor-default
+">
+        <CheckCircle
+className="
+text-blue-600
+w-4 h-4 mt-[3px] shrink-0
+transition duration-300
+group-hover:scale-110
+group-hover:text-blue-700
+"
+/>
+       <span className="transition duration-300 group-hover:text-blue-900">
+  {t[lang].storage}
+</span>
       </li>
         </Animate>
 
         <Animate delay={0.15}>
-      <li className="flex items-start gap-2">
-        <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
-        {t[lang].procurement}
+<li className="
+group
+flex items-start gap-3
+min-h-[20px]
+px-2 py-[6px]
+rounded-2xl
+transition-all duration-300
+hover:bg-white
+hover:shadow-[0_10px_25px_rgba(37,99,235,0.12)]
+hover:-translate-y-1
+cursor-default
+">
+        <CheckCircle
+className="
+text-blue-600
+w-4 h-4 mt-[3px] shrink-0
+transition duration-300
+group-hover:scale-110
+group-hover:text-blue-700
+"
+/>
+       <span className="transition duration-300 group-hover:text-blue-900">
+  {t[lang].procurement}
+</span>
       </li>
       </Animate>
 
@@ -1429,52 +1832,119 @@ ${visibleCards[0] ? "opacity-100 translate-y-0 scale-100 " : "opacity-0 translat
   cardRefs.current[2] = el;
 }}
   data-index="2"
-className={`max-w-4xl mx-auto bg-white/90 backdrop-blur-sm
-rounded-2xl shadow-md p-5 md:p-6 mb-6
-flex flex-col items-center text-center
-transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
-hover:shadow-2xl hover:shadow-blue-500/30 hover:-translate-y-2 hover:scale-[1.02] hover:brightness-[1.02]
-${visibleCards[2] ? "opacity-100 translate-x-0 scale-100 " : "opacity-0 translate-x-10 scale-95"}
+className={`h-full w-full mx-auto bg-white/90 backdrop-blur-sm
+rounded-2xl
+border border-black/5
+shadow-[0_10px_30px_rgba(0,0,0,0.05)]
+p-5 mb-6
+flex flex-col text-left
+transition-all duration-500 ease-out
+hover:-translate-y-1
+hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)]
 `}
 >
 
-    <div className="flex justify-center mb-8">
-      <div className="bg-linear-to-r from-blue-700 to-blue-500 text-white px-4 md:px-6 py-2 text-sm md:text-base rounded-full font-semibold shadow-md">
-        <Animate delay={0.1}> {t[lang].service3Title} </Animate>
-      </div>
-    </div>
+   <div className="flex justify-center mb-5">
+ <div className="
+inline-flex items-center justify-center
+bg-gradient-to-r from-blue-700 to-blue-500
+text-white
+px-4 md:px-5 py-2
+rounded-full
+text-base md:text-lg
+font-bold
+tracking-tight
+shadow-[0_10px_30px_rgba(37,99,235,0.25)]
+">
+  {t[lang].service3Title}
+</div>
+</div>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6">
-       <div className="group aspect-video overflow-hidden rounded-xl">
-        <Animate type="zoom">
-          <img src="/server.png" className="w-full h-full object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-110" />
-          </Animate>
-
-      </div>
-       <div className="group aspect-video overflow-hidden rounded-xl">
-       <Animate type="zoom">
-         <img src="/monitoring.png" className="w-full h-full object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-110" />
-        </Animate>
-      </div>
-    </div>
+<div className="w-full h-32 overflow-hidden rounded-2xl mb-4">
+  <Animate type="zoom">
+    <img
+      src="/monitoring.png"
+      className="w-full h-full object-cover hover:scale-105 transition duration-700"
+    />
+  </Animate>
+</div>
 
     <Animate delay={0.2}>
-    <p className="font-semibold text-gray-700 text-sm md:text-base mb-6 leading-relaxed text-center max-w-2xl mx-auto">
+   <p className="
+font-semibold
+tracking-tight
+text-gray-700
+text-[15px] md:text-lg
+leading-relaxed
+text-center
+max-w-xl
+mx-auto
+mb-5
+">
      {t[lang].service3Desc} 
     </p> </Animate>
 
-   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-6 text-sm md:text-base text-gray-700 max-w-xl mx-auto text-left leading-snug items-start">
+<ul className="
+flex flex-col
+gap-y-1
+text-[15px] md:text-base
+text-gray-700
+max-w-md mx-auto
+leading-snug
+">
 
         <Animate delay={0}>
-      <li className="flex items-start gap-2">
-        <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
-        {t[lang].noc}
+      <li className="
+group
+flex items-start gap-3
+min-h-[24px]
+px-2 py-1
+rounded-2xl
+transition-all duration-300
+hover:bg-white
+hover:shadow-[0_10px_25px_rgba(37,99,235,0.12)]
+hover:-translate-y-1
+cursor-default
+">
+       <CheckCircle
+className="
+text-blue-600
+w-4 h-4 mt-[3px] shrink-0
+transition duration-300
+group-hover:scale-110
+group-hover:text-blue-700
+"
+/>
+       <span className="transition duration-300 group-hover:text-blue-900">
+  {t[lang].noc}
+</span>
       </li> </Animate>
 
         <Animate delay={0.05}>
-      <li className="flex items-start gap-2">
-        <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
-        {t[lang].soc}
+<li className="
+group
+flex items-start gap-3
+min-h-[20px]
+px-2 py-[6px]
+rounded-2xl
+transition-all duration-300
+hover:bg-white
+hover:shadow-[0_10px_25px_rgba(37,99,235,0.12)]
+hover:-translate-y-1
+cursor-default
+">
+       <CheckCircle
+className="
+text-blue-600
+w-4 h-4 mt-[3px] shrink-0
+transition duration-300
+group-hover:scale-110
+group-hover:text-blue-700
+"
+/>
+        <span className="transition duration-300 group-hover:text-blue-900">
+  {t[lang].soc}
+</span>
       </li> </Animate>
 
     </ul>
@@ -1488,87 +1958,209 @@ ${visibleCards[2] ? "opacity-100 translate-x-0 scale-100 " : "opacity-0 translat
   cardRefs.current[3] = el;
 }}
   data-index="3"
-className={`max-w-4xl mx-auto bg-white/90 backdrop-blur-sm
-rounded-2xl shadow-md p-5 md:p-6 mb-6
-flex flex-col items-center text-center
-transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
-hover:shadow-2xl hover:shadow-blue-500/30 hover:-translate-y-2 hover:scale-[1.02] hover:brightness-[1.02]
-${visibleCards[3] ? "opacity-100 translate-y-0 scale-100 " : "opacity-0 translate-y-10 scale-95"}
+className={`h-full w-full mx-auto bg-white/90 backdrop-blur-sm
+rounded-2xl
+border border-black/5
+shadow-[0_10px_30px_rgba(0,0,0,0.05)]
+p-5 mb-6
+flex flex-col text-left
+transition-all duration-500 ease-out
+hover:-translate-y-1
+hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)]
 `}
 >
 
   {/* HEADER */}
-  <div className="flex justify-center mb-8">
-    <div className="bg-linear-to-r from-blue-700 to-blue-500 text-white px-4 md:px-6 py-2 text-sm md:text-base rounded-full font-semibold shadow-md">
-      <Animate delay={0.1}> {t[lang].service4Title} </Animate>
-
-    </div>
-  </div>
+  <div className="flex justify-center mb-5">
+ <div className="
+inline-flex items-center justify-center
+bg-gradient-to-r from-blue-700 to-blue-500
+text-white
+px-4 md:px-5 py-2
+rounded-full
+text-base md:text-lg
+font-bold
+tracking-tight
+shadow-[0_10px_30px_rgba(37,99,235,0.25)]
+">
+  {t[lang].service4Title}
+</div>
+</div>
 
   {/* IMAGE */}
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6">
-    
-     <div className="group aspect-video overflow-hidden rounded-xl">
-      <Animate type="zoom">
-      <img
-        src="/network1.png"
-        className="w-full h-full object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-110"
-      />
-      </Animate>
-    </div>
-
-     <div className="group aspect-video overflow-hidden rounded-xl">
-      <Animate type="zoom">
-      <img
-        src="/network2.png"
-        className="w-full h-full object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-110"
-      />
-      </Animate>
-    </div>
-
-  </div>
+<div className="w-full h-32 overflow-hidden rounded-2xl mb-4">
+  <Animate type="zoom">
+    <img
+      src="/infra.png"
+      className="w-full h-full object-cover hover:scale-105 transition duration-700"
+    />
+  </Animate>
+</div>
 
   {/* DESC */}
   <Animate delay={0.2}>
-  <p className="font-semibold text-gray-700 text-sm md:text-base mb-6 leading-relaxed text-center max-w-2xl mx-auto">
+ <p className="
+font-semibold
+tracking-tight
+text-gray-700
+text-[15px] md:text-lg
+leading-relaxed
+text-center
+max-w-xl
+mx-auto
+mb-5
+">
      {t[lang].service4Desc} 
   </p> </Animate>
 
   {/* LIST (2 KOLOM) */}
-      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-6 text-sm md:text-base text-gray-700 max-w-xl mx-auto text-left leading-snug items-start">
+<ul className="
+flex flex-col
+gap-y-1
+text-[15px] md:text-base
+text-gray-700
+max-w-md mx-auto
+leading-snug
+">
 
         <Animate delay={0}> 
-      <li className="flex items-start gap-2">
-      <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
-      {t[lang].netInstall}
+<li className="
+group
+flex items-start gap-3
+min-h-[20px]
+px-2 py-[6px]
+rounded-2xl
+transition-all duration-300
+hover:bg-white
+hover:shadow-[0_10px_25px_rgba(37,99,235,0.12)]
+hover:-translate-y-1
+cursor-default
+">
+      <CheckCircle
+className="
+text-blue-600
+w-4 h-4 mt-[3px] shrink-0
+transition duration-300
+group-hover:scale-110
+group-hover:text-blue-700
+"
+/>
+      <span className="transition duration-300 group-hover:text-blue-900">
+  {t[lang].netInstall}
+</span>
     </li> </Animate>
 
         <Animate delay={0.05}> 
-      <li className="flex items-start gap-2">
-        <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
-      {t[lang].cctv}
+<li className="
+group
+flex items-start gap-3
+min-h-[20px]
+px-2 py-[6px]
+rounded-2xl
+transition-all duration-300
+hover:bg-white
+hover:shadow-[0_10px_25px_rgba(37,99,235,0.12)]
+hover:-translate-y-1
+cursor-default
+">
+        <CheckCircle
+className="
+text-blue-600
+w-4 h-4 mt-[3px] shrink-0
+transition duration-300
+group-hover:scale-110
+group-hover:text-blue-700
+"
+/>
+      <span className="transition duration-300 group-hover:text-blue-900">
+  {t[lang].cctv}
+</span>
     </li> </Animate>
 
         <Animate delay={0.1}> 
-      <li className="flex items-start gap-2">
-        <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
-      {t[lang].gate}
+<li className="
+group
+flex items-start gap-3
+min-h-[20px]
+px-2 py-[6px]
+rounded-2xl
+transition-all duration-300
+hover:bg-white
+hover:shadow-[0_10px_25px_rgba(37,99,235,0.12)]
+hover:-translate-y-1
+cursor-default
+">
+       <CheckCircle
+className="
+text-blue-600
+w-4 h-4 mt-[3px] shrink-0
+transition duration-300
+group-hover:scale-110
+group-hover:text-blue-700
+"
+/>
+      <span className="transition duration-300 group-hover:text-blue-900">
+  {t[lang].gate}
+</span>
     </li> </Animate>
 
         <Animate delay={0.15}> 
-      <li className="flex items-start gap-2">
-        <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
-      {t[lang].me}
+<li className="
+group
+flex items-start gap-3
+min-h-[20px]
+px-2 py-[6px]
+rounded-2xl
+transition-all duration-300
+hover:bg-white
+hover:shadow-[0_10px_25px_rgba(37,99,235,0.12)]
+hover:-translate-y-1
+cursor-default
+">
+        <CheckCircle
+className="
+text-blue-600
+w-4 h-4 mt-[3px] shrink-0
+transition duration-300
+group-hover:scale-110
+group-hover:text-blue-700
+"
+/>
+      <span className="transition duration-300 group-hover:text-blue-900">
+  {t[lang].me}
+</span>
     </li> </Animate>
 
         <Animate delay={0.2}> 
-      <li className="flex items-start gap-2">
-        <CheckCircle className="text-blue-600 w-4 h-4 mt-1 shrink-0" />
-      {t[lang].cable}
+<li className="
+group
+flex items-start gap-3
+min-h-[20px]
+px-2 py-[6px]
+rounded-2xl
+transition-all duration-300
+hover:bg-white
+hover:shadow-[0_10px_25px_rgba(37,99,235,0.12)]
+hover:-translate-y-1
+cursor-default
+">
+       <CheckCircle
+className="
+text-blue-600
+w-4 h-4 mt-[3px] shrink-0
+transition duration-300
+group-hover:scale-110
+group-hover:text-blue-700
+"
+/>
+      <span className="transition duration-300 group-hover:text-blue-900">
+  {t[lang].cable}
+</span>
     </li> </Animate>
 
   </ul>
 
+</div>
 </div>
 </div>
 
@@ -1743,61 +2335,127 @@ ${visibleCards[3] ? "opacity-100 translate-y-0 scale-100 " : "opacity-0 translat
 </div>
 
 {/* PARTNERS */}
-<section id="partners" className="py-10 md:py-14 px-4 bg-gray-50">
+<section
+  id="partners"
+  className="relative overflow-hidden py-16 md:py-24 px-4 bg-linear-to-b from-white to-blue-50/40"
+>
 
-  <div className="max-w-6xl mx-auto text-center">
-     <Animate>
-  <div className="text-center mb-12">
+  {/* BACKGROUND */}
+  <div className="absolute inset-0 pointer-events-none overflow-hidden">
 
-    <h2
-      className="
-        text-3xl
-        md:text-5xl
-        font-semibold
-        tracking-[-1px]
-        text-blue-900
-        mb-4
-      "
-    >
-      {t[lang].partnersTitle}
-    </h2>
+    <div className="absolute top-10 left-0 w-72 h-72 bg-blue-200/20 blur-3xl rounded-full" />
 
-    <div className="w-24 h-1 bg-blue-900/80 mx-auto rounded-full" />
+    <div className="absolute bottom-0 right-0 w-80 h-80 bg-cyan-200/20 blur-3xl rounded-full" />
 
   </div>
-</Animate>
 
-     
+  <div className="relative max-w-7xl mx-auto">
 
-    <div className="flex flex-wrap justify-center gap-3 md:gap-5">
+    <div className="grid lg:grid-cols-2 gap-10 items-center">
 
-     {[
-  "cisco.png",
-  "aruba.png",
-  "bitdefender.png",
-  "darktrace.png",
-  "radware.png",
-  "sangfor.png",
-  "segura.png",
-  "sonicwall.png",
-  "zimperium.png",
-  "fortinet.png",
-  "microsoft.png",
-  "vmware.png",
-  "sophos.png",
-  "dell.png",
-  "hp.png",
-  "lenovo.png",
-].map((logo, i) => (
-  <Animate key={i} delay={i * 0.05} type="zoom">
-    <div className="w-40 md:w-44 bg-white rounded-2xl p-4 flex items-center justify-center shadow-sm hover:shadow-xl hover:-translate-y-2 hover:scale-105 transition-all duration-300">
-      <img
-        src={`/partners/${logo}`}
-        className="object-contain max-h-20 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition"
-      />
-    </div>
-  </Animate>
-))}
+      {/* LEFT CONTENT */}
+      <div>
+
+        
+
+        <Animate delay={0.1}>
+          <h2
+            className="
+            text-4xl
+            md:text-6xl
+            font-extrabold
+            tracking-tight
+            leading-tight
+            text-blue-900
+            mb-6
+            "
+          >
+            {t[lang].partnersTitle}
+          </h2>
+        </Animate>
+
+        <Animate delay={0.2}>
+          <p
+            className="
+            text-gray-600
+            text-lg
+            leading-relaxed
+            max-w-2xl
+            "
+          >
+            {lang === "id"
+              ? "Kami menyediakan solusi teknologi enterprise bersama vendor global terpercaya untuk keamanan siber, jaringan, cloud, infrastruktur, endpoint security, dan managed services."
+              : "We provide enterprise technology solutions with trusted global vendors for cybersecurity, networking, cloud, infrastructure, endpoint security, and managed services."}
+          </p>
+        </Animate>
+
+      </div>
+
+      {/* RIGHT LOGO GRID */}
+      <div
+        className="
+        grid
+        grid-cols-2 md:grid-cols-3
+        gap-4
+        "
+      >
+
+        {[
+          "cisco.png",
+          "aruba.png",
+          "bitdefender.png",
+          "darktrace.png",
+          "radware.png",
+          "sangfor.png",
+          "segura.png",
+          "sonicwall.png",
+          "zimperium.png",
+          "fortinet.png",
+          "microsoft.png",
+          "vmware.png",
+          "sophos.png",
+          "dell.png",
+          "hp.png",
+          "lenovo.png",
+        ].map((logo, i) => (
+
+          <Animate key={i} delay={i * 0.05} type="zoom">
+
+            <div
+              className="
+              group
+              bg-white/80
+              backdrop-blur-sm
+              border border-gray-200
+              rounded-3xl
+              h-[110px]
+              flex items-center justify-center
+              shadow-[0_10px_30px_rgba(0,0,0,0.05)]
+              hover:-translate-y-2
+              hover:shadow-[0_20px_40px_rgba(37,99,235,0.12)]
+              transition-all duration-300
+              "
+            >
+
+              <img
+                src={`/partners/${logo}`}
+                alt={logo}
+                className="
+                max-h-[48px]
+                max-w-[140px]
+                object-contain
+                transition duration-300
+                group-hover:scale-110
+                "
+              />
+
+            </div>
+
+          </Animate>
+
+        ))}
+
+      </div>
 
     </div>
 
@@ -1927,83 +2585,154 @@ ${coreVisible ? "opacity-100 translate-x-0 scale-100" : "opacity-0 translate-x-1
 
 </div>
 
-   {/* CLIENT */}
+{/* CLIENT */}
 <section
   id="clients"
   className="w-full py-14 md:py-20 bg-linear-to-b from-white to-blue-50"
 >
 
-  <div className="max-w-6xl mx-auto px-4">
+  <div className="max-w-7xl mx-auto px-4">
 
-     <Animate>
-  <div className="text-center mb-12">
-
-    <h2
+    <div
       className="
-        text-3xl
-        md:text-5xl
-        font-semibold
-        tracking-[-1px]
-        text-blue-900
-        mb-4
+      flex flex-col
+      lg:grid lg:grid-cols-2
+      gap-10
+      items-center
       "
     >
-      {t[lang].clients}
-    </h2>
 
-    <div className="w-24 h-1 bg-linear-to-r from-blue-900 to-blue-500 mx-auto rounded-full" />
-
-  </div>
-</Animate>
-
-      <Animate delay={0.1}>
-<p className="text-gray-500 text-base md:text-lg leading-relaxed max-w-3xl mx-auto mb-12 text-center">    {t[lang].clientsDesc}
- </p> </Animate>
-
-   <div className="flex flex-wrap justify-center gap-4">
-
- {clients.map((client, i) => (
-  <Animate key={i} delay={i * 0.05} type="zoom">
-<div
-  className="
-    w-36
-    md:w-44
-    h-24 md:h-32
-    bg-white/90
-    backdrop-blur-sm
-    rounded-3xl
-    p-5
-    flex items-center justify-center
-    border border-gray-100
-    shadow-sm
-    hover:shadow-2xl
-    hover:-translate-y-2
-    hover:scale-105
-    transition-all duration-300
-  "
->      <Image
-        src={`/clients/${client}`}
-        alt={client}
-        width={200}
-        height={100}
+      {/* RIGHT CONTENT */}
+      <div
         className="
-  object-contain
-  max-h-16
-  md:max-h-20
-  w-auto
-  opacity-80
-  hover:opacity-100
-  hover:scale-105
-  transition duration-300
-"
-      />
-    </div>
-  </Animate>
-))}
+        order-1
+        lg:order-2
+        text-center lg:text-left
+        "
+      >
 
-</div>
+        {/* SMALL BADGE */}
+        <Animate>
+          <div className="flex justify-center lg:justify-start mb-5">
+
+            <span
+              className="
+              inline-flex
+              items-center
+              px-5 py-2
+              rounded-full
+              bg-blue-100
+              text-blue-700
+              text-sm md:text-base
+              font-bold
+              tracking-wide
+              "
+            >
+              {lang === "id" ? "KLIEN KAMI" : "OUR CLIENTS"}
+            </span>
+
+          </div>
+        </Animate>
+
+        {/* TITLE */}
+        <Animate delay={0.1}>
+          <h3
+            className="
+            text-4xl
+            md:text-6xl
+            font-extrabold
+            tracking-tight
+            leading-tight
+            text-blue-900
+            mb-6
+            "
+          >
+            {lang === "id"
+              ? "Dipercaya Berbagai Institusi & Perusahaan"
+              : "Trusted By Government & Enterprise"}
+          </h3>
+        </Animate>
+
+        {/* DESCRIPTION */}
+        <Animate delay={0.2}>
+          <p
+            className="
+            text-gray-600
+            text-base md:text-xl
+            leading-relaxed
+            max-w-xl
+            mx-auto lg:mx-0
+            "
+          >
+            {t[lang].clientsDesc}
+          </p>
+        </Animate>
+
+      </div>
+
+      {/* LEFT LOGO GRID */}
+      <div
+        className="
+        order-2
+        lg:order-1
+        grid
+        grid-cols-2 md:grid-cols-4
+        gap-4 md:gap-5
+        w-full
+        "
+      >
+
+        {clients.map((client, i) => (
+
+          <Animate key={i} delay={i * 0.03} type="zoom">
+
+            <div
+              className="
+              group
+              h-32 md:h-36
+              bg-white/90
+              backdrop-blur-sm
+              rounded-3xl
+              p-5
+              flex items-center justify-center
+              border border-gray-100
+              shadow-[0_10px_30px_rgba(0,0,0,0.05)]
+              hover:shadow-[0_20px_40px_rgba(37,99,235,0.12)]
+              hover:-translate-y-2
+              hover:scale-[1.03]
+              transition-all duration-300
+              "
+            >
+
+              <Image
+                src={`/clients/${client}`}
+                alt={client}
+                width={220}
+                height={120}
+                className="
+                object-contain
+                max-h-20
+                md:max-h-24
+                w-auto
+                opacity-90
+                group-hover:opacity-100
+                group-hover:scale-110
+                transition duration-300
+                "
+              />
+
+            </div>
+
+          </Animate>
+
+        ))}
+
+      </div>
+
+    </div>
 
   </div>
+
 </section>
 
 
