@@ -1186,9 +1186,9 @@ className="grid grid-cols-1 md:grid-cols-2 items-stretch bg-[#F7F4F1]">
 group
 relative
 w-full
-md:w-[460px]
-h-[180px] sm:h-[200px] md:h-[220px]
-min-h-[180px]
+md:w-115
+h-45 sm:h-50 md:h-55
+min-h-45
 overflow-hidden
 flex items-center justify-center
 rounded-[30px]
@@ -1212,32 +1212,34 @@ shrink-0
   "
 />
 
-              <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/10" />
+              <div className="absolute inset-0 bg-linear-to-r from-black/30 via-transparent to-black/10" />
 
             </div>
           </Animate>
 
           {/* CONTENT */}
-          <div className="flex-1 text-left">
+<div className="flex-1 text-center md:text-left">
 
             <Animate delay={0.1}>
               <h3 className="
-              text-blue-700
-              text-3xl md:text-4xl
-              font-extrabold
-              tracking-tight
-              mb-3
-              ">
+text-blue-700
+text-3xl md:text-4xl
+font-extrabold
+tracking-tight
+mb-2
+text-center md:text-left
+">
                 {t[lang].vision}
               </h3>
             </Animate>
 
             <Animate delay={0.2}>
-              <p className="
-              text-gray-700
-              leading-snug
-              text-[15px] md:text-base
-              ">
+             <p className="
+text-gray-700
+leading-snug
+text-[15px] md:text-base
+text-center md:text-left
+">
                 {t[lang].visionText}
               </p>
             </Animate>
@@ -1279,9 +1281,9 @@ shrink-0
 group
 relative
 w-full
-md:w-[460px]
-h-[180px] sm:h-[200px] md:h-[220px]
-min-h-[180px]
+md:w-115
+h-45 sm:h-50 md:h-55
+min-h-45
 overflow-hidden
 flex items-center justify-center
 rounded-[30px]
@@ -1305,63 +1307,68 @@ shrink-0
   "
 />
 
-              <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/10" />
+              <div className="absolute inset-0 bg-linear-to-r from-black/30 via-transparent to-black/10" />
 
             </div>
           </Animate>
 
           {/* CONTENT */}
-          <div className="flex-1 text-left">
+<div className="flex-1 text-center md:text-left">
 
-            <Animate delay={0.1}>
-              <h3 className="
-              text-blue-700
-              text-3xl md:text-4xl
-              font-extrabold
-              tracking-tight
-              mb-3
-              ">
-                {t[lang].mission}
-              </h3>
-            </Animate>
+           <Animate delay={0.1}>
+  <h3 className="
+  text-blue-700
+  text-3xl md:text-4xl
+  font-extrabold
+  tracking-tight
+  mb-2
+  text-center md:text-left
+  ">
+    {t[lang].mission}
+  </h3>
+</Animate>
 
-            <ul className="text-gray-700 space-y-2 text-[15px] md:text-base">
+<ul className="
+text-gray-700
+space-y-2
+text-[15px] md:text-base
+text-left
+">
 
-              {[t[lang].mission1, t[lang].mission2, t[lang].mission3].map((item, i) => (
+  {[t[lang].mission1, t[lang].mission2, t[lang].mission3].map((item, i) => (
 
-                <Animate key={i} delay={i * 0.1}>
+    <Animate key={i} delay={i * 0.1}>
 
-                  <li className="
-                  group
-                  leading-snug
-                  flex items-start gap-3
-                  text-left
-                  px-2 py-2
-                  rounded-2xl
-                  transition-all duration-300
-                  hover:bg-blue-50
-                  hover:translate-x-1
-                  ">
+      <li className="
+      group
+      leading-snug
+      flex items-start gap-3
+      text-left
+      px-2 py-2
+      rounded-2xl
+      transition-all duration-300
+      hover:bg-blue-50
+      hover:translate-x-1
+      ">
 
-                    <span className="
-                    text-blue-600 mt-1
-                    transition duration-300
-                    group-hover:text-blue-800
-                    group-hover:scale-110
-                    ">
-                      ✦
-                    </span>
+        <span className="
+        text-blue-600 mt-1
+        transition duration-300
+        group-hover:text-blue-800
+        group-hover:scale-110
+        ">
+          ✦
+        </span>
 
-                    <span>{item}</span>
+        <span>{item}</span>
 
-                  </li>
+      </li>
 
-                </Animate>
+    </Animate>
 
-              ))}
+  ))}
 
-            </ul>
-
+</ul>
           </div>
 
         </div>
@@ -1400,7 +1407,7 @@ shrink-0
 }}
   data-index="1"
 className={`
-bg-gradient-to-br from-white to-blue-50/40
+bg-linear-to-br from-white to-blue-50/40
 backdrop-blur-sm
 rounded-[28px]
 border border-blue-100
@@ -1416,7 +1423,7 @@ hover:shadow-[0_35px_90px_rgba(37,99,235,0.16)]
 
     <div className="flex justify-center mb-8">
 <div className="
-bg-gradient-to-r from-blue-700 to-blue-500
+bg-linear-to-r from-blue-700 to-blue-500
 text-white
 px-6 md:px-6
 py-3 md:py-4
@@ -1429,9 +1436,9 @@ shadow-[0_12px_35px_rgba(37,99,235,0.35)]
       </div>
     </div>
 
-   <div className="group relative h-[220px] md:h-[280px]
+   <div className="group relative h-55 md:h-70
 bg-blue-950
-overflow-hidden rounded-[32px] mb-5 flex items-center justify-center">
+overflow-hidden rounded-4xl mb-5 flex items-center justify-center">
 
   <Animate type="zoom">
     <img
@@ -1441,7 +1448,7 @@ object-cover object-center
 scale-[1.40] md:scale-[1.20]
 transition duration-700
 group-hover:scale-[1.15]"    />
-    <div className="absolute inset-0 bg-gradient-to-r from-black/45 via-black/10 to-transparent" />
+    <div className="absolute inset-0 bg-linear-to-r from-black/45 via-black/10 to-transparent" />
   </Animate>
 
 </div>
@@ -1472,7 +1479,7 @@ leading-relaxed
 <li className="
 group
 flex items-start gap-3
-min-h-[24px]
+min-h-6
 px-1 py-1
 rounded-2xl
 transition-all duration-300
@@ -1484,7 +1491,7 @@ cursor-default
 <CheckCircle
   className="
   text-blue-600
-  w-4 h-4 mt-[3px] shrink-0
+  w-4 h-4 mt-0.75 shrink-0
   transition duration-300
   group-hover:scale-110
   group-hover:text-blue-700
@@ -1500,7 +1507,7 @@ cursor-default
 <li className="
 group
 flex items-start gap-3
-min-h-[24px]
+min-h-6
 px-1 py-1
 rounded-2xl
 transition-all duration-300
@@ -1512,7 +1519,7 @@ cursor-default
  <CheckCircle
   className="
   text-blue-600
-  w-4 h-4 mt-[3px] shrink-0
+  w-4 h-4 mt-0.75 shrink-0
   transition duration-300
   group-hover:scale-110
   group-hover:text-blue-700
@@ -1528,7 +1535,7 @@ cursor-default
 <li className="
 group
 flex items-start gap-3
-min-h-[24px]
+min-h-6
 px-1 py-1
 rounded-2xl
 transition-all duration-300
@@ -1540,7 +1547,7 @@ cursor-default
      <CheckCircle
   className="
   text-blue-600
-  w-4 h-4 mt-[3px] shrink-0
+  w-4 h-4 mt-0.75 shrink-0
   transition duration-300
   group-hover:scale-110
   group-hover:text-blue-700
@@ -1556,7 +1563,7 @@ cursor-default
 <li className="
 group
 flex items-start gap-3
-min-h-[24px]
+min-h-6
 px-1 py-1
 rounded-2xl
 transition-all duration-300
@@ -1568,7 +1575,7 @@ cursor-default
 <CheckCircle
   className="
   text-blue-600
-  w-4 h-4 mt-[3px] shrink-0
+  w-4 h-4 mt-0.75 shrink-0
   transition duration-300
   group-hover:scale-110
   group-hover:text-blue-700
@@ -1584,7 +1591,7 @@ cursor-default
 <li className="
 group
 flex items-start gap-3
-min-h-[24px]
+min-h-6
 px-1 py-1
 rounded-2xl
 transition-all duration-300
@@ -1596,7 +1603,7 @@ cursor-default
  <CheckCircle
   className="
   text-blue-600
-  w-4 h-4 mt-[3px] shrink-0
+  w-4 h-4 mt-0.75 shrink-0
   transition duration-300
   group-hover:scale-110
   group-hover:text-blue-700
@@ -1612,7 +1619,7 @@ cursor-default
 <li className="
 group
 flex items-start gap-3
-min-h-[24px]
+min-h-6
 px-1 py-1
 rounded-2xl
 transition-all duration-300
@@ -1624,7 +1631,7 @@ cursor-default
  <CheckCircle
   className="
   text-blue-600
-  w-4 h-4 mt-[3px] shrink-0
+  w-4 h-4 mt-0.75 shrink-0
   transition duration-300
   group-hover:scale-110
   group-hover:text-blue-700
@@ -1664,7 +1671,7 @@ hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)]
   <div className="flex justify-center mb-5">
   <div className="
   inline-flex items-center justify-center
-  bg-gradient-to-r from-blue-700 to-blue-500
+  bg-linear-to-r from-blue-700 to-blue-500
   text-white
 px-4 md:px-5 py-2
   rounded-full
@@ -1714,8 +1721,8 @@ leading-snug
 <li className="
 group
 flex items-start gap-3
-min-h-[20px]
-px-2 py-[6px]
+min-h-5
+px-2 py-1.5
 rounded-2xl
 transition-all duration-300
 hover:bg-white
@@ -1726,7 +1733,7 @@ cursor-default
         <CheckCircle
 className="
 text-blue-600
-w-4 h-4 mt-[3px] shrink-0
+w-4 h-4 mt-0.75 shrink-0
 transition duration-300
 group-hover:scale-110
 group-hover:text-blue-700
@@ -1742,8 +1749,8 @@ group-hover:text-blue-700
 <li className="
 group
 flex items-start gap-3
-min-h-[20px]
-px-2 py-[6px]
+min-h-5
+px-2 py-1.5
 rounded-2xl
 transition-all duration-300
 hover:bg-white
@@ -1754,7 +1761,7 @@ cursor-default
         <CheckCircle
 className="
 text-blue-600
-w-4 h-4 mt-[3px] shrink-0
+w-4 h-4 mt-0.75 shrink-0
 transition duration-300
 group-hover:scale-110
 group-hover:text-blue-700
@@ -1768,8 +1775,8 @@ group-hover:text-blue-700
 <li className="
 group
 flex items-start gap-3
-min-h-[20px]
-px-2 py-[6px]
+min-h-5
+px-2 py-1.5
 rounded-2xl
 transition-all duration-300
 hover:bg-white
@@ -1780,7 +1787,7 @@ cursor-default
         <CheckCircle
 className="
 text-blue-600
-w-4 h-4 mt-[3px] shrink-0
+w-4 h-4 mt-0.75 shrink-0
 transition duration-300
 group-hover:scale-110
 group-hover:text-blue-700
@@ -1796,8 +1803,8 @@ group-hover:text-blue-700
 <li className="
 group
 flex items-start gap-3
-min-h-[20px]
-px-2 py-[6px]
+min-h-5
+px-2 py-1.5
 rounded-2xl
 transition-all duration-300
 hover:bg-white
@@ -1808,7 +1815,7 @@ cursor-default
         <CheckCircle
 className="
 text-blue-600
-w-4 h-4 mt-[3px] shrink-0
+w-4 h-4 mt-0.75 shrink-0
 transition duration-300
 group-hover:scale-110
 group-hover:text-blue-700
@@ -1847,7 +1854,7 @@ hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)]
    <div className="flex justify-center mb-5">
  <div className="
 inline-flex items-center justify-center
-bg-gradient-to-r from-blue-700 to-blue-500
+bg-linear-to-r from-blue-700 to-blue-500
 text-white
 px-4 md:px-5 py-2
 rounded-full
@@ -1897,7 +1904,7 @@ leading-snug
       <li className="
 group
 flex items-start gap-3
-min-h-[24px]
+min-h-6
 px-2 py-1
 rounded-2xl
 transition-all duration-300
@@ -1909,7 +1916,7 @@ cursor-default
        <CheckCircle
 className="
 text-blue-600
-w-4 h-4 mt-[3px] shrink-0
+w-4 h-4 mt-0.75 shrink-0
 transition duration-300
 group-hover:scale-110
 group-hover:text-blue-700
@@ -1924,8 +1931,8 @@ group-hover:text-blue-700
 <li className="
 group
 flex items-start gap-3
-min-h-[20px]
-px-2 py-[6px]
+min-h-5
+px-2 py-1.5
 rounded-2xl
 transition-all duration-300
 hover:bg-white
@@ -1936,7 +1943,7 @@ cursor-default
        <CheckCircle
 className="
 text-blue-600
-w-4 h-4 mt-[3px] shrink-0
+w-4 h-4 mt-0.75 shrink-0
 transition duration-300
 group-hover:scale-110
 group-hover:text-blue-700
@@ -1974,7 +1981,7 @@ hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)]
   <div className="flex justify-center mb-5">
  <div className="
 inline-flex items-center justify-center
-bg-gradient-to-r from-blue-700 to-blue-500
+bg-linear-to-r from-blue-700 to-blue-500
 text-white
 px-4 md:px-5 py-2
 rounded-full
@@ -2027,8 +2034,8 @@ leading-snug
 <li className="
 group
 flex items-start gap-3
-min-h-[20px]
-px-2 py-[6px]
+min-h-5
+px-2 py-1.5
 rounded-2xl
 transition-all duration-300
 hover:bg-white
@@ -2039,7 +2046,7 @@ cursor-default
       <CheckCircle
 className="
 text-blue-600
-w-4 h-4 mt-[3px] shrink-0
+w-4 h-4 mt-0.75 shrink-0
 transition duration-300
 group-hover:scale-110
 group-hover:text-blue-700
@@ -2054,8 +2061,8 @@ group-hover:text-blue-700
 <li className="
 group
 flex items-start gap-3
-min-h-[20px]
-px-2 py-[6px]
+min-h-5
+px-2 py-1.5
 rounded-2xl
 transition-all duration-300
 hover:bg-white
@@ -2066,7 +2073,7 @@ cursor-default
         <CheckCircle
 className="
 text-blue-600
-w-4 h-4 mt-[3px] shrink-0
+w-4 h-4 mt-0.75 shrink-0
 transition duration-300
 group-hover:scale-110
 group-hover:text-blue-700
@@ -2081,8 +2088,8 @@ group-hover:text-blue-700
 <li className="
 group
 flex items-start gap-3
-min-h-[20px]
-px-2 py-[6px]
+min-h-5
+px-2 py-1.5
 rounded-2xl
 transition-all duration-300
 hover:bg-white
@@ -2093,7 +2100,7 @@ cursor-default
        <CheckCircle
 className="
 text-blue-600
-w-4 h-4 mt-[3px] shrink-0
+w-4 h-4 mt-0.75 shrink-0
 transition duration-300
 group-hover:scale-110
 group-hover:text-blue-700
@@ -2108,8 +2115,8 @@ group-hover:text-blue-700
 <li className="
 group
 flex items-start gap-3
-min-h-[20px]
-px-2 py-[6px]
+min-h-5
+px-2 py-1.5
 rounded-2xl
 transition-all duration-300
 hover:bg-white
@@ -2120,7 +2127,7 @@ cursor-default
         <CheckCircle
 className="
 text-blue-600
-w-4 h-4 mt-[3px] shrink-0
+w-4 h-4 mt-0.75 shrink-0
 transition duration-300
 group-hover:scale-110
 group-hover:text-blue-700
@@ -2135,8 +2142,8 @@ group-hover:text-blue-700
 <li className="
 group
 flex items-start gap-3
-min-h-[20px]
-px-2 py-[6px]
+min-h-5
+px-2 py-1.5
 rounded-2xl
 transition-all duration-300
 hover:bg-white
@@ -2147,7 +2154,7 @@ cursor-default
        <CheckCircle
 className="
 text-blue-600
-w-4 h-4 mt-[3px] shrink-0
+w-4 h-4 mt-0.75 shrink-0
 transition duration-300
 group-hover:scale-110
 group-hover:text-blue-700
@@ -2428,7 +2435,7 @@ group-hover:text-blue-700
               backdrop-blur-sm
               border border-gray-200
               rounded-3xl
-              h-[110px]
+              h-27.5
               flex items-center justify-center
               shadow-[0_10px_30px_rgba(0,0,0,0.05)]
               hover:-translate-y-2
@@ -2441,8 +2448,8 @@ group-hover:text-blue-700
                 src={`/partners/${logo}`}
                 alt={logo}
                 className="
-                max-h-[48px]
-                max-w-[140px]
+                max-h-12
+                max-w-35
                 object-contain
                 transition duration-300
                 group-hover:scale-110
