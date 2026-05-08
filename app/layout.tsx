@@ -20,7 +20,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "PT Dothree Santana Prisma",
   description:
-    "IT Infrastructure, Technology Services, dan solusi digital Indonesia.",
+    "PT Dothree Santana Prisma adalah perusahaan IT Infrastructure dan Technology Services Indonesia yang berfokus pada solusi digital, jaringan, server, keamanan, dan transformasi teknologi.",
+
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -32,10 +38,26 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="color-scheme" content="light" />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "PT Dothree Santana Prisma",
+              url: "https://www.dothree.co.id",
+              logo: "https://www.dothree.co.id/logo3.png",
+              description:
+                "Perusahaan IT Infrastructure dan Technology Services Indonesia.",
+            }),
+          }}
+        />
       </head>
+
       <body className="font-poppins antialiased">
-  {children}
-</body>
+        {children}
+      </body>
     </html>
   );
 }
