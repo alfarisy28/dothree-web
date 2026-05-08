@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Dothree Santana Prisma",
+  title: "PT Dothree Santana Prisma",
   description:
     "IT Infrastructure, Technology Services, dan solusi digital Indonesia.",
 };
